@@ -1,17 +1,19 @@
+<script setup>
+import logoImg from '../assets/logo-transparent.png';
+import spinnerImg from '../assets/spinner.svg';
+</script>
 
 <template>
   <div class="hero">
     <div class="blur"></div>
     <div class="content">
       <div class="logo">
-        <img src="../assets/logo-transparent.png" alt="logo"/>
+        <img :src="logoImg.src || logoImg" alt="logo"/>
       </div>
-      <img class="spinner" src="../assets/spinner.svg" alt="">
+      <img class="spinner" :src="spinnerImg.src || spinnerImg" alt="">
       <h1>Coming Soon</h1>
       <p>Questions, ideas, feedback? we’re listening.</p>
-      <a class="whatsapp"   href="https://wa.me/+212630257293"
-  target="_blank"
->Chat on WhatsApp</a>
+      <a class="whatsapp" href="https://wa.me/+212630257293" target="_blank">Chat on WhatsApp</a>
     </div>
   </div>
 </template>
@@ -32,7 +34,7 @@
   height: 90%;
   margin: auto;
   border-radius: 10px;
-  background: url('/src/assets/hoodie.png') center/contain no-repeat ;
+  background: url('../assets/hoodie.png') center/contain no-repeat ;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,7 +60,7 @@
 }
 
 .content p{
-font-style: italic;
+  font-style: italic;
 }
 .whatsapp{
   display: inline-flex;
