@@ -2,7 +2,6 @@
 import '../style.css';
 import ProductGrid from '../components/ProductGrid.vue';
 import logoImg from '../assets/logo-transparent.png';
-import heroBgImg from '../assets/hero_bg.png';
 
 // Category photos or placeholders
 const categoryCards = [
@@ -42,8 +41,8 @@ const categoryCards = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modilo - Essentiels Minimalistes Élevés</title>
-    <meta name="description" content="Sweats à capuche lourds premium, t-shirts en coton cardé et sacs de voyage durables. Conçus pour le confort, fabriqués pour durer." />
+    <title>Modilo - Parcourir par Catégorie</title>
+    <meta name="description" content="Explorez nos collections minimalistes. Sélectionnez une catégorie pour parcourir nos sweats, t-shirts, sacs à dos et tote bags premium." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
@@ -57,7 +56,7 @@ const categoryCards = [
         <nav class="nav-menu">
           <a href="/categories" class="nav-link">Boutique</a>
           <a href="/categories" class="nav-link">Catégories</a>
-          <a href="#about" class="nav-link">À propos</a>
+          <a href="/#about" class="nav-link">À propos</a>
         </nav>
         
         <div class="nav-actions">
@@ -71,65 +70,34 @@ const categoryCards = [
       </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section" style={`background-image: url('${heroBgImg.src || heroBgImg}')`}>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <span class="hero-badge">Collection Été 2026</span>
-        <h1 class="hero-title">L'Essentiel Élevé <br/>Pour La Garde-robe Moderne</h1>
-        <p class="hero-subtitle">
-          Vêtements lourds premium et accessoires urbains. Conçus en interne avec une exigence absolue d'esthétique épurée, de longévité structurelle et de matériaux durables.
-        </p>
-        <div class="hero-actions">
-          <a href="/categories" class="btn-primary">Découvrir la Collection</a>
-          <a href="/categories" class="btn-secondary">Explorer les Catégories</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Shop Section (Vue Component hydrated dynamically) -->
-    <section id="shop" class="shop-section">
-      <ProductGrid client:load showOnlyFeatured={true} />
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
+    <!-- Categories Navigation Section -->
+    <section class="categories-page-intro">
       <div class="container">
-        <div class="about-grid">
-          <div class="about-text">
-            <span class="section-subtitle">Notre Philosophie</span>
-            <h2 class="section-title">Conçu pour Durer. Pensé pour Simplifier.</h2>
-            <div class="header-line left-align"></div>
-            <p>
-              Modilo est né d'un principe simple : un vêtement doit être substantiel, durable et libre de tout branding superflu. Nous nous concentrons sur des coupes structurelles, des grammages premium (280GSM - 450GSM) et des processus de production éthiques.
-            </p>
-            <p>
-              En proposant nos produits directement via WhatsApp, nous maintenons une relation boutique, ultra-réactive avec notre communauté.
-            </p>
-            <div class="about-stats">
-              <div class="stat-item">
-                <span class="stat-number">450g</span>
-                <span class="stat-label">Coton Lourd</span>
+        <div class="section-intro">
+          <span class="section-subtitle">Répertoire des Collections</span>
+          <h1 class="page-title">Parcourir par Catégorie</h1>
+          <div class="header-line"></div>
+        </div>
+        
+        <div class="categories-grid">
+          {categoryCards.map((card) => (
+            <a href={`/categories?cat=${card.id}#shop`} class="category-card" style={`--card-gradient: ${card.gradient}`}>
+              <div class="category-bg"></div>
+              <img src={card.imgSrc} alt={card.name} class="category-img" />
+              <div class="category-content">
+                <span class="category-tagline">{card.tagline}</span>
+                <h3 class="category-name">{card.name}</h3>
+                <span class="category-link-text">Explorer les Articles &rarr;</span>
               </div>
-              <div class="stat-item">
-                <span class="stat-number">100%</span>
-                <span class="stat-label">Fibres Bio</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">24/7</span>
-                <span class="stat-label">Service Personnel</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="about-visual">
-            <div class="about-glow"></div>
-            <div class="about-img-box">
-              <img src="/_astro/mountains.jpeg" alt="Minimalist aesthetics" class="about-image" />
-            </div>
-          </div>
+            </a>
+          ))}
         </div>
       </div>
+    </section>
+
+    <!-- Shop / Category Filter Section -->
+    <section id="shop" class="shop-section">
+      <ProductGrid client:load showOnlyFeatured={false} />
     </section>
 
     <!-- Footer Section -->
@@ -145,7 +113,7 @@ const categoryCards = [
             <h4>Liens Rapides</h4>
             <a href="/categories">Boutique</a>
             <a href="/categories">Catégories</a>
-            <a href="#about">À propos</a>
+            <a href="/#about">À propos</a>
           </div>
           
           <div class="footer-contact">
@@ -239,170 +207,43 @@ const categoryCards = [
     border-color: var(--text-primary);
   }
 
-  /* Hero Section */
-  .hero-section {
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 120px 20px 80px;
+  /* Intro Section */
+  .categories-page-intro {
+    padding: 140px 0 80px;
+    background: var(--bg-primary);
   }
 
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(10, 10, 12, 0.62) 0%,
-      rgba(10, 10, 12, 0.78) 100%
-    );
-    z-index: 0;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 780px;
-  }
-
-  .hero-badge {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    padding: 8px 18px;
-    border-radius: 99px;
-    margin-bottom: 28px;
-  }
-
-  .hero-title {
-    font-family: var(--font-heading);
-    font-size: 4rem;
-    font-weight: 800;
-    line-height: 1.12;
-    letter-spacing: -1.5px;
-    margin-bottom: 24px;
-    color: #ffffff;
-  }
-
-  @media (max-width: 1024px) {
-    .hero-title {
-      font-size: 3rem;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .hero-title {
-      font-size: 2.3rem;
-    }
-  }
-
-  .hero-subtitle {
-    font-size: 1.05rem;
-    line-height: 1.75;
-    color: rgba(255, 255, 255, 0.68);
-    margin-bottom: 42px;
-    max-width: 560px;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .btn-primary, .btn-secondary {
-    display: inline-block;
-    padding: 15px 32px;
-    border-radius: 99px;
-    font-weight: 600;
-    text-decoration: none;
-    text-align: center;
-    transition: all 0.2s ease;
-    font-size: 0.95rem;
-  }
-
-  .btn-primary {
-    background-color: #ffffff;
-    color: #18181b;
-  }
-
-  .btn-primary:hover {
-    background-color: rgba(255, 255, 255, 0.88);
-  }
-
-  .btn-secondary {
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: #ffffff;
-  }
-
-  .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.6);
-  }
-
-  /* Container utility */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  /* Section Intro Headers */
   .section-intro {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
-  
+
   .section-subtitle {
+    font-size: 0.75rem;
     text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: var(--text-secondary);
     font-weight: 600;
     display: block;
-    margin-bottom: 10px;
-  }
-  
-  .section-title {
-    font-family: var(--font-heading);
-    font-size: 2.6rem;
-    font-weight: 700;
-    color: var(--text-primary);
-  }
-  
-  .header-line {
-    width: 50px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-red), var(--accent-cyan));
-    margin: 15px auto 0;
-    border-radius: 99px;
-  }
-  
-  .header-line.left-align {
-    margin: 15px 0 0;
+    margin-bottom: 12px;
   }
 
-  /* Categories Grid Section */
-  .categories-section {
-    padding: 100px 0;
-    position: relative;
-    z-index: 1;
+  .page-title {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 15px;
   }
-  
+
+  .header-line {
+    width: 60px;
+    height: 2px;
+    background: var(--text-primary);
+    margin: 0 auto;
+  }
+
+  /* Categories Grid */
   .categories-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -499,102 +340,22 @@ const categoryCards = [
     border-top: 1px solid var(--card-border);
     border-bottom: 1px solid var(--card-border);
     background: var(--bg-secondary);
+    padding: 80px 0;
   }
 
-  /* About Section */
-  .about-section {
-    padding: 120px 0;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    align-items: center;
-    gap: 80px;
-  }
-  
-  @media (max-width: 768px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-      gap: 50px;
-    }
-  }
-  
-  .about-text p {
-    color: var(--text-secondary);
-    line-height: 1.8;
-    font-size: 1.05rem;
-    margin-top: 25px;
-  }
-  
-  .about-stats {
-    display: flex;
-    gap: 40px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-  }
-  
-  .stat-item {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .stat-number {
-    font-family: var(--font-heading);
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: var(--text-primary);
-  }
-  
-  .stat-label {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 4px;
-    font-weight: 600;
-  }
-  
-  .about-visual {
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .about-glow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(244, 67, 54, 0.1) 0%, rgba(0, 0, 0, 0) 75%);
-    z-index: 0;
-  }
-  
-  .about-img-box {
-    border: 1px solid var(--card-border);
-    border-radius: 24px;
-    overflow: hidden;
-    aspect-ratio: 1.25;
-    position: relative;
-    z-index: 1;
-    background: var(--bg-secondary);
-  }
-  
-  .about-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.85;
+  /* Container utility */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 
-  /* Footer */
+  /* Footer Styles */
   .footer {
-    background-color: var(--bg-secondary);
-    border-top: 1px solid var(--card-border);
+    background: var(--bg-primary);
     padding: 80px 0 40px;
-    position: relative;
-    z-index: 1;
+    border-top: 1px solid var(--card-border);
+    color: var(--text-primary);
   }
   
   .footer-grid {
@@ -611,94 +372,76 @@ const categoryCards = [
     }
   }
   
-  .footer-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
   .footer-logo {
-    height: 45px;
-    width: fit-content;
+    height: 40px;
     object-fit: contain;
+    margin-bottom: 20px;
   }
   
   .footer-desc {
     color: var(--text-secondary);
     line-height: 1.6;
     font-size: 0.95rem;
-    max-width: 320px;
-  }
-  
-  .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
   }
   
   .footer-links h4, .footer-contact h4 {
     font-family: var(--font-heading);
     font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
   
   .footer-links a {
     color: var(--text-secondary);
     text-decoration: none;
     font-size: 0.95rem;
-    transition: color 0.3s;
+    transition: color 0.2s;
   }
   
   .footer-links a:hover {
     color: var(--text-primary);
   }
   
-  .footer-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
   .footer-contact p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
     line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
   }
   
   .footer-whatsapp {
     display: inline-flex;
     align-items: center;
-    width: fit-content;
-    background-color: var(--accent-green);
-    color: var(--bg-primary);
-    text-decoration: none;
-    font-weight: 700;
+    background: var(--text-primary);
+    color: var(--bg-secondary);
     padding: 12px 24px;
     border-radius: 99px;
+    text-decoration: none;
     font-size: 0.9rem;
-    transition: all 0.3s;
+    font-weight: 600;
+    transition: all 0.2s;
   }
   
   .footer-whatsapp:hover {
-    background-color: #20ba59;
-    transform: translateY(-2px);
+    background: var(--text-secondary);
   }
   
   .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .footer-bottom p {
-    color: var(--text-muted);
+    border-top: 1px solid var(--card-border);
+    padding-top: 30px;
+    color: var(--text-secondary);
     font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 15px;
   }
   
   .footer-meta-links {
@@ -707,13 +450,12 @@ const categoryCards = [
   }
   
   .footer-meta-links a {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.85rem;
-    transition: color 0.3s;
+    transition: color 0.2s;
   }
   
   .footer-meta-links a:hover {
-    color: var(--text-secondary);
+    color: var(--text-primary);
   }
 </style>
