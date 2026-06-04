@@ -29,6 +29,13 @@ const props = defineProps({
 });
 
 const categories = ['all', 'hoodie', 't-shirt', 'bags', 'tote-bags'];
+const categoryLabels = {
+  all: 'Tout',
+  hoodie: 'Sweats',
+  't-shirt': 'T-Shirts',
+  bags: 'Sacs',
+  'tote-bags': 'Tote Bags'
+};
 const selectedCategory = ref('all');
 const activeQuickView = ref(null);
 
@@ -129,7 +136,7 @@ function getWhatsAppLink(product) {
           :class="['tab-btn', { active: selectedCategory === cat }]"
           @click="selectCategory(cat)"
         >
-          {{ cat.replace('-', ' ') }}
+          {{ categoryLabels[cat] || cat }}
         </button>
       </div>
 
