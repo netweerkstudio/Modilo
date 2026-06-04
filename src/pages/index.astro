@@ -3,6 +3,7 @@ import '../style.css';
 import ProductGrid from '../components/ProductGrid.vue';
 import logoImg from '../assets/logo-transparent.png';
 import heroBgImg from '../assets/hero_bg.png';
+import philosophyBgImg from '../assets/philosophy_bg.png';
 
 // Category photos or placeholders
 const categoryCards = [
@@ -42,8 +43,8 @@ const categoryCards = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modilo - Essentiels Minimalistes Élevés</title>
-    <meta name="description" content="Sweats à capuche lourds premium, t-shirts en coton cardé et sacs de voyage durables. Conçus pour le confort, fabriqués pour durer." />
+    <title>Modilo - Vestiaire Masculin de Caractère</title>
+    <meta name="description" content="Sweats à capuche lourds premium, t-shirts d'exception et accessoires exclusifs. Conçus exclusivement pour l'homme d'action." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
@@ -76,9 +77,9 @@ const categoryCards = [
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <span class="hero-badge">Collection Été 2026</span>
-        <h1 class="hero-title">L'Essentiel Élevé <br/>Pour La Garde-robe Moderne</h1>
+        <h1 class="hero-title">L'Essentiel Élevé <br/>Pour Le Vestiaire Masculin</h1>
         <p class="hero-subtitle">
-          Vêtements lourds premium et accessoires urbains. Conçus en interne avec une exigence absolue d'esthétique épurée, de longévité structurelle et de matériaux durables.
+          Vêtements lourds d'exception et pièces d'ingénierie urbaine pour homme. Conçus pour affirmer votre prestance et durer toute une vie.
         </p>
         <div class="hero-actions">
           <a href="/categories" class="btn-primary">Découvrir la Collection</a>
@@ -98,34 +99,20 @@ const categoryCards = [
         <div class="about-grid">
           <div class="about-text">
             <span class="section-subtitle">Notre Philosophie</span>
-            <h2 class="section-title">Conçu pour Durer. Pensé pour Simplifier.</h2>
+            <h2 class="section-title">Le Vestiaire de Caractère. Exclusivement Masculin.</h2>
             <div class="header-line left-align"></div>
             <p>
-              Modilo est né d'un principe simple : un vêtement doit être substantiel, durable et libre de tout branding superflu. Nous nous concentrons sur des coupes structurelles, des grammages premium (280GSM - 450GSM) et des processus de production éthiques.
+              Modilo a été fondé par trois jeunes ambitieux. Nous concevons, cousons et imprimons chaque vêtement avec amour pour vous offrir des pièces uniques et durables.
             </p>
             <p>
-              En proposant nos produits directement via WhatsApp, nous maintenons une relation boutique, ultra-réactive avec notre communauté.
+              En proposant nos créations directement via WhatsApp, nous maintenons une relation de confiance, de proximité et ultra-réactive avec notre communauté.
             </p>
-            <div class="about-stats">
-              <div class="stat-item">
-                <span class="stat-number">450g</span>
-                <span class="stat-label">Coton Lourd</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">100%</span>
-                <span class="stat-label">Fibres Bio</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">24/7</span>
-                <span class="stat-label">Service Personnel</span>
-              </div>
-            </div>
           </div>
           
           <div class="about-visual">
             <div class="about-glow"></div>
             <div class="about-img-box">
-              <img src="/_astro/mountains.jpeg" alt="Minimalist aesthetics" class="about-image" />
+              <img src={philosophyBgImg.src || philosophyBgImg} alt="Artisanat Modilo" class="about-image" />
             </div>
           </div>
         </div>
@@ -138,7 +125,7 @@ const categoryCards = [
         <div class="footer-grid">
           <div class="footer-brand">
             <img src={logoImg.src} alt="Modilo Logo" class="footer-logo" />
-            <p class="footer-desc">Vêtements minimalistes premium et accessoires urbains pour le style de vie moderne.</p>
+            <p class="footer-desc">Vêtements de caractère et accessoires urbains haut de gamme, conçus exclusivement pour l'homme.</p>
           </div>
           
           <div class="footer-links">

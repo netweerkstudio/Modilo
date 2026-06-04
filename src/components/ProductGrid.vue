@@ -44,7 +44,7 @@ const topSellingProducts = computed(() => {
 });
 
 const tshirtProducts = computed(() => {
-  return products.filter(p => p.category === 't-shirt');
+  return products.filter(p => p.category === 't-shirt').slice(0, 9);
 });
 
 onMounted(() => {
@@ -85,42 +85,10 @@ function getWhatsAppLink(product) {
 
 <template>
   <div class="product-section">
-    <!-- Top Selling Section -->
-    <div v-if="props.showOnlyFeatured" class="container margin-bottom">
-      <div class="section-header">
-        <span class="subtitle">Meilleures Ventes</span>
-        <h2 class="section-title">Tendances du Moment</h2>
-        <div class="accent-line"></div>
-      </div>
-      
-      <div class="small-grid">
-        <div 
-          v-for="product in topSellingProducts" 
-          :key="'top-' + product.id"
-          class="small-card"
-          @click="openQuickView(product)"
-        >
-          <div class="card-image-wrapper">
-            <img :src="product.resolvedImage" :alt="product.title" class="card-image" :style="{ filter: product.cssFilter || 'none' }" />
-            <div class="badge">Populaire</div>
-            <div class="card-overlay">
-              <span class="view-label">Aperçu Rapide</span>
-            </div>
-          </div>
-          <div class="card-info">
-            <span class="card-category">{{ product.category }}</span>
-            <h3 class="card-title">{{ product.title }}</h3>
-            <p class="card-price">${{ product.price }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- T-Shirt Dedicated Section with Small Cards -->
+    <!-- T-Shirt Dedicated Section with Small Cards (New Arrivals) -->
     <div v-if="props.showOnlyFeatured" class="container margin-bottom tshirts-section">
       <div class="section-header">
-        <span class="subtitle">Crewnecks Naturels</span>
-        <h2 class="section-title">T-Shirts Lourds</h2>
+        <h2 class="section-title">Nouveautés</h2>
         <div class="accent-line"></div>
       </div>
       

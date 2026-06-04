@@ -139,6 +139,63 @@
     "topSelling": false
   },
   {
+    "id": "modilo-coffee-tee-brown",
+    "title": "Tee-shirt Brun Café",
+    "price": 40,
+    "category": "t-shirt",
+    "image": "../assets/tshirt_white.png",
+    "images": ["../assets/tshirt_white.png"],
+    "cssFilter": "sepia(0.8) hue-rotate(340deg) saturate(0.8) brightness(0.45)",
+    "description": "Un brun café riche et profond, idéal pour une allure décontractée et chaleureuse.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Brun Café"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM" }
+    ],
+    "topSelling": false
+  },
+  {
+    "id": "modilo-olive-tee-green",
+    "title": "Tee-shirt Vert Olive",
+    "price": 40,
+    "category": "t-shirt",
+    "image": "../assets/tshirt_white.png",
+    "images": ["../assets/tshirt_white.png"],
+    "cssFilter": "sepia(0.7) hue-rotate(75deg) saturate(0.8) brightness(0.48)",
+    "description": "Une nuance vert olive subtile et élégante, parfaite pour toutes les saisons.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Vert Olive"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM" }
+    ],
+    "topSelling": false
+  },
+  {
+    "id": "modilo-terracotta-tee",
+    "title": "Tee-shirt Terracotta",
+    "price": 42,
+    "category": "t-shirt",
+    "image": "../assets/tshirt_white.png",
+    "images": ["../assets/tshirt_white.png"],
+    "cssFilter": "sepia(0.6) hue-rotate(350deg) saturate(1.3) brightness(0.6)",
+    "description": "Une teinte terracotta vibrante inspirée de l'argile naturelle, apportant une touche de couleur subtile.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Terracotta"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM" }
+    ],
+    "topSelling": false
+  },
+  {
     "id": "modilo-commuter-backpack",
     "title": "Modilo Commuter Backpack",
     "price": 120,
