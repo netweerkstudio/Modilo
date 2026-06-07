@@ -2,7 +2,7 @@
   {
     "id": "modilo-minimalist-hoodie",
     "title": "Modilo Minimalist Hoodie",
-    "price": 85,
+    "price": 450,
     "category": "hoodie",
     "image": "../assets/hoodie_black.png",
     "images": ["../assets/hoodie_black.png"],
@@ -22,7 +22,7 @@
   {
     "id": "modilo-classic-tee-white",
     "title": "Classic White Tee",
-    "price": 38,
+    "price": 190,
     "category": "t-shirt",
     "image": "../assets/tshirt_white.png",
     "images": ["../assets/tshirt_white.png"],
@@ -43,7 +43,7 @@
   {
     "id": "modilo-organic-tee-black",
     "title": "Charcoal Black Tee",
-    "price": 38,
+    "price": 190,
     "category": "t-shirt",
     "image": "../assets/tshirt_white.png",
     "images": ["../assets/tshirt_white.png"],
@@ -64,7 +64,7 @@
   {
     "id": "modilo-vintage-tee-grey",
     "title": "Ash Grey Tee",
-    "price": 38,
+    "price": 190,
     "category": "t-shirt",
     "image": "../assets/tshirt_white.png",
     "images": ["../assets/tshirt_white.png"],
@@ -84,7 +84,7 @@
   {
     "id": "modilo-commuter-tee-sage",
     "title": "Sage Green Tee",
-    "price": 42,
+    "price": 210,
     "category": "t-shirt",
     "image": "../assets/tshirt_white.png",
     "images": ["../assets/tshirt_white.png"],
@@ -103,7 +103,7 @@
   {
     "id": "modilo-pocket-tee-sand",
     "title": "Sand Beige Tee",
-    "price": 42,
+    "price": 210,
     "category": "t-shirt",
     "image": "../assets/tshirt_white.png",
     "images": ["../assets/tshirt_white.png"],
@@ -122,7 +122,7 @@
   {
     "id": "modilo-oversized-tee-navy",
     "title": "Midnight Navy Tee",
-    "price": 40,
+    "price": 200,
     "category": "t-shirt",
     "image": "../assets/tshirt_white.png",
     "images": ["../assets/tshirt_white.png"],
@@ -141,7 +141,7 @@
   {
     "id": "modilo-coffee-tee-brown",
     "title": "Tee-shirt Brun Café",
-    "price": 40,
+    "price": 200,
     "category": "t-shirt",
     "image": "../assets/tshirt_white.png",
     "images": ["../assets/tshirt_white.png"],
@@ -160,7 +160,7 @@
   {
     "id": "modilo-olive-tee-green",
     "title": "Tee-shirt Vert Olive",
-    "price": 40,
+    "price": 200,
     "category": "t-shirt",
     "image": "../assets/tshirt_white.png",
     "images": ["../assets/tshirt_white.png"],
@@ -179,7 +179,7 @@
   {
     "id": "modilo-terracotta-tee",
     "title": "Tee-shirt Terracotta",
-    "price": 42,
+    "price": 210,
     "category": "t-shirt",
     "image": "../assets/tshirt_white.png",
     "images": ["../assets/tshirt_white.png"],
@@ -194,43 +194,5 @@
       { "name": "Poids", "value": "280 GSM" }
     ],
     "topSelling": false
-  },
-  {
-    "id": "modilo-commuter-backpack",
-    "title": "Modilo Commuter Backpack",
-    "price": 120,
-    "category": "bags",
-    "image": "../assets/backpack_grey.png",
-    "images": ["../assets/backpack_grey.png"],
-    "description": "The ultimate daily pack for the modern professional. Built with water-resistant Cordura nylon, it features a padded 16-inch laptop sleeve, hidden security pocket, and ergonomic shoulder straps for all-day comfort.",
-    "variations": {
-      "colors": ["Charcoal Grey", "Matte Black"]
-    },
-    "specifications": [
-      { "name": "Material", "value": "Cordura Nylon 1000D" },
-      { "name": "Capacity", "value": "22 Liters" },
-      { "name": "Dimensions", "value": "48cm x 30cm x 15cm" },
-      { "name": "Water Resistance", "value": "IPX4 splash proof" }
-    ],
-    "topSelling": true
-  },
-  {
-    "id": "modilo-everyday-tote",
-    "title": "Modilo Everyday Tote",
-    "price": 25,
-    "category": "tote-bags",
-    "image": "../assets/totebag_canvas.png",
-    "images": ["../assets/totebag_canvas.png"],
-    "description": "A heavyweight canvas tote for your daily essentials. Featuring extra-wide shoulder straps for heavy loads and an inner pocket for your keys and phone.",
-    "variations": {
-      "colors": ["Natural Beige", "Navy Blue"]
-    },
-    "specifications": [
-      { "name": "Material", "value": "16oz Organic Cotton Canvas" },
-      { "name": "Dimensions", "value": "40cm x 35cm x 10cm" },
-      { "name": "Handles", "value": "30cm drop length" },
-      { "name": "Care", "value": "Spot clean only" }
-    ],
-    "topSelling": true
   }
 ]

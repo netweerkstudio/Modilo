@@ -1,6 +1,7 @@
 ---
 import '../style.css';
 import ProductGrid from '../components/ProductGrid.vue';
+import Navbar from '../components/Navbar.astro';
 import logoImg from '../assets/logo-transparent.png';
 ---
 
@@ -14,29 +15,7 @@ import logoImg from '../assets/logo-transparent.png';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <!-- Header Navigation -->
-    <header class="header">
-      <div class="header-container">
-        <a href="/" class="logo-link">
-          <img src={logoImg.src} alt="Modilo Logo" class="nav-logo" />
-        </a>
-        
-        <nav class="nav-menu">
-          <a href="/products" class="nav-link active">Boutique</a>
-          <a href="/categories" class="nav-link">Catégories</a>
-          <a href="/#about" class="nav-link">À propos</a>
-        </nav>
-        
-        <div class="nav-actions">
-          <a href="https://wa.me/+212630257293" target="_blank" class="contact-btn">
-            <span>Support WhatsApp</span>
-            <svg viewBox="0 0 24 24" width="16" height="16">
-              <path fill="currentColor" d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.982L2 22l5.233-1.371a9.936 9.936 0 0 0 4.779 1.21h.005c5.505 0 9.988-4.479 9.989-9.986 0-2.67-1.037-5.178-2.922-7.062A9.925 9.925 0 0 0 12.012 2zm5.835 14.165c-.32.9-.1.9-.1.9s-.427 1.099-1.637 1.328c-1.21.23-2.56.096-4.576-.718-2.016-.814-3.526-2.585-4.464-3.878-.938-1.293-1.579-2.738-1.579-4.22 0-1.48.718-2.203 1.026-2.502.308-.299.82-.455 1.077-.455.257 0 .492-.01.705.01.214.02.487-.08.761.564.274.645.94 2.274 1.017 2.43.077.157.12.338.017.532-.102.193-.154.314-.308.492-.154.177-.325.298-.462.46-.153.18-.316.378-.137.684.18.307.8 1.314 1.718 2.128.918.814 1.692 1.065 1.992 1.185.3.12.478.105.658-.1.18-.206.77-.895.974-1.2.206-.307.41-.258.693-.153.282.105 1.795.847 2.103.992.308.145.513.218.59.35.077.133.077.77-.243 1.67z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </header>
+    <Navbar activePage="products" />
 
     <!-- Intro Header -->
     <section class="products-intro">
@@ -66,7 +45,6 @@ import logoImg from '../assets/logo-transparent.png';
           <div class="footer-links">
             <h4>Liens Rapides</h4>
             <a href="/products">Boutique</a>
-            <a href="/categories">Catégories</a>
             <a href="/#about">À propos</a>
           </div>
           
@@ -92,74 +70,7 @@ import logoImg from '../assets/logo-transparent.png';
 </html>
 
 <style>
-  /* Header Styles */
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    z-index: 1000;
-    background: var(--bg-secondary);
-    border-bottom: 1px solid var(--card-border);
-    transition: all 0.3s ease;
-  }
-  
-  .header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .logo-link {
-    display: flex;
-    align-items: center;
-  }
-  
-  .nav-logo {
-    height: 40px;
-    object-fit: contain;
-  }
-  
-  .nav-menu {
-    display: flex;
-    gap: 30px;
-  }
-  
-  .nav-link {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-  
-  .nav-link:hover, .nav-link.active {
-    color: var(--text-primary);
-  }
-  
-  .contact-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--bg-primary);
-    border: 1px solid var(--card-border);
-    color: var(--text-primary);
-    padding: 10px 20px;
-    border-radius: 99px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-    transition: all 0.2s;
-  }
-  
-  .contact-btn:hover {
-    background: var(--text-primary);
-    color: var(--bg-secondary);
-    border-color: var(--text-primary);
-  }
+
 
   /* Intro Section */
   .products-intro {
@@ -281,18 +192,21 @@ import logoImg from '../assets/logo-transparent.png';
   .footer-whatsapp {
     display: inline-flex;
     align-items: center;
-    background: var(--text-primary);
-    color: var(--bg-secondary);
+    background: linear-gradient(135deg, #10044E, #3b1fa8);
+    color: #ffffff;
     padding: 12px 24px;
     border-radius: 99px;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
     transition: all 0.2s;
+    box-shadow: 0 4px 14px rgba(16,4,78,0.25);
   }
   
   .footer-whatsapp:hover {
-    background: var(--text-secondary);
+    background: linear-gradient(135deg, #0d0340, #10044E);
+    box-shadow: 0 6px 20px rgba(16,4,78,0.35);
+    transform: translateY(-1px);
   }
   
   .footer-bottom {

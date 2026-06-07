@@ -1,0 +1,374 @@
+---
+import '../style.css';
+import Navbar from '../components/Navbar.astro';
+import logoImg from '../assets/logo-transparent.png';
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modilo - Informations de Livraison</title>
+    <meta name="description" content="Découvrez nos conditions de livraison rapides et sécurisées pour notre vestiaire masculin d'exception." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <Navbar activePage="delivery" />
+
+    <!-- Intro Header -->
+    <section class="delivery-intro">
+      <div class="container">
+        <div class="section-intro">
+          <span class="section-subtitle">Expédition et Délais</span>
+          <h1 class="page-title">Livraison Modilo</h1>
+          <div class="header-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="delivery-content">
+      <div class="container small-container">
+        <div class="info-card-grid">
+          
+          <div class="info-card">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <h3>Zones & Tarifs</h3>
+            <p>Nous livrons partout au Maroc avec des transporteurs professionnels de confiance.</p>
+            <ul>
+              <li><strong>Casablanca & environs :</strong> 25 DH (Gratuit dès 500 DH d'achat)</li>
+              <li><strong>Autres villes du Maroc :</strong> 45 DH (Gratuit dès 700 DH d'achat)</li>
+              <li><strong>Paiement à la livraison (COD) disponible.</strong></li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3>Délais de Livraison</h3>
+            <p>Chaque pièce étant traitée avec soin, voici nos temps d'acheminement standards :</p>
+            <ul>
+              <li><strong>Prêt-à-porter en stock :</strong> 24h à 48h jours ouvrables.</li>
+              <li><strong>Pièces avec impression personnalisée :</strong> Préparation sous 48h, puis livraison sous 24/48h.</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </div>
+            <h3>Suivi de Commande</h3>
+            <p>Restez informé à chaque étape de votre commande directement sur WhatsApp.</p>
+            <ul>
+              <li>Confirmation immédiate après commande.</li>
+              <li>Partage du numéro de suivi dès expédition.</li>
+              <li>Support client réactif 7j/7 pour toute question.</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="delivery-cta-box">
+          <h2>Prêt à passer commande ?</h2>
+          <p>Explorez notre boutique, composez votre panier et envoyez-le nous en un clic pour validation.</p>
+          <a href="/products" class="btn-primary-custom">Accéder à la Boutique</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src={logoImg.src} alt="Modilo Logo" class="footer-logo" />
+            <p class="footer-desc">Vêtements de caractère et accessoires urbains haut de gamme, conçus exclusivement pour l'homme.</p>
+          </div>
+          
+          <div class="footer-links">
+            <h4>Liens Rapides</h4>
+            <a href="/products">Boutique</a>
+            <a href="/custom">Impression Perso</a>
+            <a href="/delivery">Livraison</a>
+          </div>
+          
+          <div class="footer-contact">
+            <h4>Contact Direct</h4>
+            <p>N'hésitez pas à nous contacter pour toute question, idée ou retour. Nous sommes toujours à l'écoute.</p>
+            <a href="https://wa.me/+212630257293" target="_blank" class="footer-whatsapp">
+              Discuter sur WhatsApp
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; {new Date().getFullYear()} Modilo. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+
+
+  /* Intro Section */
+  .delivery-intro {
+    padding: 140px 0 40px;
+    background: var(--bg-primary);
+  }
+
+  .section-intro {
+    text-align: center;
+  }
+
+  .section-subtitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .page-title {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+  }
+
+  .header-line {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #10044E, #3b1fa8);
+    margin: 0 auto;
+  }
+
+  /* Delivery Content Section */
+  .delivery-content {
+    background: var(--bg-secondary);
+    padding: 60px 0 100px;
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .small-container {
+    max-width: 900px;
+  }
+
+  .info-card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .info-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--card-border);
+    padding: 30px;
+    border-radius: 16px;
+  }
+
+  .info-icon {
+    color: var(--accent-primary);
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+
+  .info-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+
+  .info-card p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+
+  .info-card ul {
+    list-style: none;
+  }
+
+  .info-card li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .info-card li::before {
+    content: "•";
+    color: var(--accent-primary);
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+  }
+
+  .delivery-cta-box {
+    text-align: center;
+    background: #10044E;
+    color: #ffffff;
+    padding: 50px 40px;
+    border-radius: 20px;
+    margin-top: 50px;
+    box-shadow: 0 10px 30px rgba(16, 4, 78, 0.15);
+  }
+
+  .delivery-cta-box h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  .delivery-cta-box p {
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .btn-primary-custom {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: #F1E6D3;
+    color: #10044E;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 99px;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary-custom:hover {
+    background-color: #e8d8c0;
+    transform: translateY(-2px);
+  }
+
+  /* Container utility */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Footer Styles */
+  .footer {
+    background: var(--bg-primary);
+    padding: 80px 0 40px;
+    color: var(--text-primary);
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+  
+  .footer-logo {
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+  
+  .footer-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  
+  .footer-links h4, .footer-contact h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+  
+  .footer-links a:hover {
+    color: var(--text-primary);
+  }
+  
+  .footer-contact p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+  
+  .footer-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #10044E, #3b1fa8);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 99px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    box-shadow: 0 4px 14px rgba(16,4,78,0.25);
+  }
+  
+  .footer-whatsapp:hover {
+    background: linear-gradient(135deg, #0d0340, #10044E);
+    box-shadow: 0 6px 20px rgba(16,4,78,0.35);
+    transform: translateY(-1px);
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--card-border);
+    padding-top: 30px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+</style>
