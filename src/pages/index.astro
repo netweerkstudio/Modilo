@@ -31,10 +31,52 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
         <div class="hero-actions">
           <a href="/products" class="btn-primary">Découvrir la Collection</a>
         </div>
+        <div class="hero-scroll-hint"> 
+          <span>Défiler</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </div>
       </div>
     </section>
 
-    <!-- Shop Section (Vue Component hydrated dynamically) -->
+    <!-- Trust Strip -->
+    <section class="trust-strip">
+      <div class="container">
+        <div class="trust-items">
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+            <span>Livraison Maroc</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Qualité Premium</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            <span>Commande via WhatsApp</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Paiement à la Livraison</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop Section -->
     <section id="shop" class="shop-section">
       <ProductGrid client:load showOnlyFeatured={true} />
     </section>
@@ -43,24 +85,95 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
     <section id="about" class="about-section">
       <div class="container">
         <div class="about-grid">
+
+          <!-- Left: Text -->
           <div class="about-text">
             <span class="section-subtitle">Notre Philosophie</span>
-            <h2 class="section-title">L'Essence du Vestiaire Masculin.</h2>
-            <div class="header-line left-align"></div>
-            <p>
+            <h2 class="about-title">L'Essence du<br/>Vestiaire Masculin.</h2>
+            <p class="about-lead">
               Modilo a été fondé par trois jeunes ambitieux. Nous concevons, cousons et imprimons chaque vêtement avec amour pour vous offrir des pièces uniques et durables.
             </p>
-            <p>
+            <p class="about-body">
               En proposant nos créations directement via WhatsApp, nous maintenons une relation de confiance, de proximité et ultra-réactive avec notre communauté.
             </p>
+
+            <!-- Value pillars -->
+            <div class="about-pillars">
+              <div class="pillar">
+                <div class="pillar-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                  <span class="pillar-title">Qualité Premium</span>
+                  <p class="pillar-desc">Coton biologique 280–450 GSM, coutures renflanchées, finitions soignées.</p>
+                </div>
+              </div> 
+              <div class="pillar">
+                <div class="pillar-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>
+                  <span class="pillar-title">Livraison Rapide</span>
+                  <p class="pillar-desc">Commande via WhatsApp, livraison partout au Maroc sous 24–48h.</p>
+                </div>
+              </div>
+              <div class="pillar">
+                <div class="pillar-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </div>
+                <div>
+                  <span class="pillar-title">Relation Directe</span>
+                  <p class="pillar-desc">Pas d'intermédiaire — vous parlez directement à l'équipe qui crée vos pièces.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          
+
+          <!-- Right: Image -->
           <div class="about-visual">
-            <div class="about-glow"></div>
             <div class="about-img-box">
               <img src={philosophyBgImg.src || philosophyBgImg} alt="Artisanat Modilo" class="about-image" />
             </div>
+            <div class="about-img-tag">
+              <span>★★★★★</span>
+              <p>100% fait avec passion</p>
+            </div>
           </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <!-- CTA Section -->
+    <section class="cta-section"> 
+      <div class="container">
+        <div class="cta-box">
+
+          <!-- Left -->
+          <div class="cta-left">
+            <span class="cta-label">Impression Personnalisée</span>
+            <h2 class="cta-title">Votre Design.<br/>Notre Expertise.</h2>
+            <div class="cta-chips">
+              <span class="cta-chip">DTF & Sérigraphie</span>
+              <span class="cta-chip">Logo &amp; Artwork</span>
+              <span class="cta-chip">Petites séries</span>
+            </div>
+          </div>
+
+          <!-- Right -->
+          <div class="cta-right">
+            <p class="cta-text">Imprimez vos créations sur nos pièces premium. Logo, artwork, texte — nous réalisons vos projets avec précision et dans les délais.</p>
+            <div class="cta-actions">
+              <a href="https://wa.me/+212630257293?text=Bonjour%20Modilo%2C%20je%20souhaite%20lancer%20un%20projet%20d%27impression%20personnalis%C3%A9e%20avec%20vous." target="_blank" class="cta-btn-primary">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="margin-right: 2px;">
+                  <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.982L2 22l5.233-1.371a9.936 9.936 0 0 0 4.779 1.21h.005c5.505 0 9.988-4.479 9.989-9.986 0-2.67-1.037-5.178-2.922-7.062A9.925 9.925 0 0 0 12.012 2zm5.835 14.165c-.32.9-.1.9-.1.9s-.427 1.099-1.637 1.328c-1.21.23-2.56.096-4.576-.718-2.016-.814-3.526-2.585-4.464-3.878-.938-1.293-1.579-2.738-1.579-4.22 0-1.48.718-2.203 1.026-2.502.308-.299.82-.455 1.077-.455.257 0 .492-.01.705.01.214.02.487-.08.761.564.274.645.94 2.274 1.017 2.43.077.157.12.338.017.532-.102.193-.154.314-.308.492-.154.177-.325.298-.462.46-.153.18-.316.378-.137.684.18.307.8 1.314 1.718 2.128.918.814 1.692 1.065 1.992 1.185.3.12.478.105.658-.1.18-.206.77-.895.974-1.2.206-.307.41-.258.693-.153.282.105 1.795.847 2.103.992.308.145.513.218.59.35.077.133.077.77-.243 1.67z"/>
+                </svg>
+                Créer un Design Personnalisé
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -75,8 +188,10 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
           </div>
           
           <div class="footer-links">
-            <h4>Liens Rapides</h4>
+            <h4>Navigation</h4>
             <a href="/products">Boutique</a>
+            <a href="/custom">Impression Perso</a>
+            <a href="/delivery">Livraison</a>
             <a href="#about">À propos</a>
           </div>
           
@@ -84,6 +199,9 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
             <h4>Contact Direct</h4>
             <p>N'hésitez pas à nous contacter pour toute question, idée ou retour. Nous sommes toujours à l'écoute.</p>
             <a href="https://wa.me/+212630257293" target="_blank" class="footer-whatsapp">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.982L2 22l5.233-1.371a9.936 9.936 0 0 0 4.779 1.21h.005c5.505 0 9.988-4.479 9.989-9.986 0-2.67-1.037-5.178-2.922-7.062A9.925 9.925 0 0 0 12.012 2z"/>
+              </svg>
               Discuter sur WhatsApp
             </a>
           </div>
@@ -103,7 +221,6 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
 
 <style>
 
-
   /* Hero Section */
   .hero-section {
     min-height: 100vh;
@@ -115,7 +232,7 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 120px 20px 80px;
+    padding: 140px 20px 80px;
   }
 
   .hero-overlay {
@@ -123,8 +240,8 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
     inset: 0;
     background: linear-gradient(
       to bottom,
-      rgba(10, 10, 12, 0.62) 0%,
-      rgba(10, 10, 12, 0.78) 100%
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.72) 100%
     );
     z-index: 0;
   }
@@ -135,50 +252,47 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 780px;
+    max-width: 800px;
   }
 
   .hero-badge {
-    background: rgba(16,4,78,0.15);
-    border: 1px solid rgba(16,4,78,0.35);
-    color: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    padding: 8px 18px;
+    padding: 8px 20px;
     border-radius: 99px;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(6px);
   }
 
   .hero-title {
     font-family: var(--font-heading);
-    font-size: 4rem;
+    font-size: 4.2rem;
     font-weight: 800;
-    line-height: 1.12;
+    line-height: 1.1;
     letter-spacing: -1.5px;
     margin-bottom: 24px;
     color: #ffffff;
   }
 
   @media (max-width: 1024px) {
-    .hero-title {
-      font-size: 3rem;
-    }
+    .hero-title { font-size: 3rem; }
   }
 
   @media (max-width: 600px) {
-    .hero-title {
-      font-size: 2.3rem;
-    }
+    .hero-title { font-size: 2.3rem; letter-spacing: -0.5px; }
   }
 
   .hero-subtitle {
     font-size: 1.05rem;
     line-height: 1.75;
-    color: rgba(255, 255, 255, 0.68);
-    margin-bottom: 42px;
-    max-width: 560px;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 44px;
+    max-width: 540px;
   }
 
   .hero-actions {
@@ -186,38 +300,90 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
     gap: 14px;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 60px;
   }
 
   .btn-primary, .btn-secondary {
     display: inline-block;
-    padding: 15px 32px;
+    padding: 16px 36px;
     border-radius: 99px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     text-align: center;
     transition: all 0.2s ease;
     font-size: 0.95rem;
+    letter-spacing: 0.3px;
   }
 
   .btn-primary {
     background-color: #F1E6D3;
-    color: #10044E;
-    font-weight: 700;
+    color: var(--text-primary);
   }
 
   .btn-primary:hover {
     background-color: #e8d8c0;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
   }
 
-  .btn-secondary {
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: #ffffff;
+  .hero-scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
   }
 
-  .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.6);
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* Trust Strip */
+  .trust-strip {
+    border-bottom: 1px solid var(--card-border);
+    background: var(--bg-secondary);
+  }
+
+  .trust-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 22px 0;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 32px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.3px;
+  }
+
+  .trust-item svg {
+    color: var(--text-primary);
+    flex-shrink: 0;
+  }
+
+  .trust-divider {
+    width: 1px;
+    height: 28px;
+    background: var(--card-border);
+  }
+
+  @media (max-width: 768px) {
+    .trust-items { gap: 4px; }
+    .trust-item { padding: 8px 16px; font-size: 0.8rem; }
+    .trust-divider { display: none; }
   }
 
   /* Container utility */
@@ -228,136 +394,34 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
   }
 
   /* Section Intro Headers */
-  .section-intro {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-  
   .section-subtitle {
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 3px;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     font-weight: 600;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
   
   .section-title {
     font-family: var(--font-heading);
     font-size: 2.6rem;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--text-primary);
+    line-height: 1.15;
   }
   
   .header-line {
-    width: 50px;
+    width: 40px;
     height: 3px;
-    background: linear-gradient(90deg, #10044E, #3b1fa8);
-    margin: 15px auto 0;
+    background: var(--accent-primary);
+    margin: 18px auto 0;
     border-radius: 99px;
   }
   
   .header-line.left-align {
-    margin: 15px 0 0;
-  }
-
-  /* Categories Grid Section */
-  .categories-section {
-    padding: 100px 0;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .categories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-  }
-  
-  .category-card {
-    position: relative;
-    height: 350px;
-    border-radius: 16px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 30px;
-    text-decoration: none;
-    color: var(--text-primary);
-    border: 1px solid var(--card-border);
-    background: var(--bg-secondary);
-    transition: border-color 0.2s, transform 0.2s;
-  }
-  
-  .category-bg {
-    position: absolute;
-    inset: 0;
-    background: var(--bg-primary);
-    opacity: 0;
-    transition: opacity 0.2s;
-    z-index: 0;
-  }
-  
-  .category-card:hover .category-bg {
-    opacity: 1;
-  }
-  
-  .category-img {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 60%;
-    height: auto;
-    object-fit: contain;
-    transition: transform 0.2s;
-    opacity: 0.9;
-    z-index: 1;
-  }
-  
-  .category-card:hover {
-    border-color: var(--accent-indigo);
-    box-shadow: 0 8px 32px rgba(16,4,78,0.10);
-    transform: translateY(-3px);
-  }
-  
-  .category-card:hover .category-img {
-    transform: scale(1.03);
-  }
-  
-  .category-content {
-    position: relative;
-    z-index: 2;
-  }
-  
-  .category-tagline {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-secondary);
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 500;
-  }
-  
-  .category-name {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-  }
-  
-  .category-link-text {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    transition: color 0.2s;
-    display: inline-block;
-  }
-  
-  .category-card:hover .category-link-text {
-    color: var(--accent-primary);
+    margin: 18px 0 0;
   }
 
   /* Shop Section */
@@ -372,8 +436,7 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
   /* About Section */
   .about-section {
     padding: 120px 0;
-    position: relative;
-    z-index: 1;
+    background: var(--bg-primary);
   }
   
   .about-grid {
@@ -383,86 +446,262 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
     gap: 80px;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .about-grid {
       grid-template-columns: 1fr;
-      gap: 50px;
+      gap: 48px;
     }
+    .about-visual { order: -1; }
   }
-  
-  .about-text p {
-    color: var(--text-secondary);
-    line-height: 1.8;
-    font-size: 1.05rem;
-    margin-top: 25px;
-  }
-  
-  .about-stats {
-    display: flex;
-    gap: 40px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-  }
-  
-  .stat-item {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .stat-number {
+
+  .about-title {
     font-family: var(--font-heading);
-    font-size: 2.2rem;
+    font-size: 2.6rem;
     font-weight: 800;
     color: var(--text-primary);
+    line-height: 1.12;
+    margin: 12px 0 20px;
+    letter-spacing: -0.5px;
   }
-  
-  .stat-label {
+
+  @media (max-width: 600px) {
+    .about-title { font-size: 2rem; }
+  }
+
+  .about-lead {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    line-height: 1.75;
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+
+  .about-body {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 40px;
+  }
+
+  /* Value Pillars */
+  .about-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-top: 1px solid var(--card-border);
+    padding-top: 32px;
+  }
+
+  .pillar {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .pillar-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--text-primary);
+  }
+
+  .pillar-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .pillar-desc {
     font-size: 0.85rem;
     color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 4px;
-    font-weight: 600;
+    line-height: 1.5;
   }
-  
+
+  /* About visual */
   .about-visual {
     position: relative;
     display: flex;
     justify-content: center;
   }
   
-  .about-glow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(16,4,78,0.12) 0%, rgba(16,4,78,0.04) 60%, transparent 100%);
-    z-index: 0;
-  }
-  
   .about-img-box {
     border: 1px solid var(--card-border);
-    border-radius: 24px;
+    border-radius: 20px;
     overflow: hidden;
-    aspect-ratio: 1.25;
-    position: relative;
-    z-index: 1;
+    aspect-ratio: 0.9;
+    width: 100%;
     background: var(--bg-secondary);
+    box-shadow: 0 24px 64px rgba(0,0,0,0.07);
   }
   
   .about-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.85;
+  }
+
+  .about-img-tag {
+    position: absolute;
+    bottom: -18px;
+    left: 24px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 12px 18px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .about-img-tag span {
+    font-size: 0.75rem;
+    color: #f59e0b;
+    letter-spacing: 2px;
+  }
+
+  .about-img-tag p {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: var(--bg-primary);
+    border-top: 1px solid var(--card-border);
+    padding: 80px 0;
+  }
+
+  .cta-box {
+    background: var(--accent-primary);
+    border-radius: 24px;
+    padding: 60px 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  @media (max-width: 860px) {
+    .cta-box {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding: 48px 32px;
+    }
+  }
+
+  .cta-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 16px;
+  }
+
+  .cta-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 600px) {
+    .cta-title { font-size: 2rem; }
+  }
+
+  .cta-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .cta-chip {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.8);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 99px;
+    letter-spacing: 0.2px;
+  }
+
+  .cta-text {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 32px;
+  }
+
+  .cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .cta-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #F1E6D3;
+    color: #0a0a0a;
+    padding: 14px 28px;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    letter-spacing: 0.2px;
+  }
+
+  .cta-btn-primary:hover {
+    background: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+
+  .cta-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.8);
+    padding: 14px 24px;
+    border-radius: 99px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .cta-btn-secondary:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.4);
+    color: #ffffff;
   }
 
   /* Footer */
   .footer {
-    background-color: var(--bg-secondary);
-    border-top: 1px solid var(--card-border);
+    background: #0d0c12;
+    color: #ffffff;
     padding: 80px 0 40px;
-    position: relative;
-    z-index: 1;
+    border-top: 1px solid rgba(255,255,255,0.05);
   }
   
   .footer-grid {
@@ -486,88 +725,90 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
   }
   
   .footer-logo {
-    height: 45px;
+    height: 50px;
     width: fit-content;
     object-fit: contain;
   }
   
   .footer-desc {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    font-size: 0.95rem;
-    max-width: 320px;
+    color: #9a98a6;
+    line-height: 1.7;
+    font-size: 0.9rem;
+    max-width: 300px;
   }
   
   .footer-links {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 14px;
   }
   
   .footer-links h4, .footer-contact h4 {
     font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #ffffff;
+    letter-spacing: 0.3px;
   }
   
   .footer-links a {
-    color: var(--text-secondary);
+    color: #9a98a6;
     text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.3s;
+    font-size: 0.9rem;
+    transition: color 0.2s;
   }
   
   .footer-links a:hover {
-    color: var(--text-primary);
+    color: #F1E6D3;
   }
   
   .footer-contact {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 14px;
   }
   
   .footer-contact p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    color: #9a98a6;
+    font-size: 0.9rem;
+    line-height: 1.7;
   }
   
   .footer-whatsapp {
     display: inline-flex;
     align-items: center;
+    gap: 8px;
     width: fit-content;
-    background: linear-gradient(135deg, #10044E, #3b1fa8);
+    background: #25d366;
     color: #ffffff;
     text-decoration: none;
     font-weight: 700;
-    padding: 12px 24px;
+    padding: 12px 22px;
     border-radius: 99px;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-    box-shadow: 0 4px 14px rgba(16,4,78,0.25);
+    font-size: 0.88rem;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
   }
   
   .footer-whatsapp:hover {
-    background: linear-gradient(135deg, #0d0340, #10044E);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(16,4,78,0.35);
+    background: #20ba59;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
   }
   
   .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding-top: 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 16px;
   }
   
   .footer-bottom p {
-    color: var(--text-muted);
+    color: #6a6875;
     font-size: 0.85rem;
   }
   
@@ -577,13 +818,13 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
   }
   
   .footer-meta-links a {
-    color: var(--text-muted);
+    color: #6a6875;
     text-decoration: none;
     font-size: 0.85rem;
-    transition: color 0.3s;
+    transition: color 0.2s;
   }
   
   .footer-meta-links a:hover {
-    color: var(--text-secondary);
+    color: #9a98a6;
   }
 </style>

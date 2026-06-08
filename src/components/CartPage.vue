@@ -197,7 +197,7 @@ function getWhatsAppCheckoutLink() {
   background: var(--bg-secondary);
   border: 1px solid var(--card-border);
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(16, 4, 78, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
 .empty-icon-wrapper {
@@ -229,13 +229,13 @@ function getWhatsAppCheckoutLink() {
   padding: 14px 30px;
   border-radius: 99px;
   transition: all 0.25s;
-  box-shadow: 0 4px 16px rgba(16, 4, 78, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn-shop:hover {
-  background: #1e0b7a;
+  background: var(--accent-primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 6px 22px rgba(16, 4, 78, 0.25);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* Grid Layout */
@@ -269,7 +269,7 @@ function getWhatsAppCheckoutLink() {
   border: 1px solid var(--card-border);
   border-radius: 14px;
   padding: 20px;
-  box-shadow: 0 4px 15px rgba(16, 4, 78, 0.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
 }
 
 @media (max-width: 600px) {
@@ -404,7 +404,7 @@ function getWhatsAppCheckoutLink() {
   border: 1px solid var(--card-border);
   border-radius: 16px;
   padding: 30px;
-  box-shadow: 0 10px 30px rgba(16, 4, 78, 0.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
 }
 
 .summary-title {

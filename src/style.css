@@ -2,29 +2,29 @@
 
 :root {
   /* ── Backgrounds ─────────────────────────────── */
-  --bg-primary:    #f6f5fa;
+  --bg-primary:    #fafafa;
   --bg-secondary:  #ffffff;
   --card-bg:       #ffffff;
 
   /* ── Borders ─────────────────────────────────── */
-  --card-border:   #e0ddf0;
+  --card-border:   #eaeaea;
 
   /* ── Text ────────────────────────────────────── */
-  --text-primary:  #10044E;
-  --text-secondary:#5c5480;
-  --text-muted:    #a39ec0;
+  --text-primary:  #0a0a0a;
+  --text-secondary:#555555;
+  --text-muted:    #999999;
 
-  /* ── Brand Accents (indigo-only palette) ─────── */
-  --accent-primary:        #10044E;
-  --accent-primary-hover:  #0d0340;
-  --accent-indigo:         #10044E;
-  --accent-indigo-soft:    rgba(16,4,78,0.07);
-  --accent-light:          #3b1fa8;   /* lighter indigo for gradients */
+  /* ── Brand Accents (minimalist monochrome palette) ── */
+  --accent-primary:        #000000;
+  --accent-primary-hover:  #1a1a1a;
+  --accent-indigo:         #000000;
+  --accent-indigo-soft:    rgba(0, 0, 0, 0.04);
+  --accent-light:          #111111;
 
   /* ── Legacy aliases ──────────────────────────── */
-  --accent-red:   #10044E;
-  --accent-green: #10044E;
-  --accent-cyan:  #3b1fa8;
+  --accent-red:   #000000;
+  --accent-green: #000000;
+  --accent-cyan:  #111111;
 
   /* ── Typography ──────────────────────────────── */
   --font-heading: 'Outfit', sans-serif;

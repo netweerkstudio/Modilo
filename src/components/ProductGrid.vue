@@ -187,42 +187,48 @@ function quickAddToCart(product) {
 <template>
   <div class="product-section">
     <!-- T-Shirt Dedicated Section with Small Cards (New Arrivals) -->
-    <div v-if="props.showOnlyFeatured" class="container margin-bottom tshirts-section">
-      <div class="section-header">
-        <h2 class="section-title">Nouveautés</h2>
-        <div class="accent-line"></div>
+    <div v-if="props.showOnlyFeatured" class="container featured-section">
+      <div class="featured-header">
+        <div class="featured-header-left">
+          <span class="subtitle">Collection</span>
+          <h2 class="section-title">Nouveautés</h2>
+        </div>
+        <a href="/products" class="see-all-link">
+          Voir tout
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
       </div>
       
-      <div class="small-grid">
-        <div 
+      <div class="featured-grid"> 
+        <a 
           v-for="product in tshirtProducts" 
           :key="'tshirt-' + product.id"
-          class="small-card"
-          @click="openQuickView(product)"
+          class="featured-card"
+          :href="'/product/' + product.id"
         >
-          <div class="card-image-wrapper">
+          <div class="featured-img-wrapper">
             <img :src="product.resolvedImage" :alt="product.title" class="card-image" :style="{ filter: product.cssFilter || 'none' }" />
-            <div class="card-overlay">
-              <span class="view-label">Aperçu Rapide</span>
+            <div class="featured-overlay">
+              <span class="view-label">Voir le produit</span>
             </div>
           </div>
-          <div class="card-info">
-            <h3 class="card-title">{{ product.title }}</h3>
-            <div class="card-footer-row">
-              <p class="card-price">{{ product.price }} MAD</p>
-              <button class="card-add-icon-btn" @click.stop="quickAddToCart(product)" aria-label="Ajouter au panier">
-                <span class="btn-icons">
-                  <span class="plus-sign">+</span>
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                  </svg>
-                </span>
+          <div class="featured-info">
+            <h3 class="featured-title">{{ product.title }}</h3>
+            <div class="featured-footer">
+              <p class="featured-price">{{ product.price }} MAD</p>
+              <button class="featured-add-btn" @click.prevent.stop="quickAddToCart(product)" aria-label="Ajouter au panier">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
               </button>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -243,16 +249,16 @@ function quickAddToCart(product) {
 
       <!-- Products Grid -->
       <TransitionGroup name="fade-grid" tag="div" class="grid">
-        <div 
+        <a 
           v-for="product in filteredProducts" 
           :key="product.id"
           class="card"
-          @click="openQuickView(product)"
+          :href="'/product/' + product.id"
         >
           <div class="card-image-wrapper">
             <img :src="product.resolvedImage" :alt="product.title" class="card-image" :style="{ filter: product.cssFilter || 'none' }" />
             <div class="card-overlay">
-              <button class="btn btn-secondary">Aperçu Rapide</button>
+              <span class="view-label">Voir le produit</span>
             </div>
           </div>
           <div class="card-info">
@@ -260,7 +266,7 @@ function quickAddToCart(product) {
             <h3 class="card-title">{{ product.title }}</h3>
             <div class="card-footer-row">
               <p class="card-price">{{ product.price }} MAD</p>
-              <button class="card-add-btn" @click.stop="quickAddToCart(product)" aria-label="Ajouter au panier">
+              <button class="card-add-btn" @click.prevent.stop="quickAddToCart(product)" aria-label="Ajouter au panier">
                 <span class="btn-icons">
                   <span class="plus-sign">+</span>
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -273,7 +279,7 @@ function quickAddToCart(product) {
               </button>
             </div>
           </div>
-        </div>
+        </a>
       </TransitionGroup>
       
       <div v-if="filteredProducts.length === 0" class="empty-state">
@@ -290,7 +296,7 @@ function quickAddToCart(product) {
           <div class="modal-body">
             <div class="modal-image-pane">
               <img :src="activeQuickView.resolvedImage" :alt="activeQuickView.title" :style="{ filter: activeQuickView.cssFilter || 'none' }" />
-            </div>
+            </div>  
             
             <div class="modal-info-pane">
               <span class="modal-category">{{ activeQuickView.category }}</span>
@@ -395,6 +401,153 @@ function quickAddToCart(product) {
   margin-bottom: 90px;
 }
 
+/* ── Featured Section (Homepage) ─────────────────── */
+.featured-section {
+  padding-bottom: 0;
+}
+
+.featured-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.featured-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.see-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+  padding-bottom: 2px;
+}
+
+.see-all-link:hover {
+  color: var(--text-primary);
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.featured-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.28s ease, transform 0.28s ease;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.featured-card:hover {
+  box-shadow: 0 10px 32px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+.featured-img-wrapper {
+  position: relative;
+  aspect-ratio: 1;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.featured-img-wrapper .card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.featured-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.featured-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.22);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s ease;
+}
+
+.featured-card:hover .featured-overlay {
+  opacity: 1;
+}
+
+.featured-info {
+  padding: 14px 16px 12px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-top: 1px solid var(--card-border);
+}
+
+.featured-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.featured-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--card-border);
+}
+
+.featured-price {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.featured-add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-primary);
+  color: #ffffff;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.featured-add-btn:hover {
+  background: var(--accent-primary-hover);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
 .section-header {
   text-align: center;
   margin-bottom: 50px;
@@ -402,27 +555,26 @@ function quickAddToCart(product) {
 
 .subtitle {
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   letter-spacing: 3px;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   font-weight: 600;
   display: block;
-  margin-bottom: 10px;
 }
 
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-size: 2.2rem;
+  font-weight: 800;
   color: var(--text-primary);
   font-family: 'Outfit', system-ui, sans-serif;
+  line-height: 1.15;
 }
 
 .accent-line {
-  width: 50px;
+  width: 40px;
   height: 3px;
-  background: linear-gradient(90deg, #10044E, #3b1fa8);
-  margin: 15px auto 0;
+  background: var(--accent-primary);
+  margin: 14px auto 0;
   border-radius: 99px;
 }
 
@@ -452,36 +604,39 @@ function quickAddToCart(product) {
 .tab-btn:hover {
   background: var(--accent-indigo-soft);
   color: var(--accent-indigo);
-  border-color: #c5bfe8;
+  border-color: var(--accent-indigo);
 }
 
 .tab-btn.active {
   background: var(--accent-indigo);
   border-color: var(--accent-indigo);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(16,4,78,0.20);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 /* Product Grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
+  gap: 24px;
 }
 
 .card {
   background: var(--bg-secondary);
   border: 1px solid var(--card-border);
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  transition: box-shadow 0.28s ease, transform 0.28s ease;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 }
 
 .card:hover {
-  border-color: var(--accent-indigo);
-  box-shadow: 0 8px 32px rgba(16,4,78,0.10);
-  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.09);
+  transform: translateY(-4px);
 }
 
 .card-image-wrapper {
@@ -492,34 +647,37 @@ function quickAddToCart(product) {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-bottom: 1px solid var(--card-border);
 }
 
 .card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.04);
 }
 
 .badge {
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 12px;
+  left: 12px;
   background: var(--accent-primary);
   color: white;
-  padding: 5px 11px;
-  font-size: 0.68rem;
+  padding: 4px 10px;
+  font-size: 0.65rem;
   font-weight: 700;
   border-radius: 99px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 2px 8px rgba(16,4,78,0.30);
 }
 
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(246,245,250,0.93);
+  background: rgba(0,0,0,0.20);
   opacity: 0;
   display: flex;
   align-items: center;
@@ -532,31 +690,36 @@ function quickAddToCart(product) {
 }
 
 .card-info {
-  padding: 20px;
+  padding: 16px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-top: 1px solid var(--card-border);
 }
 
 .card-category {
-  font-size: 0.75rem;
-  color: var(--text-secondary);
+  font-size: 0.68rem;
+  color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   font-weight: 600;
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .card-title {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 8px;
   color: var(--text-primary);
   line-height: 1.4;
+  flex: 1;
+  margin-bottom: 2px;
 }
 
 .card-price {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  color: var(--accent-primary);
+  color: var(--text-primary);
 }
 
 .empty-state {
@@ -586,7 +749,7 @@ function quickAddToCart(product) {
 }
 
 .btn-secondary:hover {
-  background: #1e0b7a;
+  background: var(--accent-primary-hover);
 }
 
 /* Transitions */
@@ -804,7 +967,7 @@ function quickAddToCart(product) {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: linear-gradient(135deg, var(--accent-primary), #1a0870);
+  background: var(--accent-primary);
   color: white;
   text-decoration: none;
   font-weight: 700;
@@ -814,12 +977,12 @@ function quickAddToCart(product) {
   text-align: center;
   transition: all 0.25s;
   margin-top: auto;
-  box-shadow: 0 4px 16px rgba(16,4,78,0.28);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .buy-whatsapp-btn:hover {
-  background: linear-gradient(135deg, var(--accent-primary-hover), #0d0340);
-  box-shadow: 0 6px 22px rgba(16,4,78,0.38);
+  background: var(--accent-primary-hover);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
   transform: translateY(-1px);
 }
 
@@ -841,23 +1004,24 @@ function quickAddToCart(product) {
 
 .small-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 16px;
 }
 
 .small-card {
   background: var(--bg-secondary);
   border: 1px solid var(--card-border);
-  border-radius: 10px;
+  border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .small-card:hover {
-  border-color: var(--accent-indigo);
-  box-shadow: 0 6px 20px rgba(16,4,78,0.10);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+  transform: translateY(-3px);
 }
 
 .small-card .card-image-wrapper {
@@ -867,51 +1031,53 @@ function quickAddToCart(product) {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-bottom: 1px solid var(--card-border);
+  position: relative;
 }
 
 .small-card .card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.small-card:hover .card-image {
+  transform: scale(1.05);
 }
 
 .small-card .card-info {
-  padding: 12px;
-}
-
-.small-card .card-category {
-  font-size: 0.7rem;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 600;
-  display: block;
-  margin-bottom: 2px;
+  padding: 11px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-top: 1px solid var(--card-border);
 }
 
 .small-card .card-title {
-  font-size: 0.9rem;
+  font-size: 0.87rem;
   font-weight: 600;
-  margin-bottom: 4px;
   color: var(--text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.4;
 }
 
 .small-card .card-price {
-  font-size: 0.9rem;
+  font-size: 0.87rem;
   font-weight: 700;
-  color: var(--accent-primary);
+  color: var(--text-primary);
 }
 
 .view-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  background: var(--accent-primary);
+  padding: 8px 18px;
+  border-radius: 99px;
 }
 
 /* Interactive Option Buttons */
@@ -962,12 +1128,12 @@ function quickAddToCart(product) {
   border-radius: 99px;
   cursor: pointer;
   transition: all 0.25s;
-  box-shadow: 0 4px 16px rgba(16, 4, 78, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .add-to-cart-btn:hover {
-  background: #1e0b7a;
-  box-shadow: 0 6px 22px rgba(16, 4, 78, 0.25);
+  background: var(--accent-primary-hover);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   transform: translateY(-1px);
 }
 
@@ -977,7 +1143,7 @@ function quickAddToCart(product) {
   align-items: center;
   justify-content: center;
   background: #F1E6D3;
-  color: #10044E;
+  color: var(--text-primary);
   text-decoration: none;
   font-weight: 700;
   font-size: 0.9rem;
@@ -999,34 +1165,34 @@ function quickAddToCart(product) {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #10044E;
+  background: var(--accent-primary);
   color: #F1E6D3;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 6px 24px rgba(16, 4, 78, 0.25);
-  z-index: 999;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
   transition: transform 0.25s ease, background-color 0.2s;
 }
 
 .floating-cart-btn:hover {
   transform: scale(1.05);
-  background: #1e0b7a;
+  background: var(--accent-primary-hover);
 }
 
 .cart-badge {
   position: absolute;
   top: -5px;
   right: -5px;
-  background: #10044E;
+  background: var(--accent-primary);
   color: #ffffff;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 99px;
-  box-shadow: 0 2px 8px rgba(16, 4, 78, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Cart Drawer */
@@ -1200,7 +1366,7 @@ function quickAddToCart(product) {
 }
 
 .remove-item-btn:hover {
-  color: #10044E;
+  color: var(--accent-primary);
 }
 
 .cart-drawer-footer {
@@ -1233,7 +1399,7 @@ function quickAddToCart(product) {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: linear-gradient(135deg, var(--accent-primary), #1a0870);
+  background: var(--accent-primary);
   color: white;
   text-decoration: none;
   font-weight: 700;
@@ -1242,12 +1408,12 @@ function quickAddToCart(product) {
   border-radius: 99px;
   text-align: center;
   transition: all 0.25s;
-  box-shadow: 0 4px 16px rgba(16, 4, 78, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .checkout-whatsapp-btn:hover {
-  background: linear-gradient(135deg, var(--accent-primary-hover), #0d0340);
-  box-shadow: 0 6px 20px rgba(16, 4, 78, 0.35);
+  background: var(--accent-primary-hover);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
   transform: translateY(-1px);
 }
 
@@ -1273,62 +1439,63 @@ function quickAddToCart(product) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--card-border);
   gap: 10px;
 }
 
 .card-add-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: var(--accent-indigo);
+  gap: 5px;
+  background: var(--accent-primary);
   color: #ffffff;
   border: none;
-  font-weight: 700;
-  font-size: 0.8rem;
-  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 0.78rem;
+  padding: 7px 14px;
   border-radius: 99px;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 2px 8px rgba(16, 4, 78, 0.1);
+  letter-spacing: 0.3px;
 }
 
 .card-add-btn:hover {
-  background: #1e0b7a;
+  background: var(--accent-primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(16, 4, 78, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .card-add-icon-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-indigo);
+  background: var(--accent-primary);
   color: #ffffff;
   border: none;
-  height: 28px;
-  padding: 0 10px;
-  border-radius: 99px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 2px 8px rgba(16, 4, 78, 0.1);
+  flex-shrink: 0;
 }
 
 .card-add-icon-btn:hover {
-  background: #1e0b7a;
-  transform: scale(1.06);
-  box-shadow: 0 4px 12px rgba(16, 4, 78, 0.2);
+  background: var(--accent-primary-hover);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-icons {
   display: inline-flex;
   align-items: center;
   gap: 1px;
-  margin-right: 2px;
 }
 
 .plus-sign {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 700;
   line-height: 1;
 }
