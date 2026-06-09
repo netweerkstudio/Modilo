@@ -2,6 +2,7 @@
 import '../style.css';
 import ProductGrid from '../components/ProductGrid.vue';
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 import logoImg from '../assets/logo-transparent.png';
 import heroBgImg from '../assets/hero_men_tshirts.png';
 import philosophyBgImg from '../assets/philosophy_bg.png';
@@ -179,43 +180,7 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
     </section>
 
     <!-- Footer Section -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <img src={logoImg.src} alt="Modilo Logo" class="footer-logo" />
-            <p class="footer-desc">Vêtements de caractère et accessoires urbains haut de gamme, conçus exclusivement pour l'homme.</p>
-          </div>
-          
-          <div class="footer-links">
-            <h4>Navigation</h4>
-            <a href="/products">Boutique</a>
-            <a href="/custom">Impression Perso</a>
-            <a href="/delivery">Livraison</a>
-            <a href="#about">À propos</a>
-          </div>
-          
-          <div class="footer-contact">
-            <h4>Contact Direct</h4>
-            <p>N'hésitez pas à nous contacter pour toute question, idée ou retour. Nous sommes toujours à l'écoute.</p>
-            <a href="https://wa.me/+212630257293" target="_blank" class="footer-whatsapp">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.982L2 22l5.233-1.371a9.936 9.936 0 0 0 4.779 1.21h.005c5.505 0 9.988-4.479 9.989-9.986 0-2.67-1.037-5.178-2.922-7.062A9.925 9.925 0 0 0 12.012 2z"/>
-              </svg>
-              Discuter sur WhatsApp
-            </a>
-          </div>
-        </div>
-        
-        <div class="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Modilo. Tous droits réservés.</p>
-          <div class="footer-meta-links">
-            <a href="#">Politique de Confidentialité</a>
-            <a href="#">Conditions d'Utilisation</a>
-          </div>
-        </div> 
-      </div> 
-    </footer>
+    <Footer />
   </body>
 </html>
 
@@ -447,11 +412,19 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
   }
   
   @media (max-width: 900px) {
+    .about-section {
+      padding: 60px 0;
+    }
     .about-grid {
       grid-template-columns: 1fr;
       gap: 48px;
     }
     .about-visual { order: -1; }
+    .about-img-tag {
+      left: 12px;
+      bottom: -12px;
+      padding: 8px 14px;
+    }
   }
 
   .about-title {
@@ -621,7 +594,16 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
   }
 
   @media (max-width: 600px) {
-    .cta-title { font-size: 2rem; }
+    .cta-section {
+      padding: 40px 0;
+    }
+    .cta-box {
+      padding: 32px 20px;
+      border-radius: 16px;
+      gap: 24px;
+    }
+    .cta-title { font-size: 2.1rem; }
+    .cta-text { margin-bottom: 24px; }
   }
 
   .cta-chips {
@@ -697,134 +679,5 @@ import philosophyBgImg from '../assets/philosophy_bg.png';
   }
 
   /* Footer */
-  .footer {
-    background: #0d0c12;
-    color: #ffffff;
-    padding: 80px 0 40px;
-    border-top: 1px solid rgba(255,255,255,0.05);
-  }
-  
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1.5fr;
-    gap: 60px;
-    margin-bottom: 60px;
-  }
-  
-  @media (max-width: 768px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-  }
-  
-  .footer-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .footer-logo {
-    height: 50px;
-    width: fit-content;
-    object-fit: contain;
-  }
-  
-  .footer-desc {
-    color: #9a98a6;
-    line-height: 1.7;
-    font-size: 0.9rem;
-    max-width: 300px;
-  }
-  
-  .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  
-  .footer-links h4, .footer-contact h4 {
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 6px;
-    color: #ffffff;
-    letter-spacing: 0.3px;
-  }
-  
-  .footer-links a {
-    color: #9a98a6;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.2s;
-  }
-  
-  .footer-links a:hover {
-    color: #F1E6D3;
-  }
-  
-  .footer-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  
-  .footer-contact p {
-    color: #9a98a6;
-    font-size: 0.9rem;
-    line-height: 1.7;
-  }
-  
-  .footer-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    width: fit-content;
-    background: #25d366;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
-    padding: 12px 22px;
-    border-radius: 99px;
-    font-size: 0.88rem;
-    transition: all 0.2s;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
-  }
-  
-  .footer-whatsapp:hover {
-    background: #20ba59;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
-  }
-  
-  .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
-    padding-top: 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  
-  .footer-bottom p {
-    color: #6a6875;
-    font-size: 0.85rem;
-  }
-  
-  .footer-meta-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .footer-meta-links a {
-    color: #6a6875;
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: color 0.2s;
-  }
-  
-  .footer-meta-links a:hover {
-    color: #9a98a6;
-  }
+
 </style>

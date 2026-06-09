@@ -1,8 +1,8 @@
 ---
 import '../style.css';
-import ProductGrid from '../components/ProductGrid.vue';
 import Navbar from '../components/Navbar.astro';
-import logoImg from '../assets/logo-transparent.png';
+import Footer from '../components/Footer.astro';
+import ProductGrid from '../components/ProductGrid.vue';
 ---
 
 <!DOCTYPE html>
@@ -33,39 +33,7 @@ import logoImg from '../assets/logo-transparent.png';
       <ProductGrid client:load showOnlyFeatured={false} />
     </section>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <img src={logoImg.src} alt="Modilo Logo" class="footer-logo" />
-            <p class="footer-desc">Vêtements de caractère et accessoires urbains haut de gamme, conçus exclusivement pour l'homme.</p>
-          </div>
-          
-          <div class="footer-links">
-            <h4>Liens Rapides</h4>
-            <a href="/products">Boutique</a>
-            <a href="/#about">À propos</a>
-          </div>
-          
-          <div class="footer-contact">
-            <h4>Contact Direct</h4>
-            <p>N'hésitez pas à nous contacter pour toute question, idée ou retour. Nous sommes toujours à l'écoute.</p>
-            <a href="https://wa.me/+212630257293" target="_blank" class="footer-whatsapp">
-              Discuter sur WhatsApp
-            </a>
-          </div>
-        </div>
-        
-        <div class="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Modilo. Tous droits réservés.</p>
-          <div class="footer-meta-links">
-            <a href="#">Politique de Confidentialité</a>
-            <a href="#">Conditions d'Utilisation</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>
 
@@ -124,115 +92,5 @@ import logoImg from '../assets/logo-transparent.png';
     padding: 0 20px;
   }
 
-  /* Footer Styles */
-  .footer {
-    background: var(--bg-primary);
-    padding: 80px 0 40px;
-    border-top: 1px solid var(--card-border);
-    color: var(--text-primary);
-  }
-  
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1.5fr;
-    gap: 60px;
-    margin-bottom: 60px;
-  }
-  
-  @media (max-width: 768px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-  }
-  
-  .footer-logo {
-    height: 40px;
-    object-fit: contain;
-    margin-bottom: 20px;
-  }
-  
-  .footer-desc {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
-  
-  .footer-links h4, .footer-contact h4 {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-  
-  .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .footer-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.2s;
-  }
-  
-  .footer-links a:hover {
-    color: var(--text-primary);
-  }
-  
-  .footer-contact p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-  }
-  
-  .footer-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    background: #25d366;
-    color: #ffffff;
-    padding: 12px 24px;
-    border-radius: 99px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.2s;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
-  }
-  
-  .footer-whatsapp:hover {
-    background: #20ba59;
-    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
-    transform: translateY(-1px);
-  }
-  
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid var(--card-border);
-    padding-top: 30px;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  
-  .footer-meta-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .footer-meta-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  
-  .footer-meta-links a:hover {
-    color: var(--text-primary);
-  }
+
 </style>

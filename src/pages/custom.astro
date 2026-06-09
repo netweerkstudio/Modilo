@@ -1,7 +1,6 @@
----
 import '../style.css';
 import Navbar from '../components/Navbar.astro';
-import logoImg from '../assets/logo-transparent.png';
+import Footer from '../components/Footer.astro';
 ---
 
 <!DOCTYPE html>
@@ -84,36 +83,7 @@ import logoImg from '../assets/logo-transparent.png';
       </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <img src={logoImg.src} alt="Modilo Logo" class="footer-logo" />
-            <p class="footer-desc">Vêtements de caractère et accessoires urbains haut de gamme, conçus exclusivement pour l'homme.</p>
-          </div>
-          
-          <div class="footer-links">
-            <h4>Liens Rapides</h4>
-            <a href="/products">Boutique</a>
-            <a href="/custom">Impression Perso</a>
-            <a href="/delivery">Livraison</a>
-          </div>
-          
-          <div class="footer-contact">
-            <h4>Contact Direct</h4>
-            <p>N'hésitez pas à nous contacter pour toute question, idée ou retour. Nous sommes toujours à l'écoute.</p>
-            <a href="https://wa.me/+212630257293" target="_blank" class="footer-whatsapp">
-              Discuter sur WhatsApp
-            </a>
-          </div>
-        </div>
-        
-        <div class="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Modilo. Tous droits réservés.</p>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>
 
@@ -305,87 +275,45 @@ import logoImg from '../assets/logo-transparent.png';
     padding: 0 20px;
   }
 
-  /* Footer Styles */
-  .footer {
-    background: var(--bg-primary);
-    padding: 80px 0 40px;
-    color: var(--text-primary);
-  }
-  
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1.5fr;
-    gap: 60px;
-    margin-bottom: 60px;
-  }
-  
   @media (max-width: 768px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 40px;
+    .custom-intro {
+      padding: 100px 0 30px;
+    }
+    .page-title {
+      font-size: 2rem;
+    }
+    .custom-content {
+      padding: 40px 0 60px;
+    }
+    .intro-block {
+      margin-bottom: 40px;
+    }
+    .intro-block h2 {
+      font-size: 1.5rem;
+    }
+    .intro-block p {
+      font-size: 1rem;
+    }
+    .steps-container h2 {
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+    }
+    .step-card {
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px;
+    }
+    .step-num {
+      font-size: 1.6rem;
+      padding: 8px 16px;
+    }
+    .custom-cta-box {
+      padding: 36px 24px;
+    }
+    .custom-cta-box h2 {
+      font-size: 1.6rem;
     }
   }
-  
-  .footer-logo {
-    height: 40px;
-    object-fit: contain;
-    margin-bottom: 20px;
-  }
-  
-  .footer-desc {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
-  
-  .footer-links h4, .footer-contact h4 {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-  
-  .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .footer-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.2s;
-  }
-  
-  .footer-links a:hover {
-    color: var(--text-primary);
-  }
-  
-  .footer-contact p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-  }
-  
-  .footer-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    background: #25d366;
-    color: #ffffff;
-    padding: 12px 24px;
-    border-radius: 99px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.2s;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
-  }
-  
-  .footer-whatsapp:hover {
-    background: #20ba59;
-    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
-    transform: translateY(-1px);
-  }
+
+
 </style>

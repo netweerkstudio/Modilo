@@ -1,0 +1,201 @@
+---
+import logoImg from '../assets/logo-transparent.png';
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand Block -->
+      <div class="footer-brand">
+        <img src={logoImg.src} alt="Modilo Logo" class="footer-logo" />
+        <p class="footer-desc">
+          Vêtements de caractère et accessoires urbains haut de gamme, conçus exclusivement pour l'homme moderne.
+        </p>
+      </div>
+      
+      <!-- Navigation Links -->
+      <div class="footer-links">
+        <h4>Liens Rapides</h4>
+        <div class="links-list">
+          <a href="/">Accueil</a>
+          <a href="/products">Boutique</a>
+          <a href="/delivery">Livraison</a>
+        </div>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="footer-contact">
+        <h4>Contact Direct</h4>
+        <p>N'hésitez pas à nous contacter pour toute question, idée ou retour. Notre équipe est à votre écoute 7j/7.</p>
+        <a href="https://wa.me/+212630257293" target="_blank" class="footer-whatsapp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.982L2 22l5.233-1.371a9.936 9.936 0 0 0 4.779 1.21h.005c5.505 0 9.988-4.479 9.989-9.986 0-2.67-1.037-5.178-2.922-7.062A9.925 9.925 0 0 0 12.012 2zm5.835 14.165c-.32.9-.1.9-.1.9s-.427 1.099-1.637 1.328c-1.21.23-2.56.096-4.576-.718-2.016-.814-3.526-2.585-4.464-3.878-.938-1.293-1.579-2.738-1.579-4.22 0-1.48.718-2.203 1.026-2.502.308-.299.82-.455 1.077-.455.257 0 .492-.01.705.01.214.02.487-.08.761.564.274.645.94 2.274 1.017 2.43.077.157.12.338.017.532-.102.193-.154.314-.308.492-.154.177-.325.298-.462.46-.153.18-.316.378-.137.684.18.307.8 1.314 1.718 2.128.918.814 1.692 1.065 1.992 1.185.3.12.478.105.658-.1.18-.206.77-.895.974-1.2.206-.307.41-.258.693-.153.282.105 1.795.847 2.103.992.308.145.513.218.59.35.077.133.077.77-.243 1.67z"/>
+          </svg>
+          Discuter sur WhatsApp
+        </a>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} Modilo. Tous droits réservés.</p>
+      <p class="developed-by">
+        Développé par <a href="https://netweerk.studio" target="_blank" rel="noopener noreferrer">netweerk.studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #0a0a0a;
+    color: #ffffff;
+    padding: 80px 0 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr;
+    gap: 64px;
+    margin-bottom: 60px;
+  }
+
+  @media (max-width: 868px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .footer-logo {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Ensure it's crisp white in dark footer */
+  }
+
+  .footer-desc {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    max-width: 340px;
+    margin: 0;
+  }
+
+  .footer-links h4,
+  .footer-contact h4 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    margin: 0 0 24px 0;
+  }
+
+  .links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .links-list a {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+  }
+
+  .links-list a:hover {
+    color: #ffffff;
+    transform: translateX(4px);
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .footer-contact p {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .footer-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .footer-whatsapp:hover {
+    background: #ffffff;
+    color: #0a0a0a;
+    border-color: #ffffff;
+  }
+
+  /* Bottom Area */
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-bottom p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.82rem;
+    margin: 0;
+  }
+
+  .developed-by a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .developed-by a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+
+  @media (max-width: 600px) {
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+      padding-top: 24px;
+    }
+  }
+</style>

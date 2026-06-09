@@ -217,11 +217,33 @@ const { activePage = 'home', isTransparentOnScroll = false } = Astro.props;
   @media (max-width: 768px) {
     .header {
       top: 10px;
-      width: calc(100% - 24px);
-      border-radius: 14px;
+      width: calc(100% - 20px);
+      border-radius: 12px;
     }
-    .nav-menu { display: none; }
-    .header-container { padding: 10px 16px; }
-    .nav-logo { height: 44px; }
+    .header-container {
+      padding: 8px 12px;
+    }
+    .nav-logo {
+      height: 38px;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 12px;
+    }
+    .nav-link {
+      font-size: 0.78rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-menu {
+      gap: 8px;
+    }
+    .nav-link {
+      font-size: 0.75rem;
+    }
+    .nav-logo {
+      height: 32px;
+    }
   }
 </style>

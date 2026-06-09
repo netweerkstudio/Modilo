@@ -1,8 +1,8 @@
 ---
 import '../../style.css';
 import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
 import productsData from '../../data/products.json';
-import logoImg from '../../assets/logo-transparent.png';
 
 // Static path generation for each product
 export function getStaticPaths() {
@@ -196,33 +196,7 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
       </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <img src={logoImg.src} alt="Modilo Logo" class="footer-logo" />
-            <p class="footer-desc">Vêtements de caractère et accessoires urbains haut de gamme.</p>
-          </div>
-          <div class="footer-links">
-            <h4>Navigation</h4>
-            <a href="/products">Boutique</a>
-            <a href="/custom">Impression Perso</a>
-            <a href="/delivery">Livraison</a>
-          </div>
-          <div class="footer-contact">
-            <h4>Contact Direct</h4>
-            <a href="https://wa.me/+212630257293" target="_blank" class="footer-whatsapp">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.982L2 22l5.233-1.371a9.936 9.936 0 0 0 4.779 1.21h.005c5.505 0 9.988-4.479 9.989-9.986 0-2.67-1.037-5.178-2.922-7.062A9.925 9.925 0 0 0 12.012 2z"/></svg>
-              Discuter sur WhatsApp
-            </a>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Modilo. Tous droits réservés.</p>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>
 
@@ -704,85 +678,5 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
   }
 
   /* ── Footer ─────────────────────── */
-  .footer {
-    background: #0d0c12;
-    color: #ffffff;
-    padding: 60px 0 32px;
-    border-top: 1px solid rgba(255,255,255,0.05);
-  }
 
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1.5fr;
-    gap: 50px;
-    margin-bottom: 48px;
-  }
-
-  @media (max-width: 768px) {
-    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-  }
-
-  .footer-logo { height: 44px; object-fit: contain; }
-
-  .footer-desc {
-    color: #9a98a6;
-    font-size: 0.88rem;
-    line-height: 1.6;
-    margin-top: 14px;
-  }
-
-  .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .footer-links h4, .footer-contact h4 {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 4px;
-    font-family: var(--font-heading);
-  }
-
-  .footer-links a {
-    color: #9a98a6;
-    text-decoration: none;
-    font-size: 0.88rem;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: #F1E6D3; }
-
-  .footer-contact { display: flex; flex-direction: column; gap: 14px; }
-
-  .footer-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    width: fit-content;
-    background: #25d366;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
-    padding: 11px 20px;
-    border-radius: 99px;
-    font-size: 0.85rem;
-    transition: all 0.2s;
-  }
-
-  .footer-whatsapp:hover {
-    background: #20ba59;
-    transform: translateY(-1px);
-  }
-
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.07);
-    padding-top: 28px;
-  }
-
-  .footer-bottom p {
-    color: #6a6875;
-    font-size: 0.82rem;
-  }
 </style>
