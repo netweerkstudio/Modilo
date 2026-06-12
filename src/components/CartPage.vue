@@ -123,6 +123,7 @@ function getWhatsAppCheckoutLink() {
 
       <!-- Checkout Summary Card -->
       <div class="cart-summary-section">
+        <!-- Order Summary Card -->
         <div class="summary-card">
           <h3 class="summary-title">Résumé de la commande</h3>
           
@@ -143,11 +144,12 @@ function getWhatsAppCheckoutLink() {
             <span class="total-price">{{ cartTotalPrice }} MAD</span>
           </div>
 
-          <a :href="getWhatsAppCheckoutLink()" target="_blank" class="btn-checkout-whatsapp">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.982L2 22l5.233-1.371a9.936 9.936 0 0 0 4.779 1.21h.005c5.505 0 9.988-4.479 9.989-9.986 0-2.67-1.037-5.178-2.922-7.062A9.925 9.925 0 0 0 12.012 2zm5.835 14.165c-.32.9-.1.9-.1.9s-.427 1.099-1.637 1.328c-1.21.23-2.56.096-4.576-.718-2.016-.814-3.526-2.585-4.464-3.878-.938-1.293-1.579-2.738-1.579-4.22 0-1.48.718-2.203 1.026-2.502.308-.299.82-.455 1.077-.455.257 0 .492-.01.705.01.214.02.487-.08.761.564.274.645.94 2.274 1.017 2.43.077.157.12.338.017.532-.102.193-.154.314-.308.492-.154.177-.325.298-.462.46-.153.18-.316.378-.137.684.18.307.8 1.314 1.718 2.128.918.814 1.692 1.065 1.992 1.185.3.12.478.105.658-.1.18-.206.77-.895.974-1.2.206-.307.41-.258.693-.153.282.105 1.795.847 2.103.992.308.145.513.218.59.35.077.133.077.77-.243 1.67z"/>
+          <a href="/checkout" class="btn-checkout-next">
+            <span>Passer à la livraison</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
-            <span>Commander via WhatsApp</span>
           </a>
 
           <a href="/products" class="btn-continue-shopping">
@@ -398,6 +400,79 @@ function getWhatsAppCheckoutLink() {
   color: #c92a2a;
 }
 
+/* Delivery Info Form */
+.delivery-info-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  margin-bottom: 20px;
+}
+
+.delivery-info-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.delivery-info-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-input {
+  background: var(--bg-primary);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  outline: none;
+  resize: vertical;
+}
+
+.form-input:focus {
+  border-color: var(--text-primary);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.04);
+}
+
+.form-input.input-error {
+  border-color: #c92a2a;
+}
+
+.error-text {
+  font-size: 0.78rem;
+  color: #c92a2a;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
 /* Summary Card */
 .summary-card {
   background: var(--bg-secondary);
@@ -447,12 +522,12 @@ function getWhatsAppCheckoutLink() {
   color: var(--accent-primary);
 }
 
-.btn-checkout-whatsapp {
+.btn-checkout-next {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: #25d366;
+  background: var(--accent-primary);
   color: #ffffff;
   text-decoration: none;
   font-weight: 700;
@@ -461,16 +536,16 @@ function getWhatsAppCheckoutLink() {
   border-radius: 99px;
   text-align: center;
   transition: all 0.25s;
-  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   margin-bottom: 15px;
   border: none;
   cursor: pointer;
 }
 
-.btn-checkout-whatsapp:hover {
-  background: #20ba59;
+.btn-checkout-next:hover {
+  background: var(--accent-primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.15);
 }
 
 .btn-continue-shopping {

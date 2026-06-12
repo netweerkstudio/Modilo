@@ -1,45 +1,31 @@
 ---
-import '../style.css';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
 import ProductGrid from '../components/ProductGrid.vue';
 ---
 
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modilo - Boutique & Vestiaire Complet</title>
-    <meta name="description" content="Explorez l'intégralité de nos pièces d'exception. Sweats lourds, t-shirts de caractère et accessoires exclusifs pour l'homme d'action." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  </head>
-  <body>
-    <Navbar activePage="products" />
-
-    <!-- Intro Header -->
-    <section class="products-intro">
-      <div class="container">
-        <div class="section-intro">
-          <span class="section-subtitle">Collection Modilo</span>
-          <h1 class="page-title">Notre Vestiaire</h1>
-          <div class="header-line"></div>
-        </div>
+<Layout 
+  title="Modilo - Boutique & Vestiaire Complet" 
+  description="Explorez l'intégralité de nos pièces d'exception. Sweats lourds, t-shirts de caractère et accessoires exclusifs pour l'homme d'action."
+  activePage="products"
+>
+  <!-- Intro Header -->
+  <section class="products-intro">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-subtitle">Collection Modilo</span>
+        <h1 class="page-title">Notre Vestiaire</h1>
+        <div class="header-line"></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Filterable Product Grid Section -->
-    <section class="shop-section">
-      <ProductGrid client:load showOnlyFeatured={false} />
-    </section>
-
-    <Footer />
-  </body>
-</html>
+  <!-- Filterable Product Grid Section -->
+  <section class="shop-section">
+    <ProductGrid client:load showOnlyFeatured={false} />
+  </section>
+</Layout>
 
 <style>
-
-
   /* Intro Section */
   .products-intro {
     padding: 140px 0 40px;
@@ -91,6 +77,4 @@ import ProductGrid from '../components/ProductGrid.vue';
     margin: 0 auto;
     padding: 0 20px;
   }
-
-
 </style>

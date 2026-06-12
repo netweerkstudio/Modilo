@@ -1,5 +1,5 @@
 <script setup>
-import logoImg from '../assets/logo-transparent.png';
+import logoImg from '../assets/images/logo/logo-website.png';
 import spinnerImg from '../assets/spinner.svg';
 </script>
 

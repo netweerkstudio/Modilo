@@ -1,95 +1,82 @@
-import '../style.css';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+---
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modilo - Impression Personnalisée DTF</title>
-    <meta name="description" content="Imprimez vos designs uniques sur nos textiles premium lourds. Impression Direct-to-Film (DTF) haute fidélité pour homme." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  </head>
-  <body>
-    <Navbar activePage="custom" />
-
-    <!-- Intro Header -->
-    <section class="custom-intro">
-      <div class="container">
-        <div class="section-intro">
-          <span class="section-subtitle">Atelier Personnalisation</span>
-          <h1 class="page-title">Votre Design, Notre Savoir-faire</h1>
-          <div class="header-line"></div>
-        </div>
+<Layout 
+  title="Modilo - Impression Personnalisée DTF" 
+  description="Imprimez vos designs uniques sur nos textiles premium lourds. Impression Direct-to-Film (DTF) haute fidélité pour homme."
+  activePage="custom"
+>
+  <!-- Intro Header -->
+  <section class="custom-intro">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-subtitle">Atelier Personnalisation</span>
+        <h1 class="page-title">Votre Design, Notre Savoir-faire</h1>
+        <div class="header-line"></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Instructions Content -->
-    <section class="custom-content">
-      <div class="container small-container">
+  <!-- Instructions Content -->
+  <section class="custom-content">
+    <div class="container small-container">
+      
+      <div class="intro-block">
+        <h2>Technologie DTF (Direct-to-Film)</h2>
+        <p>
+          Nous utilisons la technologie d'impression DTF haut de gamme. Elle garantit des couleurs éclatantes, des détails ultra-précis et une résistance exceptionnelle aux lavages répétés. Idéal pour imprimer vos visuels et logos sur nos basiques premium (t-shirts et sweats), ainsi que vos vêtements professionnels de coiffeur/barbier (barber clothes), de café/restaurant et tabliers.
+        </p>
+      </div>
+
+      <div class="steps-container">
+        <h2>Comment ça marche ?</h2>
         
-        <div class="intro-block">
-          <h2>Technologie DTF (Direct-to-Film)</h2>
-          <p>
-            Nous utilisons la technologie d'impression DTF haut de gamme. Elle garantit des couleurs éclatantes, des détails ultra-précis et une résistance exceptionnelle aux lavages répétés. Idéal pour imprimer vos visuels et logos sur nos sweats et t-shirts en coton lourd bio.
-          </p>
-        </div>
-
-        <div class="steps-container">
-          <h2>Comment ça marche ?</h2>
-          
-          <div class="step-card">
-            <span class="step-num">01</span>
-            <div class="step-body">
-              <h3>Choisissez votre textile de base</h3>
-              <p>Sélectionnez parmi nos basiques haut de gamme : le T-shirt Coton Lourd 280 GSM ou le Sweat à capuche 450 GSM. Choisissez votre couleur et votre taille.</p>
-            </div>
-          </div>
-
-          <div class="step-card">
-            <span class="step-num">02</span>
-            <div class="step-body">
-              <h3>Préparez votre fichier graphique</h3>
-              <p>Pour un rendu optimal sans fond indésirable, fournissez-nous :</p>
-              <ul>
-                <li>Un fichier au format <strong>PNG transparent</strong> ou <strong>PDF vectorisé</strong>.</li>
-                <li>Une résolution minimale de <strong>300 DPI</strong>.</li>
-                <li>Les dimensions souhaitées de l'impression (A4, A3, Logo cœur, ou Grand dos).</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="step-card">
-            <span class="step-num">03</span>
-            <div class="step-body">
-              <h3>Envoyez-nous le projet sur WhatsApp</h3>
-              <p>Cliquez sur le bouton ci-dessous pour démarrer une discussion avec notre équipe de création. Vous pourrez y envoyer vos fichiers et valider le rendu avant impression.</p>
-            </div>
+        <div class="step-card">
+          <span class="step-num">01</span>
+          <div class="step-body">
+            <h3>Choisissez votre textile de base</h3>
+            <p>Sélectionnez le support de votre choix : nos basiques premium (t-shirts et sweats) ou vêtements professionnels de barbier, coiffeur, café et restaurant (tabliers personnalisés, t-shirts de salon/service). Choisissez votre couleur et votre taille.</p>
           </div>
         </div>
 
-        <div class="custom-cta-box">
-          <h2>Lancer une Impression Personnalisée</h2>
-          <p>Préparez vos fichiers et discutez directement avec nos artisans pour concrétiser votre projet.</p>
-          <a href="https://wa.me/+212630257293?text=Bonjour%20Modilo%2C%20je%20souhaite%20commander%20une%20impression%20personnalis%C3%A9e%20sur%20un%20v%C3%AAtement." target="_blank" class="btn-whatsapp-custom">
-            <span>Démarrer sur WhatsApp</span>
-            <svg viewBox="0 0 24 24" width="20" height="20">
-              <path fill="currentColor" d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.982L2 22l5.233-1.371a9.936 9.936 0 0 0 4.779 1.21h.005c5.505 0 9.988-4.479 9.989-9.986 0-2.67-1.037-5.178-2.922-7.062A9.925 9.925 0 0 0 12.012 2zm5.835 14.165c-.32.9-.1.9-.1.9s-.427 1.099-1.637 1.328c-1.21.23-2.56.096-4.576-.718-2.016-.814-3.526-2.585-4.464-3.878-.938-1.293-1.579-2.738-1.579-4.22 0-1.48.718-2.203 1.026-2.502.308-.299.82-.455 1.077-.455.257 0 .492-.01.705.01.214.02.487-.08.761.564.274.645.94 2.274 1.017 2.43.077.157.12.338.017.532-.102.193-.154.314-.308.492-.154.177-.325.298-.462.46-.153.18-.316.378-.137.684.18.307.8 1.314 1.718 2.128.918.814 1.692 1.065 1.992 1.185.3.12.478.105.658-.1.18-.206.77-.895.974-1.2.206-.307.41-.258.693-.153.282.105 1.795.847 2.103.992.308.145.513.218.59.35.077.133.077.77-.243 1.67z"/>
-            </svg>
-          </a>
+        <div class="step-card">
+          <span class="step-num">02</span>
+          <div class="step-body">
+            <h3>Envoyez votre image ou logo</h3>
+            <p>Pas besoin de fichier technique complexe. Envoyez-nous simplement le visuel de votre choix :</p>
+            <ul>
+              <li>Une photo, un logo existant, ou un simple croquis.</li>
+              <li>Notre équipe se charge de détourer, vectoriser et optimiser gratuitement le fichier pour l'impression.</li>
+              <li>Nous validerons ensemble les dimensions finales (Logo cœur, Format A4, A3, etc.) avant production.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <span class="step-num">03</span>
+          <div class="step-body">
+            <h3>Discutez avec l'équipe sur WhatsApp</h3>
+            <p>Cliquez sur le bouton ci-dessous pour démarrer l'échange. Vous nous envoyez votre image, nous préparons le design, et nous vous soumettons une maquette numérique pour validation avant impression.</p>
+          </div>
         </div>
       </div>
-    </section>
 
-    <Footer />
-  </body>
-</html>
+      <div class="custom-cta-box">
+        <h2>Lancer une Impression Personnalisée</h2>
+        <p>Envoyez votre visuel sur WhatsApp et discutez directement avec nous pour lancer votre projet.</p>
+        <a href="https://wa.me/+212630257293?text=Bonjour%20Modilo%2C%20je%20souhaite%20commander%20une%20impression%20personnalis%C3%A9e%20sur%20un%20v%C3%AAtement." target="_blank" class="btn-whatsapp-custom">
+          <span>Lancer mon projet sur WhatsApp</span>
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <path fill="currentColor" d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.982L2 22l5.233-1.371a9.936 9.936 0 0 0 4.779 1.21h.005c5.505 0 9.988-4.479 9.989-9.986 0-2.67-1.037-5.178-2.922-7.062A9.925 9.925 0 0 0 12.012 2zm5.835 14.165c-.32.9-.1.9-.1.9s-.427 1.099-1.637 1.328c-1.21.23-2.56.096-4.576-.718-2.016-.814-3.526-2.585-4.464-3.878-.938-1.293-1.579-2.738-1.579-4.22 0-1.48.718-2.203 1.026-2.502.308-.299.82-.455 1.077-.455.257 0 .492-.01.705.01.214.02.487-.08.761.564.274.645.94 2.274 1.017 2.43.077.157.12.338.017.532-.102.193-.154.314-.308.492-.154.177-.325.298-.462.46-.153.18-.316.378-.137.684.18.307.8 1.314 1.718 2.128.918.814 1.692 1.065 1.992 1.185.3.12.478.105.658-.1.18-.206.77-.895.974-1.2.206-.307.41-.258.693-.153.282.105 1.795.847 2.103.992.308.145.513.218.59.35.077.133.077.77-.243 1.67z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
 
 <style>
-
-
   /* Intro Section */
   .custom-intro {
     padding: 140px 0 40px;
@@ -228,11 +215,22 @@ import Footer from '../components/Footer.astro';
 
   .custom-cta-box {
     text-align: center;
-    background: var(--accent-primary);
+    background: #10044E;
+    background: radial-gradient(circle at top left, #A33E5B 0%, #10044E 35%);
     color: #ffffff;
     padding: 50px 40px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(163, 62, 91, 0.35);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .custom-cta-box:hover {
+    border-color: rgba(163, 62, 91, 0.55);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
   }
 
   .custom-cta-box h2 {
@@ -314,6 +312,4 @@ import Footer from '../components/Footer.astro';
       font-size: 1.6rem;
     }
   }
-
-
 </style>

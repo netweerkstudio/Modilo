@@ -1,29 +1,17 @@
 ---
-import '../style.css';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
 import CartPage from '../components/CartPage.vue';
 ---
 
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modilo - Mon Panier</title>
-    <meta name="description" content="Gérez votre panier et passez votre commande via WhatsApp en un seul clic." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  </head>
-  <body>
-    <Navbar activePage="cart" />
-
-    <main class="cart-main-content">
-      <CartPage client:load />
-    </main>
-
-    <Footer />
-  </body>
-</html>
+<Layout 
+  title="Modilo - Mon Panier" 
+  description="Gérez votre panier et passez votre commande via WhatsApp en un seul clic."
+  activePage="cart"
+>
+  <main class="cart-main-content">
+    <CartPage client:load />
+  </main>
+</Layout>
 
 <style>
   .cart-main-content {
@@ -36,6 +24,4 @@ import CartPage from '../components/CartPage.vue';
     margin: 0 auto;
     padding: 0 20px;
   }
-
-
 </style>

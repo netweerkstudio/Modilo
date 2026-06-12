@@ -28,7 +28,7 @@ const props = defineProps({
   }
 });
 
-const categories = ['all', 'hoodie', 't-shirt'];
+const categories = ['all', 't-shirt', 'hoodie'];
 const categoryLabels = {
   all: 'Tout',
   hoodie: 'Sweats',
@@ -1165,34 +1165,43 @@ function quickAddToCart(product) {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--accent-primary);
+  background: #000000;
   color: #F1E6D3;
-  border: none;
+  border: 1px solid rgba(241, 230, 211, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   z-index: 9999;
-  transition: transform 0.25s ease, background-color 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
 }
 
 .floating-cart-btn:hover {
-  transform: scale(1.05);
-  background: var(--accent-primary-hover);
+  transform: translateY(-5px) scale(1.08);
+  border-color: #F1E6D3;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 15px rgba(241, 230, 211, 0.15);
+  color: #ffffff;
 }
 
 .cart-badge {
   position: absolute;
-  top: -5px;
-  right: -5px;
-  background: var(--accent-primary);
-  color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 3px 8px;
+  top: -4px;
+  right: -4px;
+  background: #F1E6D3;
+  color: #000000;
+  font-size: 0.72rem;
+  font-weight: 800;
+  min-width: 20px;
+  height: 20px;
   border-radius: 99px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 1.5px solid #000000;
 }
 
 /* Cart Drawer */

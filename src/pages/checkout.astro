@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CheckoutPage from '../components/CheckoutPage.vue';
+---
+
+<Layout 
+  title="Modilo - Livraison" 
+  description="Remplissez vos informations de livraison pour finaliser votre commande Modilo sur WhatsApp."
+  activePage="cart"
+>
+  <main class="checkout-main-content">
+    <CheckoutPage client:load />
+  </main>
+</Layout>
+
+<style>
+  .checkout-main-content {
+    background-color: var(--bg-primary);
+    min-height: 80vh;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+</style>

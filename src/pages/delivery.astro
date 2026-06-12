@@ -1,102 +1,88 @@
 ---
-import '../style.css';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modilo - Informations de Livraison</title>
-    <meta name="description" content="Découvrez nos conditions de livraison rapides et sécurisées pour notre vestiaire masculin d'exception." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  </head>
-  <body>
-    <Navbar activePage="delivery" />
-
-    <!-- Intro Header -->
-    <section class="delivery-intro">
-      <div class="container">
-        <div class="section-intro">
-          <span class="section-subtitle">Expédition et Délais</span>
-          <h1 class="page-title">Livraison Modilo</h1>
-          <div class="header-line"></div>
-        </div>
+<Layout 
+  title="Modilo - Informations de Livraison" 
+  description="Découvrez nos conditions de livraison rapides et sécurisées pour notre vestiaire masculin d'exception."
+  activePage="delivery"
+>
+  <!-- Intro Header -->
+  <section class="delivery-intro">
+    <div class="container">
+      <div class="section-intro">
+        <span class="section-subtitle">Expédition et Délais</span>
+        <h1 class="page-title">Livraison Modilo</h1>
+        <div class="header-line"></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Content Section -->
-    <section class="delivery-content">
-      <div class="container small-container">
-        <div class="info-card-grid">
-          
-          <div class="info-card">
-            <div class="info-icon">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect>
-                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-                <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                <circle cx="18.5" cy="18.5" r="2.5"></circle>
-              </svg>
-            </div>
-            <h3>Zones & Tarifs</h3>
-            <p>Nous livrons partout au Maroc avec des transporteurs professionnels de confiance.</p>
-            <ul>
-              <li><strong>Tanger :</strong> Livraison gratuite</li>
-              <li><strong>Autres villes du Maroc :</strong> 45 DH</li>
-              <li><strong>Paiement à la livraison (COD) disponible.</strong></li>
-            </ul>
+  <!-- Content Section -->
+  <section class="delivery-content">
+    <div class="container small-container">
+      <div class="info-card-grid">
+        
+        <div class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
           </div>
-
-          <div class="info-card">
-            <div class="info-icon">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-            </div>
-            <h3>Délais de Livraison</h3>
-            <p>Nous faisons de notre mieux pour acheminer vos commandes le plus rapidement possible :</p>
-            <ul>
-              <li><strong>Délai garanti :</strong> 7 jours maximum partout au Maroc (y compris pour les impressions personnalisées).</li>
-              <li><strong>Tanger :</strong> Livraison généralement sous 24h à 48h.</li>
-            </ul>
-          </div>
-
-          <div class="info-card">
-            <div class="info-icon">
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-              </svg>
-            </div>
-            <h3>Suivi de Commande</h3>
-            <p>Restez informé à chaque étape de votre commande directement sur WhatsApp.</p>
-            <ul>
-              <li>Confirmation immédiate après commande.</li>
-              <li>Partage du numéro de suivi dès expédition (hors Tanger).</li>
-              <li>Support client réactif 7j/7 pour toute question.</li>
-            </ul>
-          </div>
-
+          <h3>Zones & Tarifs</h3>
+          <p>Nous livrons partout au Maroc avec des transporteurs professionnels de confiance.</p>
+          <ul>
+            <li><strong>Tanger :</strong> Livraison gratuite</li>
+            <li><strong>Autres villes du Maroc :</strong> 45 DH</li>
+            <li><strong>Paiement à la livraison (COD) disponible.</strong></li>
+          </ul>
         </div>
 
-        <div class="delivery-cta-box">
-          <h2>Prêt à passer commande ?</h2>
-          <p>Explorez notre boutique, composez votre panier et envoyez-le nous en un clic pour validation.</p>
-          <a href="/products" class="btn-primary-custom">Accéder à la Boutique</a>
+        <div class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3>Délais de Livraison</h3>
+          <p>Nous faisons de notre mieux pour acheminer vos commandes le plus rapidement possible :</p>
+          <ul>
+            <li><strong>Délai garanti :</strong> 7 jours maximum partout au Maroc (y compris pour les impressions personnalisées).</li>
+            <li><strong>Tanger :</strong> Livraison généralement sous 24h à 48h.</li>
+          </ul>
         </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+          </div>
+          <h3>Suivi de Commande</h3>
+          <p>Restez informé à chaque étape de votre commande directement sur WhatsApp.</p>
+          <ul>
+            <li>Confirmation immédiate après commande.</li>
+            <li>Partage du numéro de suivi dès expédition (hors Tanger).</li>
+            <li>Support client réactif 7j/7 pour toute question.</li>
+          </ul>
+        </div>
+
       </div>
-    </section>
 
-    <Footer />
-  </body>
-</html>
+      <div class="delivery-cta-box">
+        <h2>Prêt à passer commande ?</h2>
+        <p>Explorez notre boutique, composez votre panier et envoyez-le nous en un clic pour validation.</p>
+        <a href="/products" class="btn-primary-custom">Accéder à la Boutique</a>
+      </div>
+    </div>
+  </section>
+</Layout>
 
 <style>
-
-
   /* Intro Section */
   .delivery-intro {
     padding: 140px 0 40px;
@@ -268,6 +254,4 @@ import Footer from '../components/Footer.astro';
       font-size: 1.6rem;
     }
   }
-
-
 </style>
