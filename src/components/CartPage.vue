@@ -80,7 +80,7 @@ function getWhatsAppCheckoutLink() {
       </div>
       <h2 class="empty-title">Votre panier est vide</h2>
       <p class="empty-text">Découvrez notre collection de vêtements premium conçus exclusivement pour l'homme d'action.</p>
-      <a href="/products" class="btn-shop">Découvrir la Boutique</a>
+      <a href="/produits" class="btn-shop">Découvrir la Boutique</a>
     </div>
 
     <div v-else class="cart-grid">
@@ -144,7 +144,7 @@ function getWhatsAppCheckoutLink() {
             <span class="total-price">{{ cartTotalPrice }} MAD</span>
           </div>
 
-          <a href="/checkout" class="btn-checkout-next">
+          <a href="/commande" class="btn-checkout-next">
             <span>Passer à la livraison</span>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -152,7 +152,7 @@ function getWhatsAppCheckoutLink() {
             </svg>
           </a>
 
-          <a href="/products" class="btn-continue-shopping">
+          <a href="/produits" class="btn-continue-shopping">
             Continuer mes achats
           </a>
         </div>

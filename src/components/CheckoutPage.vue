@@ -155,7 +155,7 @@ function handleCheckout() {
     <div v-if="cart.length === 0" class="checkout-empty-state">
       <h2 class="empty-title">Votre panier est vide</h2>
       <p class="empty-text">Veuillez ajouter des articles à votre panier avant de passer à la livraison.</p>
-      <a href="/products" class="btn-shop">Découvrir la Boutique</a>
+      <a href="/produits" class="btn-shop">Découvrir la Boutique</a>
     </div>
 
     <div v-else class="checkout-grid">
@@ -261,7 +261,7 @@ function handleCheckout() {
           </div>
         </div>
 
-        <a href="/cart" class="btn-back-to-cart">
+        <a href="/panier" class="btn-back-to-cart">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="19" y1="12" x2="5" y2="12"></line>
             <polyline points="12 19 5 12 12 5"></polyline>

@@ -207,7 +207,7 @@ function quickAddToCart(product) {
           v-for="product in tshirtProducts" 
           :key="'tshirt-' + product.id"
           class="featured-card"
-          :href="'/product/' + product.id"
+          :href="'/produit/' + product.id"
         >
           <div class="featured-img-wrapper">
             <img :src="product.resolvedImage" :alt="product.title" class="card-image" :style="{ filter: product.cssFilter || 'none' }" />
@@ -253,7 +253,7 @@ function quickAddToCart(product) {
           v-for="product in filteredProducts" 
           :key="product.id"
           class="card"
-          :href="'/product/' + product.id"
+          :href="'/produit/' + product.id"
         >
           <div class="card-image-wrapper">
             <img :src="product.resolvedImage" :alt="product.title" class="card-image" :style="{ filter: product.cssFilter || 'none' }" />
