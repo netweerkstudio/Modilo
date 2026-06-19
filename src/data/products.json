@@ -20,6 +20,31 @@
     "topSelling": true
   },
   {
+    "id": "modilo-amalfi-tee",
+    "title": "Tee-shirt Amalfi White",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/italy-product/Gemini_Generated_Image_dxdq10dxdq10dxdq.png",
+    "images": [
+      "/products/italy-product/Gemini_Generated_Image_dxdq10dxdq10dxdq.png",
+      "/products/italy-product/Gemini_Generated_Image_b92jq3b92jq3b92j.png",
+      "/products/italy-product/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
+      "/products/italy-product/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+    ],
+    "description": "Une édition limitée célébrant la douceur de vivre de la côte amalfitaine. Confectionné dans un coton biologique haut de gamme de 280 GSM, ce t-shirt blanc arbore sur le dos une illustration artistique exclusive de Positano surplombée de la signature Modilo. Coupe relaxed, col en tricot côtelé épais et coutures renforcées pour une tenue parfaite.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Amalfi"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
     "id": "modilo-classic-tee-white",
     "title": "Classic White Tee",
     "price": 190,
