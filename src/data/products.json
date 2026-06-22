@@ -45,6 +45,56 @@
     "topSelling": true
   },
   {
+    "id": "modilo-tangier-tee",
+    "title": "Tee-shirt Tanger White",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/tangier-product/Gemini_Generated_Image_o3gk04o3gk04o3gk.png",
+    "images": [
+      "/products/tangier-product/Gemini_Generated_Image_o3gk04o3gk04o3gk.png",
+      "/products/tangier-product/Gemini_Generated_Image_om5psuom5psuom5p.png",
+      "/products/tangier-product/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
+      "/products/tangier-product/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+    ],
+    "description": "Une édition spéciale inspirée de la perle du Nord, Tanger. Confectionné dans un coton biologique lourd de 280 GSM, ce t-shirt blanc arbore sur le dos une illustration artistique exclusive rendant hommage à la ville du détroit. Coupe relaxed contemporaine, col épais et finitions haut de gamme.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Tanger"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-stranger-things-tee",
+    "title": "Tee-shirt Stranger Things",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/stranger-things/Gemini_Generated_Image_2hu3zz2hu3zz2hu3.png",
+    "images": [
+      "/products/stranger-things/Gemini_Generated_Image_2hu3zz2hu3zz2hu3.png",
+      "/products/stranger-things/Gemini_Generated_Image_2p27sw2p27sw2p27.png",
+      "/products/stranger-things/Gemini_Generated_Image_pvyzkepvyzkepvyz.png",
+      "/products/stranger-things/8411d2c9-24c0-41ca-af0c-10d0cdba2610.jpeg"
+    ],
+    "description": "Un t-shirt en édition spéciale inspiré de l'univers mystérieux de Stranger Things. Confectionné dans un coton lourd haut de gamme de 280 GSM pour une structure et un confort parfaits. Arborant des visuels uniques, ce modèle propose une coupe relaxed moderne avec col côtelé épais.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Gris Anthracite", "Blanc Vintage"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
     "id": "modilo-classic-tee-white",
     "title": "Classic White Tee",
     "price": 190,
