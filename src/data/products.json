@@ -95,6 +95,173 @@
     "topSelling": true
   },
   {
+    "id": "modilo-palestine-tee",
+    "title": "Tee-shirt Palestine",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/palestine/Gemini_Generated_Image_re4bvkre4bvkre4b.png",
+    "images": [
+      "/products/palestine/Gemini_Generated_Image_re4bvkre4bvkre4b.png",
+      "/products/palestine/Gemini_Generated_Image_geltwrgeltwrgelt.png",
+      "/products/palestine/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
+      "/products/palestine/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+    ],
+    "description": "Une édition spéciale dédiée à la Palestine, arborant un design artistique raffiné sur la poitrine. Confectionné dans un coton de 280 GSM d'une grande douceur et d'une durabilité exceptionnelle. Coupe décontractée, col épais et finitions soignées.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Palestine", "Gris Palestine"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-kufia-tee",
+    "title": "Tee-shirt Kufia",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/kufia/Gemini_Generated_Image_f9ismkf9ismkf9is.png",
+    "images": [
+      "/products/kufia/Gemini_Generated_Image_f9ismkf9ismkf9is.png"
+    ],
+    "description": "Un t-shirt inspiré des motifs traditionnels du Keffieh (Kufia), symbolisant l'héritage et la solidarité. Conçu en coton biologique premium ultra-confortable de 280 GSM avec une coupe moderne relaxed.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Gris Anthracite"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-spider-tee",
+    "title": "Tee-shirt Spider",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/spider/Gemini_Generated_Image_6otlgl6otlgl6otl.png",
+    "images": [
+      "/products/spider/Gemini_Generated_Image_6otlgl6otlgl6otl.png",
+      "/products/spider/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
+      "/products/spider/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+    ],
+    "description": "Une édition spéciale mystique arborant une illustration d'araignée artistique finement détaillée sur le dos. Confectionné dans un coton de 280 GSM de grande qualité. Coupe décontractée, col épais et finitions haut de gamme.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Spider"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-tree-tee",
+    "title": "Tee-shirt Tree",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/tree/Gemini_Generated_Image_a1cwqga1cwqga1cw.png",
+    "images": [
+      "/products/tree/Gemini_Generated_Image_a1cwqga1cwqga1cw.png",
+      "/products/tree/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
+      "/products/tree/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+    ],
+    "description": "Une édition spéciale nature arborant une illustration d'arbre artistique finement détaillée sur le dos. Confectionné dans un coton de 280 GSM de grande qualité. Coupe décontractée, col épais et finitions soignées.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Nature"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-supra-tee",
+    "title": "Tee-shirt Supra",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/supra/Gemini_Generated_Image_j65vmgj65vmgj65v.png",
+    "images": [
+      "/products/supra/Gemini_Generated_Image_j65vmgj65vmgj65v.png",
+      "/products/supra/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
+      "/products/supra/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+    ],
+    "description": "Une édition limitée célébrant la légendaire sportive nippone Supra, avec une illustration graphique percutante au dos. Confectionné dans un coton lourd de 280 GSM pour un confort et une structure parfaits.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Supra"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-samurai-tee",
+    "title": "Tee-shirt Samurai",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/samurai/samurai.png",
+    "images": [
+      "/products/samurai/samurai.png",
+      "/products/samurai/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
+      "/products/samurai/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+    ],
+    "description": "Un t-shirt unique arborant un design de guerrier samouraï traditionnel sur le dos. Fabriqué en coton épais de 280 GSM avec col côtelé robuste et coupe relaxed.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Samouraï"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-samurai-2-tee",
+    "title": "Tee-shirt Samurai V2",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/samurai 2/ad86e0d9-2480-48ad-8d53-772055dbd0bc.jpeg",
+    "images": [
+      "/products/samurai 2/ad86e0d9-2480-48ad-8d53-772055dbd0bc.jpeg",
+      "/products/samurai 2/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
+      "/products/samurai 2/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+    ],
+    "description": "Seconde variante du design Samouraï avec une illustration artistique alternative du guerrier nippon. Confectionné dans notre coton lourd premium de 280 GSM.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Samouraï V2"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
     "id": "modilo-classic-tee-white",
     "title": "Classic White Tee",
     "price": 190,
