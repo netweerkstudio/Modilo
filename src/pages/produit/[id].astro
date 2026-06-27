@@ -267,7 +267,7 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
                   </svg>
                   <select id="p-city-select" class="form-select has-icon">
                     <option value="tanger">Tanger (Livraison Gratuite)</option>
-                    <option value="autre">Autre ville du Maroc (Livraison: 45 MAD)</option>
+                    <option value="autre">Autre ville du Maroc (Livraison: 30 MAD)</option>
                   </select>
                 </div>
               </div>
@@ -512,8 +512,8 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
     }
 
     const finalCity = citySelect.value === 'tanger' ? 'Tanger' : customCityInput.value.trim();
-    const shippingText = citySelect.value === 'tanger' ? 'Gratuite' : '45 MAD';
-    const shippingCost = citySelect.value === 'tanger' ? 0 : 45;
+    const shippingText = citySelect.value === 'tanger' ? 'Gratuite' : '30 MAD';
+    const shippingCost = citySelect.value === 'tanger' ? 0 : 30;
     const grandTotal = Number(product.price) + shippingCost;
 
     let message = `Bonjour Modilo, je souhaite commander l'article suivant :\n\n`;
@@ -1236,6 +1236,9 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
     .form-grid {
       grid-template-columns: 1fr;
       gap: 16px;
+    }
+    .form-group.full-width {
+      grid-column: span 1;
     }
     .product-delivery-card {
       padding: 30px 20px;

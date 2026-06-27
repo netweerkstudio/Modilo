@@ -218,11 +218,11 @@ function quickAddToCart(product) {
             <h3 class="featured-title">{{ product.title }}</h3>
             <div class="featured-footer">
               <p class="featured-price">{{ product.price }} MAD</p>
-              <button class="featured-add-btn" @click.prevent.stop="quickAddToCart(product)" aria-label="Ajouter au panier">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="20" cy="21" r="1"></circle>
-                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              <button class="featured-add-btn" @click.prevent.stop="quickAddToCart(product)" aria-label="Commander">
+                <span>Commander</span>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </button>
             </div>
@@ -265,16 +265,12 @@ function quickAddToCart(product) {
             <h3 class="card-title">{{ product.title }}</h3>
             <div class="card-footer-row">
               <p class="card-price">{{ product.price }} MAD</p>
-              <button class="card-add-btn" @click.prevent.stop="quickAddToCart(product)" aria-label="Ajouter au panier">
-                <span class="btn-icons">
-                  <span class="plus-sign">+</span>
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                  </svg>
-                </span>
-                <span>Ajouter</span>
+              <button class="card-add-btn" @click.prevent.stop="quickAddToCart(product)" aria-label="Commander">
+                <span>Commander</span>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
               </button>
             </div>
           </div>
@@ -529,22 +525,25 @@ function quickAddToCart(product) {
 .featured-add-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: var(--accent-primary);
-  color: #ffffff;
-  border: none;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+  gap: 6px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 7px 14px;
+  border-radius: 99px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   flex-shrink: 0;
 }
 
 .featured-add-btn:hover {
-  background: var(--accent-primary-hover);
-  transform: scale(1.08);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .section-header {
@@ -1456,23 +1455,24 @@ function quickAddToCart(product) {
 .card-add-btn {
   display: flex;
   align-items: center;
-  gap: 5px;
-  background: var(--accent-primary);
-  color: #ffffff;
-  border: none;
+  gap: 6px;
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border: 1px solid transparent;
   font-weight: 600;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   padding: 7px 14px;
   border-radius: 99px;
   cursor: pointer;
-  transition: all 0.2s;
-  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
 }
 
 .card-add-btn:hover {
-  background: var(--accent-primary-hover);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--text-primary);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .card-add-icon-btn {

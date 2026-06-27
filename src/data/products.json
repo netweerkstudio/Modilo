@@ -14,7 +14,7 @@
     "description": "Une édition limitée célébrant les magnifiques paysages de Santorin et ses célèbres toits bleus. Confectionné dans notre coton lourd premium.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc", "Noir"]
+      "colors": ["Blanc"]
     },
     "specifications": [
       { "name": "Matériau", "value": "100% Coton Biologique" }
@@ -35,7 +35,7 @@
     "description": "Un t-shirt inspiré de l'esthétique classique et intemporelle 'Old Money'. Confectionné dans un coton de grande qualité. Coupe décontractée, col épais et finitions soignées.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc", "Noir"]
+      "colors": ["Blanc"]
     },
     "specifications": [
       { "name": "Matériau", "value": "100% Coton Biologique" }
@@ -57,7 +57,7 @@
     "description": "Une édition limitée célébrant la douceur de vivre de la côte amalfitaine. Confectionné dans un coton biologique haut de gamme, ce t-shirt blanc arbore sur le dos une illustration artistique exclusive de Positano surplombée de la signature Modilo. Coupe relaxed, col en tricot côtelé épais et coutures renforcées pour une tenue parfaite.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc", "Noir"]
+      "colors": ["Blanc"]
     },
     "specifications": [
       { "name": "Matériau", "value": "100% Coton Biologique" }
@@ -79,7 +79,7 @@
     "description": "Une édition spéciale inspirée de la perle du Nord, Tanger. Confectionné dans un coton biologique lourd, ce t-shirt blanc arbore sur le dos une illustration artistique exclusive rendant hommage à la ville du détroit. Coupe relaxed contemporaine, col épais et finitions haut de gamme.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc", "Noir"]
+      "colors": ["Blanc"]
     },
     "specifications": [
       { "name": "Matériau", "value": "100% Coton Biologique" }
@@ -100,7 +100,7 @@
     "description": "Une édition spéciale célébrant la vie de luxe et le prestige, avec une illustration graphique moderne et percutante. Fabriqué en coton épais avec col côtelé robuste et coupe relaxed.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc", "Noir"]
+      "colors": ["Blanc"]
     },
     "specifications": [
       { "name": "Matériau", "value": "100% Coton Biologique" }
@@ -143,7 +143,7 @@
     "description": "Un t-shirt inspiré des motifs traditionnels du Keffieh (Kufia), symbolisant l'héritage et la solidarité. Conçu en coton biologique premium ultra-confortable avec une coupe moderne relaxed.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc", "Noir"]
+      "colors": ["Noir"]
     },
     "specifications": [
       { "name": "Matériau", "value": "100% Coton Biologique" }
@@ -186,7 +186,7 @@
     "description": "Une édition spéciale mystique arborant une illustration d'araignée artistique finement détaillée sur le dos. Confectionné dans un coton de grande qualité. Coupe décontractée, col épais et finitions haut de gamme.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc", "Noir"]
+      "colors": ["Blanc"]
     },
     "specifications": [
       { "name": "Matériau", "value": "100% Coton Biologique" }
@@ -207,7 +207,7 @@
     "description": "Une édition spéciale nature arborant une illustration d'arbre artistique finement détaillée sur le dos. Confectionné dans un coton de grande qualité. Coupe décontractée, col épais et finitions soignées.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc", "Noir"]
+      "colors": ["Blanc"]
     },
     "specifications": [
       { "name": "Matériau", "value": "100% Coton Biologique" }
@@ -228,7 +228,7 @@
     "description": "Une édition limitée célébrant la légendaire sportive nippone Supra, avec une illustration graphique percutante au dos. Confectionné dans un coton lourd pour un confort et une structure parfaits.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc", "Noir"]
+      "colors": ["Blanc"]
     },
     "specifications": [
       { "name": "Matériau", "value": "100% Coton Biologique" }
@@ -249,7 +249,7 @@
     "description": "Un t-shirt unique arborant un design de guerrier samouraï traditionnel sur le dos. Fabriqué en coton épais avec col côtelé robuste et coupe relaxed.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc", "Noir"]
+      "colors": ["Blanc"]
     },
     "specifications": [
       { "name": "Matériau", "value": "100% Coton Biologique" }
@@ -270,7 +270,7 @@
     "description": "Seconde variante du design Samouraï avec une illustration artistique alternative du guerrier nippon. Confectionné dans notre coton lourd premium.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc", "Noir"]
+      "colors": ["Blanc"]
     },
     "specifications": [
       { "name": "Matériau", "value": "100% Coton Biologique" }
@@ -291,7 +291,7 @@
     "description": "Un t-shirt en édition spéciale inspiré de l'univers mythique de Dragon Ball. Confectionné dans notre coton lourd premium, offrant confort, structure et durabilité.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc", "Noir"]
+      "colors": ["Blanc"]
     },
     "specifications": [
       { "name": "Matériau", "value": "100% Coton Biologique" }
@@ -312,7 +312,7 @@
     "description": "Une édition spéciale rendant hommage à Goku, le légendaire guerrier Saiyan. Confectionné dans un coton de grande qualité. Coupe décontractée, col épais et finitions soignées.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc", "Noir"]
+      "colors": ["Blanc"]
     },
     "specifications": [
       { "name": "Matériau", "value": "100% Coton Biologique" }
@@ -333,7 +333,7 @@
     "description": "Un design unique dédié au clan légendaire Uchiha, arborant des visuels artistiques saisissants. Conçu en coton biologique premium ultra-confortable avec une coupe moderne relaxed.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc", "Noir"]
+      "colors": ["Blanc"]
     },
     "specifications": [
       { "name": "Matériau", "value": "100% Coton Biologique" }

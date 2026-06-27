@@ -15,6 +15,7 @@ const imageMap = {
 };
 
 const cart = ref([]);
+const isLoading = ref(true);
 
 const name = ref('');
 const phone = ref('');
@@ -30,29 +31,38 @@ const errors = ref({
 });
 
 onMounted(() => {
-  const savedCart = localStorage.getItem('modilo_cart');
-  if (savedCart) {
-    try {
+  try {
+    const savedCart = localStorage.getItem('modilo_cart');
+    if (savedCart) {
       cart.value = JSON.parse(savedCart);
-    } catch (e) {
-      console.error(e);
     }
+  } catch (e) {
+    console.error('Failed to read cart in checkout:', e);
   }
 
-  // Load customer details
-  name.value = localStorage.getItem('modilo_cust_name') || '';
-  phone.value = localStorage.getItem('modilo_cust_phone') || '';
-  selectedCityType.value = localStorage.getItem('modilo_cust_city_type') || 'tanger';
-  customCity.value = localStorage.getItem('modilo_cust_city_custom') || '';
-  address.value = localStorage.getItem('modilo_cust_address') || '';
+  try {
+    name.value = localStorage.getItem('modilo_cust_name') || '';
+    phone.value = localStorage.getItem('modilo_cust_phone') || '';
+    selectedCityType.value = localStorage.getItem('modilo_cust_city_type') || 'tanger';
+    customCity.value = localStorage.getItem('modilo_cust_city_custom') || '';
+    address.value = localStorage.getItem('modilo_cust_address') || '';
+  } catch (e) {
+    console.error('Failed to read customer details:', e);
+  }
+  
+  isLoading.value = false;
 });
 
 function saveCustomerInfo() {
-  localStorage.setItem('modilo_cust_name', name.value);
-  localStorage.setItem('modilo_cust_phone', phone.value);
-  localStorage.setItem('modilo_cust_city_type', selectedCityType.value);
-  localStorage.setItem('modilo_cust_city_custom', customCity.value);
-  localStorage.setItem('modilo_cust_address', address.value);
+  try {
+    localStorage.setItem('modilo_cust_name', name.value);
+    localStorage.setItem('modilo_cust_phone', phone.value);
+    localStorage.setItem('modilo_cust_city_type', selectedCityType.value);
+    localStorage.setItem('modilo_cust_city_custom', customCity.value);
+    localStorage.setItem('modilo_cust_address', address.value);
+  } catch (e) {
+    console.error('Failed to save customer details:', e);
+  }
 
   // Clear errors when typing/selecting
   if (name.value.trim()) errors.value.name = '';
@@ -70,7 +80,7 @@ const cartTotalPrice = computed(() => {
 });
 
 const shippingFee = computed(() => {
-  return selectedCityType.value === 'tanger' ? 0 : 45;
+  return selectedCityType.value === 'tanger' ? 0 : 30;
 });
 
 const totalWithShipping = computed(() => {
@@ -124,7 +134,7 @@ function handleCheckout() {
   }
 
   const finalCity = selectedCityType.value === 'tanger' ? 'Tanger' : customCity.value.trim();
-  const shippingText = selectedCityType.value === 'tanger' ? 'Gratuite' : '45 MAD';
+  const shippingText = selectedCityType.value === 'tanger' ? 'Gratuite' : '30 MAD';
 
   let message = `Bonjour Modilo, je souhaite commander les articles suivants :\n\n`;
   cart.value.forEach(item => {
@@ -152,7 +162,47 @@ function handleCheckout() {
       <div class="accent-line"></div>
     </div>
 
-    <div v-if="cart.length === 0" class="checkout-empty-state">
+    <div v-if="isLoading" class="shimmer-grid">
+      <!-- Form column -->
+      <div>
+        <div class="shimmer-placeholder" style="display: flex; flex-direction: column; gap: 20px; padding: 40px;">
+          <div class="shimmer-block" style="width: 50%; height: 24px;"></div>
+          <div class="shimmer-block" style="width: 80%; height: 16px;"></div>
+          <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 10px;">
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div class="shimmer-block" style="width: 20%; height: 14px;"></div>
+              <div class="shimmer-block" style="width: 100%; height: 48px; border-radius: 10px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div class="shimmer-block" style="width: 15%; height: 14px;"></div>
+              <div class="shimmer-block" style="width: 100%; height: 48px; border-radius: 10px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Summary column -->
+      <div>
+        <div class="shimmer-placeholder" style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="shimmer-block" style="width: 70%; height: 22px; margin-bottom: 10px;"></div>
+          <div style="display: flex; justify-content: space-between;">
+            <div class="shimmer-block" style="width: 40%; height: 16px;"></div>
+            <div class="shimmer-block" style="width: 20%; height: 16px;"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <div class="shimmer-block" style="width: 30%; height: 16px;"></div>
+            <div class="shimmer-block" style="width: 20%; height: 16px;"></div>
+          </div>
+          <hr style="border: 0; border-top: 1px solid var(--card-border); margin: 0;" />
+          <div style="display: flex; justify-content: space-between;">
+            <div class="shimmer-block" style="width: 25%; height: 20px;"></div>
+            <div class="shimmer-block" style="width: 30%; height: 20px;"></div>
+          </div>
+          <div class="shimmer-block" style="width: 100%; height: 52px; border-radius: 12px; margin-top: 10px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div v-else-if="cart.length === 0" class="checkout-empty-state">
       <h2 class="empty-title">Votre panier est vide</h2>
       <p class="empty-text">Veuillez ajouter des articles à votre panier avant de passer à la livraison.</p>
       <a href="/produits" class="btn-shop">Découvrir la Boutique</a>
@@ -161,84 +211,93 @@ function handleCheckout() {
     <div v-else class="checkout-grid">
       <!-- Left: Delivery Form -->
       <div class="checkout-form-section">
+        <a href="/panier" class="btn-back-to-cart" style="margin-bottom: 10px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Retour au panier
+        </a>
         <div class="delivery-info-card">
           <h3 class="delivery-info-title">Informations de livraison</h3>
           <p class="delivery-info-desc">Complétez vos coordonnées pour finaliser la commande sur WhatsApp.</p>
           
-          <div class="form-group">
-            <label for="fullname" class="form-label">Nom Complet *</label>
-            <div class="input-icon-wrapper">
-              <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              <input 
-                type="text" 
-                id="fullname" 
-                v-model="name" 
-                @input="saveCustomerInfo" 
-                placeholder="Ex: Mohammed Alami" 
-                :class="['form-input', 'has-icon', {'input-error': errors.name}]" 
-              />
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fullname" class="form-label">Nom Complet *</label>
+              <div class="input-icon-wrapper">
+                <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <input 
+                  type="text" 
+                  id="fullname" 
+                  v-model="name" 
+                  @input="saveCustomerInfo" 
+                  placeholder="Ex: Mohammed Alami" 
+                  :class="['form-input', 'has-icon', {'input-error': errors.name}]" 
+                />
+              </div>
+              <span v-if="errors.name" class="error-text">{{ errors.name }}</span>
             </div>
-            <span v-if="errors.name" class="error-text">{{ errors.name }}</span>
-          </div>
 
-          <div class="form-group">
-            <label for="phone" class="form-label">Téléphone *</label>
-            <div class="input-icon-wrapper">
-              <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-              </svg>
-              <input 
-                type="tel" 
-                id="phone" 
-                v-model="phone" 
-                @input="saveCustomerInfo" 
-                placeholder="Ex: 0612345678" 
-                :class="['form-input', 'has-icon', {'input-error': errors.phone}]" 
-              />
+            <div class="form-group">
+              <label for="phone" class="form-label">Téléphone *</label>
+              <div class="input-icon-wrapper">
+                <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  v-model="phone" 
+                  @input="saveCustomerInfo" 
+                  placeholder="Ex: 0612345678" 
+                  :class="['form-input', 'has-icon', {'input-error': errors.phone}]" 
+                />
+              </div>
+              <span v-if="errors.phone" class="error-text">{{ errors.phone }}</span>
             </div>
-            <span v-if="errors.phone" class="error-text">{{ errors.phone }}</span>
-          </div>
 
-          <div class="form-group">
-            <label for="city-select" class="form-label">Ville *</label>
-            <div class="input-icon-wrapper">
-              <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <select 
-                id="city-select" 
-                v-model="selectedCityType" 
-                @change="saveCustomerInfo" 
-                class="form-select has-icon"
-              >
-                <option value="tanger">Tanger (Livraison Gratuite)</option>
-                <option value="autre">Autre ville du Maroc (Livraison: 45 MAD)</option>
-              </select>
+            <div :class="['form-group', { 'full-width': selectedCityType === 'tanger' }]">
+              <label for="city-select" class="form-label">Ville *</label>
+              <div class="input-icon-wrapper">
+                <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <select 
+                  id="city-select" 
+                  v-model="selectedCityType" 
+                  @change="saveCustomerInfo" 
+                  class="form-select has-icon"
+                >
+                  <option value="tanger">Tanger (Livraison Gratuite)</option>
+                  <option value="autre">Autre ville du Maroc (Livraison: 30 MAD)</option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div v-if="selectedCityType === 'autre'" class="form-group slide-fade-in">
-            <label for="custom-city" class="form-label">Nom de la ville *</label>
-            <div class="input-icon-wrapper">
-              <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="2" y1="12" x2="22" y2="12"></line>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-              </svg>
-              <input 
-                type="text" 
-                id="custom-city" 
-                v-model="customCity" 
-                @input="saveCustomerInfo" 
-                placeholder="Ex: Casablanca, Rabat, Marrakech..." 
-                :class="['form-input', 'has-icon', {'input-error': errors.city}]" 
-              />
+            <div v-if="selectedCityType === 'autre'" class="form-group slide-fade-in">
+              <label for="custom-city" class="form-label">Nom de la ville *</label>
+              <div class="input-icon-wrapper">
+                <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <input 
+                  type="text" 
+                  id="custom-city" 
+                  v-model="customCity" 
+                  @input="saveCustomerInfo" 
+                  placeholder="Ex: Casablanca, Rabat, Marrakech..." 
+                  :class="['form-input', 'has-icon', {'input-error': errors.city}]" 
+                />
+              </div>
+              <span v-if="errors.city" class="error-text">{{ errors.city }}</span>
             </div>
-            <span v-if="errors.city" class="error-text">{{ errors.city }}</span>
           </div>
 
           <div class="form-group">
@@ -260,14 +319,6 @@ function handleCheckout() {
             <span v-if="errors.address" class="error-text">{{ errors.address }}</span>
           </div>
         </div>
-
-        <a href="/panier" class="btn-back-to-cart">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
-          Retour au panier
-        </a>
       </div>
 
       <!-- Right: Summary Card -->
@@ -425,14 +476,28 @@ function handleCheckout() {
   overflow: hidden;
 }
 
-.delivery-info-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--accent-primary);
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+@media (max-width: 576px) {
+  .delivery-info-card {
+    padding: 24px 20px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .form-group.full-width {
+    grid-column: span 1;
+  }
 }
 
 .delivery-info-title {

@@ -15,20 +15,26 @@ const imageMap = {
 };
 
 const cart = ref([]);
+const isLoading = ref(true);
 
 onMounted(() => {
-  const savedCart = localStorage.getItem('modilo_cart');
-  if (savedCart) {
-    try {
+  try {
+    const savedCart = localStorage.getItem('modilo_cart');
+    if (savedCart) {
       cart.value = JSON.parse(savedCart);
-    } catch (e) {
-      console.error(e);
     }
+  } catch (e) {
+    console.error('Failed to read cart from localStorage:', e);
   }
+  isLoading.value = false;
 });
 
 function saveCart() {
-  localStorage.setItem('modilo_cart', JSON.stringify(cart.value));
+  try {
+    localStorage.setItem('modilo_cart', JSON.stringify(cart.value));
+  } catch (e) {
+    console.error('Failed to save cart to localStorage:', e);
+  }
   window.dispatchEvent(new CustomEvent('cart-updated'));
 }
 
@@ -70,7 +76,49 @@ function getWhatsAppCheckoutLink() {
       <div class="accent-line"></div>
     </div>
 
-    <div v-if="cart.length === 0" class="cart-empty-state">
+    <div v-if="isLoading" class="shimmer-grid">
+      <!-- Items column -->
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div class="shimmer-placeholder" style="display: flex; gap: 20px; align-items: center;">
+          <div class="shimmer-block" style="width: 80px; height: 80px; border-radius: 12px; flex-shrink: 0;"></div>
+          <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 10px;">
+            <div class="shimmer-block" style="width: 40%; height: 20px;"></div>
+            <div class="shimmer-block" style="width: 25%; height: 14px;"></div>
+            <div class="shimmer-block" style="width: 15%; height: 16px;"></div>
+          </div>
+        </div>
+        <div class="shimmer-placeholder" style="display: flex; gap: 20px; align-items: center;">
+          <div class="shimmer-block" style="width: 80px; height: 80px; border-radius: 12px; flex-shrink: 0;"></div>
+          <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 10px;">
+            <div class="shimmer-block" style="width: 35%; height: 20px;"></div>
+            <div class="shimmer-block" style="width: 20%; height: 14px;"></div>
+            <div class="shimmer-block" style="width: 15%; height: 16px;"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Summary column -->
+      <div>
+        <div class="shimmer-placeholder" style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="shimmer-block" style="width: 70%; height: 22px; margin-bottom: 10px;"></div>
+          <div style="display: flex; justify-content: space-between;">
+            <div class="shimmer-block" style="width: 40%; height: 16px;"></div>
+            <div class="shimmer-block" style="width: 20%; height: 16px;"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <div class="shimmer-block" style="width: 30%; height: 16px;"></div>
+            <div class="shimmer-block" style="width: 20%; height: 16px;"></div>
+          </div>
+          <hr style="border: 0; border-top: 1px solid var(--card-border); margin: 0;" />
+          <div style="display: flex; justify-content: space-between;">
+            <div class="shimmer-block" style="width: 25%; height: 20px;"></div>
+            <div class="shimmer-block" style="width: 30%; height: 20px;"></div>
+          </div>
+          <div class="shimmer-block" style="width: 100%; height: 52px; border-radius: 12px; margin-top: 10px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div v-else-if="cart.length === 0" class="cart-empty-state">
       <div class="empty-icon-wrapper">
         <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="9" cy="21" r="1"></circle>

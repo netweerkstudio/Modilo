@@ -102,3 +102,19 @@ body {
     background-position: -200% 0;
   }
 }
+
+.shimmer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 968px) {
+  .shimmer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
