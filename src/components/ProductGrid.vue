@@ -52,7 +52,7 @@ const topSellingProducts = computed(() => {
 });
 
 const tshirtProducts = computed(() => {
-  return products.filter(p => p.category === 't-shirt').slice(0, 15);
+  return products.filter(p => p.category === 't-shirt');
 });
 
 onMounted(() => {
