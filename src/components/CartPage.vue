@@ -88,7 +88,7 @@ function getWhatsAppCheckoutLink() {
       <div class="cart-items-section">
         <div v-for="item in cart" :key="item.id + '-' + item.size + '-' + item.color" class="cart-page-item">
           <div class="item-img-wrapper">
-            <img :src="imageMap[item.image] || item.image" :alt="item.title" :style="{ filter: item.cssFilter || 'none' }" />
+            <img :src="imageMap[item.image] || item.image" :alt="item.title" />
           </div>
           
           <div class="item-details">

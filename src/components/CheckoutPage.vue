@@ -278,7 +278,7 @@ function handleCheckout() {
           <div class="items-list-compact">
             <div v-for="item in cart" :key="item.id + '-' + item.size + '-' + item.color" class="compact-item">
               <div class="compact-item-img">
-                <img :src="imageMap[item.image] || item.image" :alt="item.title" :style="{ filter: item.cssFilter || 'none' }" />
+                <img :src="imageMap[item.image] || item.image" :alt="item.title" />
                 <span class="compact-item-qty">{{ item.quantity }}</span>
               </div>
               <div class="compact-item-details">

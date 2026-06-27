@@ -55,41 +55,47 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
 
           <!-- Left: Image Gallery -->
           <div class="gallery-pane">
+            {product.images && product.images.length > 1 && (
+              <div class="thumb-col">
+                {product.images.map((img, i) => (
+                  <button class={`thumb-btn${i === 0 ? ' active' : ''}`} data-img={imageAssets[img] || img}>
+                    <img src={imageAssets[img] || img} alt={`Vue ${i+1}`} />
+                  </button>
+                ))}
+              </div>
+            )}
             <div class="main-image-box" id="main-img-box">
               <img
                 id="main-product-img"
                 src={imageAssets[product.image] || product.image}
                 alt={product.title}
-                style={product.cssFilter ? `filter: ${product.cssFilter}` : ''}
                 class="main-product-img"
               />
             </div>
-            {product.images && product.images.length > 1 && (
-              <div class="thumb-row">
-                {product.images.map((img, i) => (
-                  <button class={`thumb-btn${i === 0 ? ' active' : ''}`} data-img={imageAssets[img] || img} data-filter={product.cssFilter || ''}>
-                    <img src={imageAssets[img] || img} alt={`Vue ${i+1}`} style={product.cssFilter ? `filter: ${product.cssFilter}` : ''} />
-                  </button>
-                ))}
-              </div>
-            )}
           </div> 
 
           <!-- Right: Product Info -->
           <div class="info-pane">
             <span class="product-cat-label">{catLabel}</span>
             <h1 class="product-name">{product.title}</h1>
-            <p class="product-price">{product.price} <span class="price-currency">MAD</span></p>
+            <div class="price-share-row">
+              <p class="product-price">{product.price} <span class="price-currency">MAD</span></p>
+              <button class="btn-share" id="share-btn" aria-label="Partager ce produit">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                  <polyline points="16 6 12 2 8 6"></polyline>
+                  <line x1="12" y1="2" x2="12" y2="15"></line>
+                </svg>
+                <span>Partager</span>
+              </button>
+            </div>
 
             <div class="info-divider"></div>
 
             <!-- Size selector -->
             {product.variations?.sizes && (
               <div class="selector-group" id="size-group">
-                <div class="selector-label-row">
-                  <span class="selector-label">Taille</span>
-                  <span class="size-guide-link">Guide des tailles</span>
-                </div>
+                <span class="selector-label">Taille</span>
                 <div class="size-options" id="size-options">
                   {product.variations.sizes.map((size, i) => (
                     <button
@@ -149,11 +155,11 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
                 <span>Paiement à la livraison</span>
               </div>
               <div class="trust-badge">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
                 <span>Livraison dans tout le Maroc</span>
               </div>
               <div class="trust-badge">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
                 <span>Qualité premium garantie</span>
               </div>
             </div>
@@ -195,8 +201,27 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
                 </svg>
                 Commande Instantanée
               </div>
-              <h3 class="delivery-title">Commande Rapide</h3>
-              <p class="delivery-subtitle">Remplissez vos coordonnées ci-dessous pour finaliser votre achat via WhatsApp.</p>
+              <h3 class="delivery-title">Achat Express — Commande Rapide</h3>
+              <p class="delivery-subtitle">Pas d'inscription requise. Remplissez simplement vos informations ci-dessous pour finaliser votre commande directement sur WhatsApp. Paiement à la livraison.</p>
+            </div>
+
+            <!-- Order summary preview inside card -->
+            <div class="quick-order-preview">
+              <div class="preview-img-wrapper">
+                <img src={product.image} alt={product.title} id="quick-preview-img" />
+              </div>
+              <div class="preview-details">
+                <span class="preview-name">{product.title}</span>
+                <span class="preview-meta">
+                  Taille : <span id="quick-preview-size">-</span>
+                  {product.variations?.colors && (
+                    <span id="quick-preview-color-wrapper"> — Couleur : <span id="quick-preview-color">-</span></span>
+                  )}
+                </span>
+              </div>
+              <div class="preview-price-qty">
+                <span class="preview-price">{product.price} MAD</span>
+              </div>
             </div>
             
             <div class="form-grid">
@@ -233,7 +258,7 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
                 <span class="error-text" id="error-phone" style="display: none;"></span>
               </div>
 
-              <div class="form-group">
+              <div class="form-group" id="p-city-group">
                 <label for="p-city-select" class="form-label">Ville *</label>
                 <div class="input-icon-wrapper">
                   <svg class="input-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -276,7 +301,7 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
                 <textarea 
                   id="p-address" 
                   class="form-input has-icon" 
-                  placeholder="Ex: Boulevard Mohamed V, N° 12, Appt 4" 
+                  placeholder="Ex: Boulevard Mohamed V, N° 134, Appt 4" 
                   rows="2"
                   style="min-height: 80px;"
                 ></textarea>
@@ -311,13 +336,34 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
   let selectedSize = product.variations?.sizes?.[0] || '';
   let selectedColor = product.variations?.colors?.[0] || '';
 
+  function updateQuickPreview() {
+    const sizeEl = document.getElementById('quick-preview-size');
+    if (sizeEl) sizeEl.textContent = selectedSize || 'Non sélectionnée';
+
+    const colorEl = document.getElementById('quick-preview-color');
+    if (colorEl) colorEl.textContent = selectedColor || 'Non sélectionnée';
+  }
+
+  // Initialize preview
+  updateQuickPreview();
+
   // Load customer details from localStorage
   const fullnameInput = document.getElementById('p-fullname');
   const phoneInput = document.getElementById('p-phone');
   const citySelect = document.getElementById('p-city-select');
+  const cityGroup = document.getElementById('p-city-group');
   const customCityGroup = document.getElementById('p-custom-city-group');
   const customCityInput = document.getElementById('p-custom-city');
   const addressInput = document.getElementById('p-address');
+
+  function updateCityFieldWidth() {
+    if (!citySelect || !cityGroup) return;
+    if (citySelect.value === 'tanger') {
+      cityGroup.classList.add('full-width');
+    } else {
+      cityGroup.classList.remove('full-width');
+    }
+  }
 
   if (fullnameInput) fullnameInput.value = localStorage.getItem('modilo_cust_name') || '';
   if (phoneInput) phoneInput.value = localStorage.getItem('modilo_cust_phone') || '';
@@ -326,6 +372,7 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
     if (citySelect.value === 'autre' && customCityGroup) {
       customCityGroup.style.display = 'block';
     }
+    updateCityFieldWidth();
   }
   if (customCityInput) customCityInput.value = localStorage.getItem('modilo_cust_city_custom') || '';
   if (addressInput) addressInput.value = localStorage.getItem('modilo_cust_address') || '';
@@ -352,6 +399,7 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
 
   citySelect?.addEventListener('change', () => {
     saveCustomerInfo();
+    updateCityFieldWidth();
     if (citySelect.value === 'autre') {
       if (customCityGroup) customCityGroup.style.display = 'block';
     } else {
@@ -367,6 +415,7 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
       document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       selectedSize = btn.dataset.size;
+      updateQuickPreview();
     });
   });
 
@@ -378,6 +427,7 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
       selectedColor = btn.dataset.color;
       const label = document.getElementById('selected-color-label');
       if (label) label.textContent = selectedColor;
+      updateQuickPreview();
     });
   });
 
@@ -389,7 +439,6 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
       const mainImg = document.getElementById('main-product-img');
       if (mainImg) {
         mainImg.src = btn.dataset.img;
-        mainImg.style.filter = btn.dataset.filter || '';
       }
     });
   });
@@ -497,14 +546,83 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
         size: selectedSize,
         color: selectedColor,
         quantity: 1,
-        image: product.image,
-        cssFilter: product.cssFilter || null
+        image: product.image
       });
     }
     localStorage.setItem('modilo_cart', JSON.stringify(cart));
     window.dispatchEvent(new CustomEvent('cart-updated'));
-    window.location.href = '/cart';
+    window.location.href = '/panier';
   });
+
+  // Share button logic
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', async () => {
+      const shareData = {
+        title: document.title,
+        text: `Découvrez le produit ${product.title} chez Modilo !`,
+        url: window.location.href
+      };
+
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        try {
+          await navigator.share(shareData);
+          return;
+        } catch (err) {
+          console.log('Share canceled or failed', err);
+        }
+      }
+
+      // Fallback: Copy link
+      let copied = false;
+      const textToCopy = window.location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          copied = true;
+        } catch (err) {
+          console.error('navigator.clipboard failed', err);
+        }
+      }
+
+      if (!copied) {
+        try {
+          const textArea = document.createElement('textarea');
+          textArea.value = textToCopy;
+          textArea.style.position = 'fixed';
+          textArea.style.top = '0';
+          textArea.style.left = '0';
+          textArea.style.width = '2em';
+          textArea.style.height = '2em';
+          textArea.style.padding = '0';
+          textArea.style.border = 'none';
+          textArea.style.outline = 'none';
+          textArea.style.boxShadow = 'none';
+          textArea.style.background = 'transparent';
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          copied = document.execCommand('copy');
+          document.body.removeChild(textArea);
+        } catch (err) {
+          console.error('Fallback copy failed', err);
+        }
+      }
+
+      if (copied) {
+        const span = shareBtn.querySelector('span');
+        if (span) {
+          const originalText = span.textContent;
+          span.textContent = 'Lien copié !';
+          shareBtn.classList.add('copied');
+          setTimeout(() => {
+            span.textContent = originalText;
+            shareBtn.classList.remove('copied');
+          }, 2000);
+        }
+      }
+    });
+  }
 
   // Scroll to fast order form when clicking "Order now"
   document.getElementById('order-now-btn')?.addEventListener('click', (e) => {
@@ -513,7 +631,8 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
     if (formEl) {
       formEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  });</script>
+  });
+</script>
 
 <style>
   .product-page {
@@ -573,17 +692,23 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
   /* ── Gallery ─────────────────────── */
   .gallery-pane {
     position: sticky;
-    top: 90px;
+    top: 130px;
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: row;
+    gap: 16px;
+    align-items: flex-start;
   }
 
   @media (max-width: 900px) {
-    .gallery-pane { position: static; }
+    .gallery-pane {
+      position: static;
+      flex-direction: column;
+      gap: 12px;
+    }
   }
 
   .main-image-box {
+    flex-grow: 1;
     background: var(--bg-secondary);
     border: 1px solid var(--card-border);
     border-radius: 20px;
@@ -605,9 +730,32 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
     transform: scale(1.03);
   }
 
-  .thumb-row {
+  .thumb-col {
     display: flex;
+    flex-direction: column;
     gap: 10px;
+    flex-shrink: 0;
+    max-height: 500px;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  .thumb-col::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .thumb-col {
+      flex-direction: row;
+      order: 2;
+      overflow-x: auto;
+      max-height: none;
+      width: 100%;
+    }
+    .main-image-box {
+      order: 1;
+      width: 100%;
+    }
   }
 
   .thumb-btn {
@@ -663,6 +811,44 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
 
   @media (max-width: 600px) {
     .product-name { font-size: 1.7rem; }
+  }
+
+  .price-share-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .btn-share {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .btn-share:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .btn-share.copied {
+    background: rgba(37, 211, 102, 0.1);
+    border-color: #25d366;
+    color: #25d366;
+  }
+
+  .btn-share svg {
+    flex-shrink: 0;
   }
 
   .product-price {
@@ -840,23 +1026,39 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
   /* ── Trust Badges ───────────────── */
   .trust-badges {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 24px;
+    padding: 12px 18px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
   }
 
   .trust-badge {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.82rem;
+    gap: 8px;
+    font-size: 0.76rem;
     color: var(--text-secondary);
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.2px;
   }
 
   .trust-badge svg {
-    color: var(--text-primary);
+    color: var(--accent-primary);
     flex-shrink: 0;
+  }
+
+  @media (max-width: 600px) {
+    .trust-badges {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px;
+    }
   }
 
   /* ── Description & Specs ────────── */
@@ -910,9 +1112,7 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
   /* ── Product Delivery Form ─────────── */
   .product-delivery-section {
     margin-top: 60px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 100%;
     scroll-margin-top: 140px; /* Offset to account for sticky navbar */
   }
 
@@ -927,18 +1127,73 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
     scroll-margin-top: 140px;
   }
 
-  .product-delivery-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
+  /* Quick Order Preview */
+  .quick-order-preview {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: var(--bg-primary);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    margin-bottom: 30px;
+  }
+
+  .preview-img-wrapper {
+    width: 60px;
+    height: 60px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .preview-img-wrapper img {
+    width: 100%;
     height: 100%;
-    background: var(--accent-primary);
+    object-fit: cover;
+  }
+
+  .preview-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex-grow: 1;
+  }
+
+  .preview-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .preview-meta {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  .preview-meta span {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .preview-price-qty {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .preview-price {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--accent-primary);
   }
 
   .delivery-card-header {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 
   .delivery-title-badge {
@@ -993,6 +1248,10 @@ const catLabel = product.category === 'hoodie' ? 'Sweat à Capuche' : 'T-Shirt';
     flex-direction: column;
     gap: 8px;
     scroll-margin-top: 140px;
+  }
+
+  .form-group.full-width {
+    grid-column: span 2;
   }
 
   .form-group:last-of-type {

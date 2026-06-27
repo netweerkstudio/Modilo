@@ -74,7 +74,7 @@ onMounted(() => {
 
   // Expose global cart page redirect
   window.__openModiloCart = () => {
-    window.location.href = '/cart';
+    window.location.href = '/panier';
   };
 
   // Dispatch loaded cart event to navbar
@@ -82,7 +82,7 @@ onMounted(() => {
 
   // Redirect to cart page if requested from URL
   if (urlParams.get('open_cart') === 'true') {
-    window.location.href = '/cart';
+    window.location.href = '/panier';
   }
 });
 
@@ -132,13 +132,12 @@ function addToCart(product) {
       size,
       color,
       quantity: 1,
-      image: product.resolvedImage,
-      cssFilter: product.cssFilter
+      image: product.resolvedImage
     });
   }
   saveCart();
   closeQuickView();
-  window.location.href = '/cart';
+  window.location.href = '/panier';
 }
 
 function updateQuantity(item, amount) {
@@ -210,7 +209,7 @@ function quickAddToCart(product) {
           :href="'/produit/' + product.id"
         >
           <div class="featured-img-wrapper">
-            <img :src="product.resolvedImage" :alt="product.title" class="card-image" :style="{ filter: product.cssFilter || 'none' }" />
+            <img :src="product.resolvedImage" :alt="product.title" class="card-image" />
             <div class="featured-overlay">
               <span class="view-label">Voir le produit</span>
             </div>
@@ -256,7 +255,7 @@ function quickAddToCart(product) {
           :href="'/produit/' + product.id"
         >
           <div class="card-image-wrapper">
-            <img :src="product.resolvedImage" :alt="product.title" class="card-image" :style="{ filter: product.cssFilter || 'none' }" />
+            <img :src="product.resolvedImage" :alt="product.title" class="card-image" />
             <div class="card-overlay">
               <span class="view-label">Voir le produit</span>
             </div>
@@ -295,7 +294,7 @@ function quickAddToCart(product) {
           
           <div class="modal-body">
             <div class="modal-image-pane">
-              <img :src="activeQuickView.resolvedImage" :alt="activeQuickView.title" :style="{ filter: activeQuickView.cssFilter || 'none' }" />
+              <img :src="activeQuickView.resolvedImage" :alt="activeQuickView.title" />
             </div>  
             
             <div class="modal-info-pane">
@@ -374,7 +373,7 @@ function quickAddToCart(product) {
     </Transition>
 
     <!-- Floating Cart Toggle Button -->
-    <a v-if="cartItemCount > 0" class="floating-cart-btn" href="/cart" aria-label="Voir le Panier">
+    <a v-if="cartItemCount > 0" class="floating-cart-btn" href="/panier" aria-label="Voir le Panier">
       <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="9" cy="21" r="1"></circle>
         <circle cx="20" cy="21" r="1"></circle>
