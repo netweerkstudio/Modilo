@@ -260,5 +260,152 @@
       { "name": "Coupe", "value": "Unisexe" }
     ],
     "topSelling": true
+  },
+  {
+    "id": "modilo-dragonball-tee",
+    "title": "Tee-shirt Dragon Ball",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/dragon-ball/Gemini_Generated_Image_tvwwm7tvwwm7tvww_1.png",
+    "images": [
+      "/products/dragon-ball/Gemini_Generated_Image_tvwwm7tvwwm7tvww_1.png",
+      "/products/dragon-ball/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
+      "/products/dragon-ball/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+    ],
+    "description": "Un t-shirt en édition spéciale inspiré de l'univers mythique de Dragon Ball. Confectionné dans notre coton lourd premium de 280 GSM, offrant confort, structure et durabilité.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Dragon Ball"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-goku-tee",
+    "title": "Tee-shirt Goku",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/goku/fa4fe416-d815-453d-8d95-6b0c8b240520.jpeg",
+    "images": [
+      "/products/goku/fa4fe416-d815-453d-8d95-6b0c8b240520.jpeg",
+      "/products/goku/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
+      "/products/goku/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+    ],
+    "description": "Une édition spéciale rendant hommage à Goku, le légendaire guerrier Saiyan. Confectionné dans un coton de 280 GSM de grande qualité. Coupe décontractée, col épais et finitions soignées.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Goku"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-uchiha-tee",
+    "title": "Tee-shirt Uchiha",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/uchiha/Gemini_Generated_Image_g03uyjg03uyjg03u.png",
+    "images": [
+      "/products/uchiha/Gemini_Generated_Image_g03uyjg03uyjg03u.png",
+      "/products/uchiha/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
+      "/products/uchiha/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+    ],
+    "description": "Un design unique dédié au clan légendaire Uchiha, arborant des visuels artistiques saisissants. Conçu en coton biologique premium ultra-confortable de 280 GSM avec une coupe moderne relaxed.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Uchiha"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-oldmoney-tee",
+    "title": "Tee-shirt Old Money",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/old-money/Gemini_Generated_Image_uu3447uu3447uu34.png",
+    "images": [
+      "/products/old-money/Gemini_Generated_Image_uu3447uu3447uu34.png",
+      "/products/old-money/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
+      "/products/old-money/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+    ],
+    "description": "Un t-shirt inspiré de l'esthétique classique et intemporelle 'Old Money'. Confectionné dans un coton de 280 GSM de grande qualité. Coupe décontractée, col épais et finitions soignées.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Old Money"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-richlife-tee",
+    "title": "Tee-shirt Rich Life",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/rich-life/Gemini_Generated_Image_2c1orh2c1orh2c1o.png",
+    "images": [
+      "/products/rich-life/Gemini_Generated_Image_2c1orh2c1orh2c1o.png",
+      "/products/rich-life/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
+      "/products/rich-life/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+    ],
+    "description": "Une édition spéciale célébrant la vie de luxe et le prestige, avec une illustration graphique moderne et percutante. Fabriqué en coton épais de 280 GSM avec col côtelé robuste et coupe relaxed.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Rich Life"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-santorini-tee",
+    "title": "Tee-shirt Santorini",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/santorini/Gemini_Generated_Image_iph8h9iph8h9iph8.png",
+    "images": [
+      "/products/santorini/Gemini_Generated_Image_iph8h9iph8h9iph8.png",
+      "/products/santorini/ea60a62a40b7b0037490ae84ee423791.jpg",
+      "/products/santorini/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
+      "/products/santorini/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+    ],
+    "description": "Une édition limitée célébrant les magnifiques paysages de Santorin et ses célèbres toits bleus. Confectionné dans notre coton lourd premium de 280 GSM.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Santorini"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
   }
 ]
+
+
