@@ -1,7 +1,7 @@
 [
   {
     "id": "modilo-minimalist-hoodie",
-    "title": "Modilo Minimalist Hoodie",
+    "title": "Sweat à Capuche Minimaliste Modilo",
     "price": 450,
     "category": "hoodie",
     "image": "../assets/hoodie_black.png",
@@ -20,16 +20,65 @@
     "topSelling": true
   },
   {
-    "id": "modilo-amalfi-tee",
-    "title": "Tee-shirt Amalfi White",
+    "id": "modilo-santorini-tee",
+    "title": "T-shirt Santorini - Édition Limitée",
     "price": 240,
     "category": "t-shirt",
-    "image": "/products/italy-product/Gemini_Generated_Image_dxdq10dxdq10dxdq.png",
+    "image": "/products/santorini/tshirt-santorini-print.png",
     "images": [
-      "/products/italy-product/Gemini_Generated_Image_dxdq10dxdq10dxdq.png",
-      "/products/italy-product/Gemini_Generated_Image_b92jq3b92jq3b92j.png",
-      "/products/italy-product/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
-      "/products/italy-product/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+      "/products/santorini/tshirt-santorini-print.png",
+      "/products/santorini/tshirt-santorini-lifestyle.jpg",
+      "/products/santorini/tshirt-santorini-front.png",
+      "/products/santorini/tshirt-santorini-back.png"
+    ],
+    "description": "Une édition limitée célébrant les magnifiques paysages de Santorin et ses célèbres toits bleus. Confectionné dans notre coton lourd premium de 280 GSM.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Santorini"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-oldmoney-tee",
+    "title": "T-shirt Old Money - Style Classique",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/old-money/tshirt-oldmoney-print.png",
+    "images": [
+      "/products/old-money/tshirt-oldmoney-print.png",
+      "/products/old-money/tshirt-oldmoney-front.png",
+      "/products/old-money/tshirt-oldmoney-back.png"
+    ],
+    "description": "Un t-shirt inspiré de l'esthétique classique et intemporelle 'Old Money'. Confectionné dans un coton de 280 GSM de grande qualité. Coupe décontractée, col épais et finitions soignées.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Old Money"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-amalfi-tee",
+    "title": "T-shirt Amalfi Positano - Blanc",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/amalfi-italie/tshirt-amalfi-print.png",
+    "images": [
+      "/products/amalfi-italie/tshirt-amalfi-print.png",
+      "/products/amalfi-italie/tshirt-amalfi-detail.png",
+      "/products/amalfi-italie/tshirt-amalfi-front.png",
+      "/products/amalfi-italie/tshirt-amalfi-back.png"
     ],
     "description": "Une édition limitée célébrant la douceur de vivre de la côte amalfitaine. Confectionné dans un coton biologique haut de gamme de 280 GSM, ce t-shirt blanc arbore sur le dos une illustration artistique exclusive de Positano surplombée de la signature Modilo. Coupe relaxed, col en tricot côtelé épais et coutures renforcées pour une tenue parfaite.",
     "variations": {
@@ -46,15 +95,15 @@
   },
   {
     "id": "modilo-tangier-tee",
-    "title": "Tee-shirt Tanger White",
+    "title": "T-shirt Tanger Médina - Blanc",
     "price": 240,
     "category": "t-shirt",
-    "image": "/products/tangier-product/Gemini_Generated_Image_o3gk04o3gk04o3gk.png",
+    "image": "/products/tanger-maroc/tshirt-tanger-print.png",
     "images": [
-      "/products/tangier-product/Gemini_Generated_Image_o3gk04o3gk04o3gk.png",
-      "/products/tangier-product/Gemini_Generated_Image_om5psuom5psuom5p.png",
-      "/products/tangier-product/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
-      "/products/tangier-product/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+      "/products/tanger-maroc/tshirt-tanger-print.png",
+      "/products/tanger-maroc/tshirt-tanger-detail.png",
+      "/products/tanger-maroc/tshirt-tanger-front.png",
+      "/products/tanger-maroc/tshirt-tanger-back.png"
     ],
     "description": "Une édition spéciale inspirée de la perle du Nord, Tanger. Confectionné dans un coton biologique lourd de 280 GSM, ce t-shirt blanc arbore sur le dos une illustration artistique exclusive rendant hommage à la ville du détroit. Coupe relaxed contemporaine, col épais et finitions haut de gamme.",
     "variations": {
@@ -70,16 +119,42 @@
     "topSelling": true
   },
   {
-    "id": "modilo-stranger-things-tee",
-    "title": "Tee-shirt Stranger Things",
+    "id": "modilo-richlife-tee",
+    "title": "T-shirt Rich Life - Signature",
     "price": 240,
     "category": "t-shirt",
-    "image": "/products/stranger-things/Gemini_Generated_Image_2hu3zz2hu3zz2hu3.png",
+    "image": "/products/rich-life/tshirt-richlife-print.png",
     "images": [
-      "/products/stranger-things/Gemini_Generated_Image_2hu3zz2hu3zz2hu3.png",
-      "/products/stranger-things/Gemini_Generated_Image_2p27sw2p27sw2p27.png",
-      "/products/stranger-things/Gemini_Generated_Image_pvyzkepvyzkepvyz.png",
-      "/products/stranger-things/8411d2c9-24c0-41ca-af0c-10d0cdba2610.jpeg"
+      "/products/rich-life/tshirt-richlife-print.png",
+      "/products/rich-life/tshirt-richlife-front.png",
+      "/products/rich-life/tshirt-richlife-back.png"
+    ],
+    "description": "Une édition spéciale célébrant la vie de luxe et le prestige, avec une illustration graphique moderne et percutante. Fabriqué en coton épais de 280 GSM avec col côtelé robuste et coupe relaxed.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Rich Life"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-stranger-things-tee",
+    "title": "T-shirt Stranger Things - Édition Spéciale",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/stranger-things/tshirt-strangerthings-print.png",
+    "images": [
+      "/products/stranger-things/tshirt-strangerthings-print.png",
+      "/products/stranger-things/tshirt-strangerthings-detail-1.png",
+      "/products/stranger-things/tshirt-strangerthings-detail-2.png",
+      "/products/stranger-things/tshirt-strangerthings-lifestyle.jpeg",
+      "/products/stranger-things/tshirt-strangerthings-front.png",
+      "/products/stranger-things/tshirt-strangerthings-back.png"
     ],
     "description": "Un t-shirt en édition spéciale inspiré de l'univers mystérieux de Stranger Things. Confectionné dans un coton lourd haut de gamme de 280 GSM pour une structure et un confort parfaits. Arborant des visuels uniques, ce modèle propose une coupe relaxed moderne avec col côtelé épais.",
     "variations": {
@@ -95,38 +170,13 @@
     "topSelling": true
   },
   {
-    "id": "modilo-palestine-tee",
-    "title": "Tee-shirt Palestine",
-    "price": 240,
-    "category": "t-shirt",
-    "image": "/products/palestine/Gemini_Generated_Image_re4bvkre4bvkre4b.png",
-    "images": [
-      "/products/palestine/Gemini_Generated_Image_re4bvkre4bvkre4b.png",
-      "/products/palestine/Gemini_Generated_Image_geltwrgeltwrgelt.png",
-      "/products/palestine/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
-      "/products/palestine/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
-    ],
-    "description": "Une édition spéciale dédiée à la Palestine, arborant un design artistique raffiné sur la poitrine. Confectionné dans un coton de 280 GSM d'une grande douceur et d'une durabilité exceptionnelle. Coupe décontractée, col épais et finitions soignées.",
-    "variations": {
-      "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc Palestine", "Gris Palestine"]
-    },
-    "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" },
-      { "name": "Poids", "value": "280 GSM Heavyweight" },
-      { "name": "Fit", "value": "Relaxed Boxy Fit" },
-      { "name": "Coupe", "value": "Unisexe" }
-    ],
-    "topSelling": true
-  },
-  {
     "id": "modilo-kufia-tee",
-    "title": "Tee-shirt Kufia",
+    "title": "T-shirt Keffieh Traditionnel",
     "price": 240,
     "category": "t-shirt",
-    "image": "/products/kufia/Gemini_Generated_Image_f9ismkf9ismkf9is.png",
+    "image": "/products/keffieh/tshirt-keffieh-print.png",
     "images": [
-      "/products/kufia/Gemini_Generated_Image_f9ismkf9ismkf9is.png"
+      "/products/keffieh/tshirt-keffieh-print.png"
     ],
     "description": "Un t-shirt inspiré des motifs traditionnels du Keffieh (Kufia), symbolisant l'héritage et la solidarité. Conçu en coton biologique premium ultra-confortable de 280 GSM avec une coupe moderne relaxed.",
     "variations": {
@@ -142,15 +192,40 @@
     "topSelling": true
   },
   {
-    "id": "modilo-spider-tee",
-    "title": "Tee-shirt Spider",
+    "id": "modilo-palestine-tee",
+    "title": "T-shirt Palestine Solidaire",
     "price": 240,
     "category": "t-shirt",
-    "image": "/products/spider/Gemini_Generated_Image_6otlgl6otlgl6otl.png",
+    "image": "/products/palestine/tshirt-palestine-print.png",
     "images": [
-      "/products/spider/Gemini_Generated_Image_6otlgl6otlgl6otl.png",
-      "/products/spider/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
-      "/products/spider/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+      "/products/palestine/tshirt-palestine-print.png",
+      "/products/palestine/tshirt-palestine-detail.png",
+      "/products/palestine/tshirt-palestine-front.png",
+      "/products/palestine/tshirt-palestine-back.png"
+    ],
+    "description": "Une édition spéciale dédiée à la Palestine, arborant un design artistique raffiné sur la poitrine. Confectionné dans un coton de 280 GSM d'une grande douceur et d'une durabilité exceptionnelle. Coupe décontractée, col épais et finitions soignées.",
+    "variations": {
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blanc Palestine", "Gris Palestine"]
+    },
+    "specifications": [
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Poids", "value": "280 GSM Heavyweight" },
+      { "name": "Fit", "value": "Relaxed Boxy Fit" },
+      { "name": "Coupe", "value": "Unisexe" }
+    ],
+    "topSelling": true
+  },
+  {
+    "id": "modilo-spider-tee",
+    "title": "T-shirt Araignée Artistique",
+    "price": 240,
+    "category": "t-shirt",
+    "image": "/products/araignee/tshirt-araignee-print.png",
+    "images": [
+      "/products/araignee/tshirt-araignee-print.png",
+      "/products/araignee/tshirt-araignee-front.png",
+      "/products/araignee/tshirt-araignee-back.png"
     ],
     "description": "Une édition spéciale mystique arborant une illustration d'araignée artistique finement détaillée sur le dos. Confectionné dans un coton de 280 GSM de grande qualité. Coupe décontractée, col épais et finitions haut de gamme.",
     "variations": {
@@ -167,14 +242,14 @@
   },
   {
     "id": "modilo-tree-tee",
-    "title": "Tee-shirt Tree",
+    "title": "T-shirt Arbre de Vie",
     "price": 240,
     "category": "t-shirt",
-    "image": "/products/tree/Gemini_Generated_Image_a1cwqga1cwqga1cw.png",
+    "image": "/products/arbre-de-vie/tshirt-arbredevie-print.png",
     "images": [
-      "/products/tree/Gemini_Generated_Image_a1cwqga1cwqga1cw.png",
-      "/products/tree/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
-      "/products/tree/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+      "/products/arbre-de-vie/tshirt-arbredevie-print.png",
+      "/products/arbre-de-vie/tshirt-arbredevie-front.png",
+      "/products/arbre-de-vie/tshirt-arbredevie-back.png"
     ],
     "description": "Une édition spéciale nature arborant une illustration d'arbre artistique finement détaillée sur le dos. Confectionné dans un coton de 280 GSM de grande qualité. Coupe décontractée, col épais et finitions soignées.",
     "variations": {
@@ -191,14 +266,14 @@
   },
   {
     "id": "modilo-supra-tee",
-    "title": "Tee-shirt Supra",
+    "title": "T-shirt Supra Sport",
     "price": 240,
     "category": "t-shirt",
-    "image": "/products/supra/Gemini_Generated_Image_j65vmgj65vmgj65v.png",
+    "image": "/products/supra-nippon/tshirt-supra-print.png",
     "images": [
-      "/products/supra/Gemini_Generated_Image_j65vmgj65vmgj65v.png",
-      "/products/supra/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
-      "/products/supra/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+      "/products/supra-nippon/tshirt-supra-print.png",
+      "/products/supra-nippon/tshirt-supra-front.png",
+      "/products/supra-nippon/tshirt-supra-back.png"
     ],
     "description": "Une édition limitée célébrant la légendaire sportive nippone Supra, avec une illustration graphique percutante au dos. Confectionné dans un coton lourd de 280 GSM pour un confort et une structure parfaits.",
     "variations": {
@@ -215,14 +290,14 @@
   },
   {
     "id": "modilo-samurai-tee",
-    "title": "Tee-shirt Samurai",
+    "title": "T-shirt Samouraï Guerrier",
     "price": 240,
     "category": "t-shirt",
-    "image": "/products/samurai/samurai.png",
+    "image": "/products/samourai-shogun/tshirt-samourai-shogun-print.png",
     "images": [
-      "/products/samurai/samurai.png",
-      "/products/samurai/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
-      "/products/samurai/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+      "/products/samourai-shogun/tshirt-samourai-shogun-print.png",
+      "/products/samourai-shogun/tshirt-samourai-shogun-front.png",
+      "/products/samourai-shogun/tshirt-samourai-shogun-back.png"
     ],
     "description": "Un t-shirt unique arborant un design de guerrier samouraï traditionnel sur le dos. Fabriqué en coton épais de 280 GSM avec col côtelé robuste et coupe relaxed.",
     "variations": {
@@ -239,14 +314,14 @@
   },
   {
     "id": "modilo-samurai-2-tee",
-    "title": "Tee-shirt Samurai V2",
+    "title": "T-shirt Samouraï Shogun",
     "price": 240,
     "category": "t-shirt",
-    "image": "/products/samurai2/ad86e0d9-2480-48ad-8d53-772055dbd0bc.jpeg",
+    "image": "/products/samourai-ronin/tshirt-samourai-ronin-print.jpeg",
     "images": [
-      "/products/samurai2/ad86e0d9-2480-48ad-8d53-772055dbd0bc.jpeg",
-      "/products/samurai2/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
-      "/products/samurai2/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+      "/products/samourai-ronin/tshirt-samourai-ronin-print.jpeg",
+      "/products/samourai-ronin/tshirt-samourai-ronin-front.png",
+      "/products/samourai-ronin/tshirt-samourai-ronin-back.png"
     ],
     "description": "Seconde variante du design Samouraï avec une illustration artistique alternative du guerrier nippon. Confectionné dans notre coton lourd premium de 280 GSM.",
     "variations": {
@@ -263,14 +338,14 @@
   },
   {
     "id": "modilo-dragonball-tee",
-    "title": "Tee-shirt Dragon Ball",
+    "title": "T-shirt Dragon Ball Z",
     "price": 240,
     "category": "t-shirt",
-    "image": "/products/dragon-ball/Gemini_Generated_Image_tvwwm7tvwwm7tvww_1.png",
+    "image": "/products/dragon-ball/tshirt-dragonball-print.png",
     "images": [
-      "/products/dragon-ball/Gemini_Generated_Image_tvwwm7tvwwm7tvww_1.png",
-      "/products/dragon-ball/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
-      "/products/dragon-ball/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+      "/products/dragon-ball/tshirt-dragonball-print.png",
+      "/products/dragon-ball/tshirt-dragonball-front.png",
+      "/products/dragon-ball/tshirt-dragonball-back.png"
     ],
     "description": "Un t-shirt en édition spéciale inspiré de l'univers mythique de Dragon Ball. Confectionné dans notre coton lourd premium de 280 GSM, offrant confort, structure et durabilité.",
     "variations": {
@@ -287,14 +362,14 @@
   },
   {
     "id": "modilo-goku-tee",
-    "title": "Tee-shirt Goku",
+    "title": "T-shirt Goku Légende",
     "price": 240,
     "category": "t-shirt",
-    "image": "/products/goku/fa4fe416-d815-453d-8d95-6b0c8b240520.jpeg",
+    "image": "/products/goku-saiyan/tshirt-goku-print.jpeg",
     "images": [
-      "/products/goku/fa4fe416-d815-453d-8d95-6b0c8b240520.jpeg",
-      "/products/goku/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
-      "/products/goku/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+      "/products/goku-saiyan/tshirt-goku-print.jpeg",
+      "/products/goku-saiyan/tshirt-goku-front.png",
+      "/products/goku-saiyan/tshirt-goku-back.png"
     ],
     "description": "Une édition spéciale rendant hommage à Goku, le légendaire guerrier Saiyan. Confectionné dans un coton de 280 GSM de grande qualité. Coupe décontractée, col épais et finitions soignées.",
     "variations": {
@@ -311,14 +386,14 @@
   },
   {
     "id": "modilo-uchiha-tee",
-    "title": "Tee-shirt Uchiha",
+    "title": "T-shirt Clan Uchiha",
     "price": 240,
     "category": "t-shirt",
-    "image": "/products/uchiha/Gemini_Generated_Image_g03uyjg03uyjg03u.png",
+    "image": "/products/uchiha-clan/tshirt-uchiha-print.png",
     "images": [
-      "/products/uchiha/Gemini_Generated_Image_g03uyjg03uyjg03u.png",
-      "/products/uchiha/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
-      "/products/uchiha/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
+      "/products/uchiha-clan/tshirt-uchiha-print.png",
+      "/products/uchiha-clan/tshirt-uchiha-front.png",
+      "/products/uchiha-clan/tshirt-uchiha-back.png"
     ],
     "description": "Un design unique dédié au clan légendaire Uchiha, arborant des visuels artistiques saisissants. Conçu en coton biologique premium ultra-confortable de 280 GSM avec une coupe moderne relaxed.",
     "variations": {
@@ -332,80 +407,5 @@
       { "name": "Coupe", "value": "Unisexe" }
     ],
     "topSelling": true
-  },
-  {
-    "id": "modilo-oldmoney-tee",
-    "title": "Tee-shirt Old Money",
-    "price": 240,
-    "category": "t-shirt",
-    "image": "/products/old-money/Gemini_Generated_Image_uu3447uu3447uu34.png",
-    "images": [
-      "/products/old-money/Gemini_Generated_Image_uu3447uu3447uu34.png",
-      "/products/old-money/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
-      "/products/old-money/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
-    ],
-    "description": "Un t-shirt inspiré de l'esthétique classique et intemporelle 'Old Money'. Confectionné dans un coton de 280 GSM de grande qualité. Coupe décontractée, col épais et finitions soignées.",
-    "variations": {
-      "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc Old Money"]
-    },
-    "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" },
-      { "name": "Poids", "value": "280 GSM Heavyweight" },
-      { "name": "Fit", "value": "Relaxed Boxy Fit" },
-      { "name": "Coupe", "value": "Unisexe" }
-    ],
-    "topSelling": true
-  },
-  {
-    "id": "modilo-richlife-tee",
-    "title": "Tee-shirt Rich Life",
-    "price": 240,
-    "category": "t-shirt",
-    "image": "/products/rich-life/Gemini_Generated_Image_2c1orh2c1orh2c1o.png",
-    "images": [
-      "/products/rich-life/Gemini_Generated_Image_2c1orh2c1orh2c1o.png",
-      "/products/rich-life/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
-      "/products/rich-life/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
-    ],
-    "description": "Une édition spéciale célébrant la vie de luxe et le prestige, avec une illustration graphique moderne et percutante. Fabriqué en coton épais de 280 GSM avec col côtelé robuste et coupe relaxed.",
-    "variations": {
-      "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc Rich Life"]
-    },
-    "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" },
-      { "name": "Poids", "value": "280 GSM Heavyweight" },
-      { "name": "Fit", "value": "Relaxed Boxy Fit" },
-      { "name": "Coupe", "value": "Unisexe" }
-    ],
-    "topSelling": true
-  },
-  {
-    "id": "modilo-santorini-tee",
-    "title": "Tee-shirt Santorini",
-    "price": 240,
-    "category": "t-shirt",
-    "image": "/products/santorini/Gemini_Generated_Image_iph8h9iph8h9iph8.png",
-    "images": [
-      "/products/santorini/Gemini_Generated_Image_iph8h9iph8h9iph8.png",
-      "/products/santorini/ea60a62a40b7b0037490ae84ee423791.jpg",
-      "/products/santorini/Gemini_Generated_Image_wvdtsewvdtsewvdt.png",
-      "/products/santorini/Gemini_Generated_Image_3h03hq3h03hq3h03.png"
-    ],
-    "description": "Une édition limitée célébrant les magnifiques paysages de Santorin et ses célèbres toits bleus. Confectionné dans notre coton lourd premium de 280 GSM.",
-    "variations": {
-      "sizes": ["S", "M", "L", "XL"],
-      "colors": ["Blanc Santorini"]
-    },
-    "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" },
-      { "name": "Poids", "value": "280 GSM Heavyweight" },
-      { "name": "Fit", "value": "Relaxed Boxy Fit" },
-      { "name": "Coupe", "value": "Unisexe" }
-    ],
-    "topSelling": true
   }
 ]
-
-
