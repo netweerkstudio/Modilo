@@ -485,7 +485,7 @@ function handleCheckout() {
   grid-column: span 2;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .delivery-info-card {
     padding: 24px 20px;
   }

@@ -244,13 +244,13 @@ function quickAddToCart(product) {
             <h3 class="featured-title">{{ product.title }}</h3>
             <div class="featured-footer">
               <p class="featured-price">{{ product.price }} MAD</p>
-              <button class="featured-add-btn" @click.prevent.stop="quickAddToCart(product)" aria-label="Ajouter au panier">
-                <span>Ajouter</span>
+              <div class="featured-add-btn">
+                <span>Commander</span>
                 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
                   <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
-              </button>
+              </div>
             </div>
           </div>
         </a>
@@ -291,13 +291,13 @@ function quickAddToCart(product) {
             <h3 class="card-title">{{ product.title }}</h3>
             <div class="card-footer-row">
               <p class="card-price">{{ product.price }} MAD</p>
-              <button class="card-add-btn" @click.prevent.stop="quickAddToCart(product)" aria-label="Ajouter au panier">
-                <span>Ajouter</span>
+              <div class="card-add-btn">
+                <span>Commander</span>
                 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
                   <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
-              </button>
+              </div>
             </div>
           </div>
         </a>
