@@ -37,6 +37,7 @@ const activeQuickView = ref(null);
 const selectedSize = ref('');
 const selectedColor = ref('');
 const cart = ref([]);
+const isMounted = ref(false);
 
 const filteredProducts = computed(() => {
   if (selectedCategory.value === 'all') {
@@ -82,6 +83,8 @@ onMounted(() => {
   if (urlParams.get('open_cart') === 'true') {
     window.location.href = '/panier';
   }
+
+  isMounted.value = true;
 });
 
 function selectCategory(cat) {
@@ -392,7 +395,7 @@ function quickAddToCart(product) {
     </Transition>
 
     <!-- Floating Cart Toggle Button -->
-    <teleport to="body">
+    <teleport to="body" v-if="isMounted">
       <a v-if="cartItemCount > 0" class="floating-cart-btn" href="/panier" aria-label="Voir le Panier">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="9" cy="21" r="1"></circle>
