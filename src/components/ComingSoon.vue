@@ -1,6 +1,6 @@
 <script setup>
 import logoImg from '../assets/images/logo/logo-website.png';
-import spinnerImg from '../assets/spinner.svg';
+import spinnerImg from '../assets/images/spinner.svg';
 </script>
 
 <template>
@@ -34,7 +34,7 @@ import spinnerImg from '../assets/spinner.svg';
   height: 90%;
   margin: auto;
   border-radius: 10px;
-  background: url('../assets/hoodie.png') center/contain no-repeat ;
+  background: url('../assets/images/hoodie.png') center/contain no-repeat ;
   display: flex;
   flex-direction: column;
   align-items: center;

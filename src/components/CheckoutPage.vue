@@ -2,16 +2,14 @@
 import { ref, computed, onMounted } from 'vue';
 
 // Import local image assets for correct Vue bundle resolution
-import hoodieImg from '../assets/hoodie_black.png';
-import tshirtImg from '../assets/tshirt_white.png';
-import backpackImg from '../assets/backpack_grey.png';
-import totebagImg from '../assets/totebag_canvas.png';
+import hoodieImg from '../assets/images/hoodie.png';
+import tshirtImg from '../assets/images/tshirt_white.png';
 
 const imageMap = {
   "../assets/hoodie_black.png": hoodieImg.src || hoodieImg,
   "../assets/tshirt_white.png": tshirtImg.src || tshirtImg,
-  "../assets/backpack_grey.png": backpackImg.src || backpackImg,
-  "../assets/totebag_canvas.png": totebagImg.src || totebagImg
+  "../assets/backpack_grey.png": tshirtImg.src || tshirtImg,
+  "../assets/totebag_canvas.png": tshirtImg.src || tshirtImg
 };
 
 const cart = ref([]);

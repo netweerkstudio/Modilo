@@ -3,17 +3,15 @@ import { ref, computed, onMounted } from 'vue';
 import productsData from '../data/products.json';
 
 // Import local image assets for correct Vue bundle resolution
-import hoodieImg from '../assets/hoodie_black.png';
-import tshirtImg from '../assets/tshirt_white.png';
-import backpackImg from '../assets/backpack_grey.png';
-import totebagImg from '../assets/totebag_canvas.png';
+import hoodieImg from '../assets/images/hoodie.png';
+import tshirtImg from '../assets/images/tshirt_white.png';
 
 // Map product image paths to resolved static assets
 const imageMap = {
   "../assets/hoodie_black.png": hoodieImg.src || hoodieImg,
   "../assets/tshirt_white.png": tshirtImg.src || tshirtImg,
-  "../assets/backpack_grey.png": backpackImg.src || backpackImg,
-  "../assets/totebag_canvas.png": totebagImg.src || totebagImg
+  "../assets/backpack_grey.png": tshirtImg.src || tshirtImg,
+  "../assets/totebag_canvas.png": tshirtImg.src || tshirtImg
 };
 
 const products = productsData.map(p => ({
@@ -114,6 +112,31 @@ function saveCart() {
   window.dispatchEvent(new CustomEvent('cart-updated'));
 }
 
+function showToast(message) {
+  const existing = document.querySelector('.toast-notification');
+  if (existing) {
+    existing.remove();
+  }
+  const toast = document.createElement('div');
+  toast.className = 'toast-notification';
+  toast.innerHTML = `
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span>${message}</span>
+  `;
+  document.body.appendChild(toast);
+  setTimeout(() => {
+    toast.classList.add('show');
+  }, 10);
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => {
+      toast.remove();
+    }, 400);
+  }, 3000);
+}
+
 function addToCart(product) {
   const size = selectedSize.value || (product.variations && product.variations.sizes ? product.variations.sizes[0] : '');
   const color = selectedColor.value || (product.variations && product.variations.colors ? product.variations.colors[0] : '');
@@ -137,7 +160,7 @@ function addToCart(product) {
   }
   saveCart();
   closeQuickView();
-  window.location.href = '/panier';
+  showToast('Produit ajouté au panier !');
 }
 
 function updateQuantity(item, amount) {
@@ -218,11 +241,11 @@ function quickAddToCart(product) {
             <h3 class="featured-title">{{ product.title }}</h3>
             <div class="featured-footer">
               <p class="featured-price">{{ product.price }} MAD</p>
-              <button class="featured-add-btn" @click.prevent.stop="quickAddToCart(product)" aria-label="Commander">
-                <span>Commander</span>
+              <button class="featured-add-btn" @click.prevent.stop="quickAddToCart(product)" aria-label="Ajouter au panier">
+                <span>Ajouter</span>
                 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
                   <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </button>
             </div>
@@ -265,11 +288,11 @@ function quickAddToCart(product) {
             <h3 class="card-title">{{ product.title }}</h3>
             <div class="card-footer-row">
               <p class="card-price">{{ product.price }} MAD</p>
-              <button class="card-add-btn" @click.prevent.stop="quickAddToCart(product)" aria-label="Commander">
-                <span>Commander</span>
+              <button class="card-add-btn" @click.prevent.stop="quickAddToCart(product)" aria-label="Ajouter au panier">
+                <span>Ajouter</span>
                 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
                   <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </button>
             </div>
