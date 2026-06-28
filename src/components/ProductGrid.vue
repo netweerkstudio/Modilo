@@ -392,14 +392,16 @@ function quickAddToCart(product) {
     </Transition>
 
     <!-- Floating Cart Toggle Button -->
-    <a v-if="cartItemCount > 0" class="floating-cart-btn" href="/panier" aria-label="Voir le Panier">
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="9" cy="21" r="1"></circle>
-        <circle cx="20" cy="21" r="1"></circle>
-        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-      </svg>
-      <span class="cart-badge">{{ cartItemCount }}</span>
-    </a>
+    <teleport to="body">
+      <a v-if="cartItemCount > 0" class="floating-cart-btn" href="/panier" aria-label="Voir le Panier">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-badge">{{ cartItemCount }}</span>
+      </a>
+    </teleport>
   </div>
 </template>
 
@@ -1194,7 +1196,7 @@ function quickAddToCart(product) {
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
+  z-index: 9999999;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
 }

@@ -153,3 +153,8 @@ body {
     justify-content: center;
   }
 }
+
+/* Prevent iOS Zoom on focus */
+input, select, textarea {
+  font-size: 16px !important;
+}
