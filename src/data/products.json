@@ -8,8 +8,8 @@
     "images": [
       "/products/santorini/tshirt-santorini-print.png",
       "/products/santorini/tshirt-santorini-lifestyle.jpg",
-      "/products/santorini/tshirt-santorini-front.png",
-      "/products/santorini/tshirt-santorini-back.png"
+      "/products/santorini/tshirt-closeup.png",
+      "/products/santorini/tshirt-front.png"
     ],
     "description": "Une édition limitée célébrant les magnifiques paysages de Santorin et ses célèbres toits bleus. Confectionné dans notre coton lourd premium.",
     "variations": {
@@ -17,7 +17,8 @@
       "colors": ["Blanc"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -29,8 +30,8 @@
     "image": "/products/old-money/tshirt-oldmoney-print.png",
     "images": [
       "/products/old-money/tshirt-oldmoney-print.png",
-      "/products/old-money/tshirt-oldmoney-front.png",
-      "/products/old-money/tshirt-oldmoney-back.png"
+      "/products/old-money/tshirt-closeup.png",
+      "/products/old-money/tshirt-front.png"
     ],
     "description": "Un t-shirt inspiré de l'esthétique classique et intemporelle 'Old Money'. Confectionné dans un coton de grande qualité. Coupe décontractée, col épais et finitions soignées.",
     "variations": {
@@ -38,7 +39,8 @@
       "colors": ["Blanc"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -51,8 +53,8 @@
     "images": [
       "/products/amalfi-italie/tshirt-amalfi-print.png",
       "/products/amalfi-italie/tshirt-amalfi-detail.png",
-      "/products/amalfi-italie/tshirt-amalfi-front.png",
-      "/products/amalfi-italie/tshirt-amalfi-back.png"
+      "/products/amalfi-italie/tshirt-closeup.png",
+      "/products/amalfi-italie/tshirt-front.png"
     ],
     "description": "Une édition limitée célébrant la douceur de vivre de la côte amalfitaine. Confectionné dans un coton biologique haut de gamme, ce t-shirt blanc arbore sur le dos une illustration artistique exclusive de Positano surplombée de la signature Modilo. Coupe relaxed, col en tricot côtelé épais et coutures renforcées pour une tenue parfaite.",
     "variations": {
@@ -60,7 +62,8 @@
       "colors": ["Blanc"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -73,8 +76,8 @@
     "images": [
       "/products/tanger-maroc/tshirt-tanger-print.png",
       "/products/tanger-maroc/tshirt-tanger-detail.png",
-      "/products/tanger-maroc/tshirt-tanger-front.png",
-      "/products/tanger-maroc/tshirt-tanger-back.png"
+      "/products/tanger-maroc/tshirt-closeup.png",
+      "/products/tanger-maroc/tshirt-front.png"
     ],
     "description": "Une édition spéciale inspirée de la perle du Nord, Tanger. Confectionné dans un coton biologique lourd, ce t-shirt blanc arbore sur le dos une illustration artistique exclusive rendant hommage à la ville du détroit. Coupe relaxed contemporaine, col épais et finitions haut de gamme.",
     "variations": {
@@ -82,7 +85,8 @@
       "colors": ["Blanc"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -94,8 +98,8 @@
     "image": "/products/rich-life/tshirt-richlife-print.png",
     "images": [
       "/products/rich-life/tshirt-richlife-print.png",
-      "/products/rich-life/tshirt-richlife-front.png",
-      "/products/rich-life/tshirt-richlife-back.png"
+      "/products/rich-life/tshirt-closeup.png",
+      "/products/rich-life/tshirt-front.png"
     ],
     "description": "Une édition spéciale célébrant la vie de luxe et le prestige, avec une illustration graphique moderne et percutante. Fabriqué en coton épais avec col côtelé robuste et coupe relaxed.",
     "variations": {
@@ -103,7 +107,8 @@
       "colors": ["Blanc"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -116,10 +121,9 @@
     "images": [
       "/products/stranger-things/tshirt-strangerthings-print.png",
       "/products/stranger-things/tshirt-strangerthings-detail-1.png",
-      "/products/stranger-things/tshirt-strangerthings-detail-2.png",
-      "/products/stranger-things/tshirt-strangerthings-lifestyle.jpeg",
-      "/products/stranger-things/tshirt-strangerthings-front.png",
-      "/products/stranger-things/tshirt-strangerthings-back.png"
+      "/products/stranger-things/tshirt-strangerthings-1.png",
+      "/products/stranger-things/tshirt-strangerthings-2.png",
+      "/products/stranger-things/tshirt-closeup.png"
     ],
     "description": "Un t-shirt en édition spéciale inspiré de l'univers mystérieux de Stranger Things. Confectionné dans un coton lourd haut de gamme pour une structure et un confort parfaits. Arborant des visuels uniques, ce modèle propose une coupe relaxed moderne avec col côtelé épais.",
     "variations": {
@@ -127,7 +131,8 @@
       "colors": ["Blanc", "Noir"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -146,7 +151,8 @@
       "colors": ["Noir"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -155,12 +161,12 @@
     "title": "T-shirt Palestine Solidaire",
     "price": 170,
     "category": "t-shirt",
-    "image": "/products/palestine/tshirt-palestine-print.png",
+    "image": "/products/palestine/tshirt-palestine-1.png",
     "images": [
-      "/products/palestine/tshirt-palestine-print.png",
-      "/products/palestine/tshirt-palestine-detail.png",
-      "/products/palestine/tshirt-palestine-front.png",
-      "/products/palestine/tshirt-palestine-back.png"
+      "/products/palestine/tshirt-palestine-1.png",
+      "/products/palestine/tshirt-palestine-2.png",
+      "/products/palestine/tshirt-closeup.png",
+      "/products/palestine/tshirt-front.png"
     ],
     "description": "Une édition spéciale dédiée à la Palestine, arborant un design artistique raffiné sur la poitrine. Confectionné dans un coton d'une grande douceur et d'une durabilité exceptionnelle. Coupe décontractée, col épais et finitions soignées.",
     "variations": {
@@ -168,7 +174,8 @@
       "colors": ["Blanc", "Noir"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -180,8 +187,8 @@
     "image": "/products/araignee/tshirt-araignee-print.png",
     "images": [
       "/products/araignee/tshirt-araignee-print.png",
-      "/products/araignee/tshirt-araignee-front.png",
-      "/products/araignee/tshirt-araignee-back.png"
+      "/products/araignee/tshirt-closeup.png",
+      "/products/araignee/tshirt-front.png"
     ],
     "description": "Une édition spéciale mystique arborant une illustration d'araignée artistique finement détaillée sur le dos. Confectionné dans un coton de grande qualité. Coupe décontractée, col épais et finitions haut de gamme.",
     "variations": {
@@ -189,7 +196,8 @@
       "colors": ["Blanc"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -201,8 +209,8 @@
     "image": "/products/arbre-de-vie/tshirt-arbredevie-print.png",
     "images": [
       "/products/arbre-de-vie/tshirt-arbredevie-print.png",
-      "/products/arbre-de-vie/tshirt-arbredevie-front.png",
-      "/products/arbre-de-vie/tshirt-arbredevie-back.png"
+      "/products/arbre-de-vie/tshirt-closeup.png",
+      "/products/arbre-de-vie/tshirt-front.png"
     ],
     "description": "Une édition spéciale nature arborant une illustration d'arbre artistique finement détaillée sur le dos. Confectionné dans un coton de grande qualité. Coupe décontractée, col épais et finitions soignées.",
     "variations": {
@@ -210,7 +218,8 @@
       "colors": ["Blanc"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -222,8 +231,8 @@
     "image": "/products/supra-nippon/tshirt-supra-print.png",
     "images": [
       "/products/supra-nippon/tshirt-supra-print.png",
-      "/products/supra-nippon/tshirt-supra-front.png",
-      "/products/supra-nippon/tshirt-supra-back.png"
+      "/products/supra-nippon/tshirt-closeup.png",
+      "/products/supra-nippon/tshirt-front.png"
     ],
     "description": "Une édition limitée célébrant la légendaire sportive nippone Supra, avec une illustration graphique percutante au dos. Confectionné dans un coton lourd pour un confort et une structure parfaits.",
     "variations": {
@@ -231,7 +240,8 @@
       "colors": ["Blanc"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -243,8 +253,8 @@
     "image": "/products/samourai-shogun/tshirt-samourai-shogun-print.png",
     "images": [
       "/products/samourai-shogun/tshirt-samourai-shogun-print.png",
-      "/products/samourai-shogun/tshirt-samourai-shogun-front.png",
-      "/products/samourai-shogun/tshirt-samourai-shogun-back.png"
+      "/products/samourai-shogun/tshirt-closeup.png",
+      "/products/samourai-shogun/tshirt-front.png"
     ],
     "description": "Un t-shirt unique arborant un design de guerrier samouraï traditionnel sur le dos. Fabriqué en coton épais avec col côtelé robuste et coupe relaxed.",
     "variations": {
@@ -252,7 +262,8 @@
       "colors": ["Blanc"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -261,11 +272,11 @@
     "title": "T-shirt Samouraï Shogun",
     "price": 170,
     "category": "t-shirt",
-    "image": "/products/samourai-ronin/tshirt-samourai-ronin-print.jpeg",
+    "image": "/products/samourai-ronin/tshirt-samourai-ronin-print.png",
     "images": [
-      "/products/samourai-ronin/tshirt-samourai-ronin-print.jpeg",
-      "/products/samourai-ronin/tshirt-samourai-ronin-front.png",
-      "/products/samourai-ronin/tshirt-samourai-ronin-back.png"
+      "/products/samourai-ronin/tshirt-samourai-ronin-print.png",
+      "/products/samourai-ronin/tshirt-closeup.png",
+      "/products/samourai-ronin/tshirt-front.png"
     ],
     "description": "Seconde variante du design Samouraï avec une illustration artistique alternative du guerrier nippon. Confectionné dans notre coton lourd premium.",
     "variations": {
@@ -273,7 +284,8 @@
       "colors": ["Blanc"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -285,16 +297,17 @@
     "image": "/products/dragon-ball/tshirt-dragonball-print.png",
     "images": [
       "/products/dragon-ball/tshirt-dragonball-print.png",
-      "/products/dragon-ball/tshirt-dragonball-front.png",
-      "/products/dragon-ball/tshirt-dragonball-back.png"
+      "/products/dragon-ball/tshirt-closeup.png",
+      "/products/dragon-ball/tshirt-front.png"
     ],
-    "description": "Un t-shirt en édition spéciale inspiré de l'univers mythique de Dragon Ball. Confectionné dans notre coton lourd premium, offrant confort, structure et durabilité.",
+    "description": "Un t-shirt en édition spéciale inspiré de l'univers mythique de Dragon Ball. Confectionné dans notre coton lourd premium, offering confort, structure et durabilité.",
     "variations": {
       "sizes": ["S", "M", "L", "XL"],
       "colors": ["Blanc"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -303,11 +316,11 @@
     "title": "T-shirt Goku Légende",
     "price": 170,
     "category": "t-shirt",
-    "image": "/products/goku-saiyan/tshirt-goku-print.jpeg",
+    "image": "/products/goku-saiyan/tshirt-goku-print.png",
     "images": [
-      "/products/goku-saiyan/tshirt-goku-print.jpeg",
-      "/products/goku-saiyan/tshirt-goku-front.png",
-      "/products/goku-saiyan/tshirt-goku-back.png"
+      "/products/goku-saiyan/tshirt-goku-print.png",
+      "/products/goku-saiyan/tshirt-closeup.png",
+      "/products/goku-saiyan/tshirt-front.png"
     ],
     "description": "Une édition spéciale rendant hommage à Goku, le légendaire guerrier Saiyan. Confectionné dans un coton de grande qualité. Coupe décontractée, col épais et finitions soignées.",
     "variations": {
@@ -315,7 +328,8 @@
       "colors": ["Blanc"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   },
@@ -327,8 +341,8 @@
     "image": "/products/uchiha-clan/tshirt-uchiha-print.png",
     "images": [
       "/products/uchiha-clan/tshirt-uchiha-print.png",
-      "/products/uchiha-clan/tshirt-uchiha-front.png",
-      "/products/uchiha-clan/tshirt-uchiha-back.png"
+      "/products/uchiha-clan/tshirt-closeup.png",
+      "/products/uchiha-clan/tshirt-front.png"
     ],
     "description": "Un design unique dédié au clan légendaire Uchiha, arborant des visuels artistiques saisissants. Conçu en coton biologique premium ultra-confortable avec une coupe moderne relaxed.",
     "variations": {
@@ -336,7 +350,8 @@
       "colors": ["Blanc"]
     },
     "specifications": [
-      { "name": "Matériau", "value": "100% Coton Biologique" }
+      { "name": "Matériau", "value": "100% Coton Biologique" },
+      { "name": "Origine", "value": "Fabriqué au Maroc par Modilo" }
     ],
     "topSelling": true
   }
